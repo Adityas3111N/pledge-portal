@@ -15,8 +15,10 @@ import {
   SheetTitle, 
   SheetTrigger 
 } from "@/components/ui/sheet";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Navbar() {
+  const { t, language, setLanguage } = useTranslation();
   const [currentTime, setCurrentTime] = useState("");
   const [shortTime, setShortTime] = useState("");
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -40,14 +42,15 @@ export default function Navbar() {
         minute: "2-digit",
         hour12: true,
       };
-      setCurrentTime(now.toLocaleString("en-US", longOptions));
-      setShortTime(now.toLocaleString("en-US", shortOptions));
+      const locale = language === "hi" ? "hi-IN" : "en-US";
+      setCurrentTime(now.toLocaleString(locale, longOptions));
+      setShortTime(now.toLocaleString(locale, shortOptions));
     };
 
     updateTime();
     const interval = setInterval(updateTime, 60000);
     return () => clearInterval(interval);
-  }, []);
+  }, [language]);
 
   const toggleDropdown = (menuName: string) => {
     setActiveDropdown(activeDropdown === menuName ? null : menuName);
@@ -59,8 +62,8 @@ export default function Navbar() {
       <div className="bg-[#fc661e] text-white py-2 text-[9.5px] min-[360px]:text-[11px] sm:text-[13px] font-medium whitespace-nowrap overflow-x-auto no-scrollbar">
         <div className="w-full px-3 sm:px-4 md:px-6 lg:px-[42px] flex justify-between items-center gap-4">
           <div className="opacity-95 tabular-nums tracking-wide flex-shrink-0">
-            <span className="inline sm:hidden">{shortTime || "28 May, 05:10 pm"}</span>
-            <span className="hidden sm:inline">{currentTime || "Thursday, 28 May 2026 05:10 pm"}</span>
+            <span className="inline sm:hidden">{shortTime || t("navbar.dateFallback")}</span>
+            <span className="hidden sm:inline">{currentTime || t("navbar.dateFallback")}</span>
           </div>
 
           <div className="flex items-center gap-1.5 sm:gap-3.5 opacity-95 text-[9.5px] min-[360px]:text-[11px] sm:text-[13px] flex-shrink-0">
@@ -80,9 +83,11 @@ export default function Navbar() {
             </button>
             <span className="opacity-40">|</span>
             <button 
+              onClick={() => setLanguage(language === "en" ? "hi" : "en")}
               className="hover:opacity-85 transition-opacity focus:outline-none flex items-center gap-0.5 font-semibold"
+              aria-label="Switch Language / भाषा बदलें"
             >
-              <span className="underline">English</span>
+              <span className="underline">{language === "en" ? "हिन्दी" : "English"}</span>
               <ChevronDown className="w-3 h-3 text-white stroke-[2.5]" />
             </button>
           </div>
@@ -107,10 +112,10 @@ export default function Navbar() {
 
             <div className="flex flex-col min-w-0">
               <h2 className="font-bold text-[#202124] text-[10px] min-[360px]:text-[11.5px] min-[400px]:text-[13px] sm:text-[17px] md:text-[20px] leading-tight tracking-tight whitespace-nowrap">
-                Directorate of Industries & Enterprise Promotion
+                {t("navbar.title")}
               </h2>
               <p className="text-[6.5px] min-[360px]:text-[7.5px] min-[400px]:text-[8.5px] sm:text-[11px] font-bold text-[#5f6368] tracking-wider mt-0.5 uppercase whitespace-nowrap">
-                GOVERNMENT OF UTTAR PRADESH — PLEDGE PORTAL
+                {t("navbar.subtitle")}
               </p>
             </div>
           </div>
@@ -155,12 +160,18 @@ export default function Navbar() {
 
                 {/* Bilingual Language Switcher */}
                 <div className="flex items-center justify-between bg-gray-50 border border-gray-100 p-2 rounded-xl">
-                  <span className="text-[11px] font-bold text-gray-500 ml-1.5">Language / भाषा</span>
+                  <span className="text-[11px] font-bold text-gray-500 ml-1.5">{t("navbar.languageLabel")}</span>
                   <div className="flex gap-1">
-                    <button className="px-2.5 py-1 text-[11px] rounded-lg font-bold bg-[#fc661e] text-white hover:bg-orange-600 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">
+                    <button 
+                      onClick={() => setLanguage("en")}
+                      className={`px-2.5 py-1 text-[11px] rounded-lg font-bold transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none ${language === "en" ? "bg-[#fc661e] text-white" : "text-gray-700 hover:bg-gray-100"}`}
+                    >
                       English
                     </button>
-                    <button className="px-2.5 py-1 text-[11px] rounded-lg font-medium text-gray-700 hover:bg-gray-100 transition-colors focus-visible:ring-2 focus-visible:ring-gray-300 focus-visible:outline-none">
+                    <button 
+                      onClick={() => setLanguage("hi")}
+                      className={`px-2.5 py-1 text-[11px] rounded-lg font-bold transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none ${language === "hi" ? "bg-[#fc661e] text-white" : "text-gray-700 hover:bg-gray-100"}`}
+                    >
                       हिन्दी
                     </button>
                   </div>
@@ -171,15 +182,15 @@ export default function Navbar() {
                   <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
                   <input
                     type="text"
-                    placeholder="Search portal..."
+                    placeholder={t("navbar.searchPlaceholder")}
                     className="w-full pl-9 pr-4 py-2 border border-gray-200 rounded-xl text-xs bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#fc661e] focus:border-transparent font-medium"
                   />
                 </div>
 
                 {/* Structured Scheme Navigation */}
                 <nav className="flex flex-col gap-1 text-xs font-semibold text-[#424242]" aria-label="Mobile Navigation Drawer">
-                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">Home</a>
-                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">About</a>
+                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">{t("navbar.home")}</a>
+                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">{t("navbar.about")}</a>
                   
                   <div className="border-b border-gray-50">
                     <button 
@@ -187,13 +198,13 @@ export default function Navbar() {
                       aria-expanded={activeDropdown === "schemeInfo"}
                       className="w-full flex items-center justify-between hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg text-left transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
                     >
-                      <span>Scheme Info</span>
+                      <span>{t("navbar.schemeInfo")}</span>
                       <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${activeDropdown === "schemeInfo" ? "rotate-180" : ""}`} />
                     </button>
                     {activeDropdown === "schemeInfo" && (
                       <div className="pl-6 pb-2.5 flex flex-col gap-1.5 text-[11px] text-gray-600 bg-gray-50/50 rounded-lg mt-1 p-1.5">
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">Pledge Scheme Guidelines</a>
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">Benefits & Incentives</a>
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.schemeGuidelines")}</a>
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.schemeBenefits")}</a>
                       </div>
                     )}
                   </div>
@@ -204,14 +215,14 @@ export default function Navbar() {
                       aria-expanded={activeDropdown === "services"}
                       className="w-full flex items-center justify-between hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg text-left transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
                     >
-                      <span>Services</span>
+                      <span>{t("navbar.services")}</span>
                       <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${activeDropdown === "services" ? "rotate-180" : ""}`} />
                     </button>
                     {activeDropdown === "services" && (
                       <div className="pl-6 pb-2.5 flex flex-col gap-1.5 text-[11px] text-gray-600 bg-gray-50/50 rounded-lg mt-1 p-1.5">
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">Online Application</a>
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">Track Status</a>
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">Grievance Redressal</a>
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.serviceApplication")}</a>
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.serviceTrack")}</a>
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.serviceGrievance")}</a>
                       </div>
                     )}
                   </div>
@@ -222,19 +233,19 @@ export default function Navbar() {
                       aria-expanded={activeDropdown === "approvedParks"}
                       className="w-full flex items-center justify-between hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg text-left transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
                     >
-                      <span>Approved Parks</span>
+                      <span>{t("navbar.approvedParks")}</span>
                       <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${activeDropdown === "approvedParks" ? "rotate-180" : ""}`} />
                     </button>
                     {activeDropdown === "approvedParks" && (
                       <div className="pl-6 pb-2.5 flex flex-col gap-1.5 text-[11px] text-gray-600 bg-gray-50/50 rounded-lg mt-1 p-1.5">
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">State Level Directory</a>
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">District Level Directory</a>
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.stateDirectory")}</a>
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.districtDirectory")}</a>
                       </div>
                     )}
                   </div>
 
-                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">FAQs</a>
-                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">Contact</a>
+                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">{t("navbar.faqs")}</a>
+                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">{t("navbar.contact")}</a>
                 </nav>
 
                 <div className="mt-auto flex flex-col gap-3 pt-4 border-t border-gray-100">
@@ -248,17 +259,17 @@ export default function Navbar() {
                       <Phone className="w-4 h-4 text-[#fc661e]" />
                     </div>
                     <div className="flex flex-col min-w-0">
-                      <span className="text-[9px] text-orange-600 font-bold uppercase tracking-wider leading-none">Official Helpdesk</span>
+                      <span className="text-[9px] text-orange-600 font-bold uppercase tracking-wider leading-none">{t("navbar.helpdesk")}</span>
                       <span className="text-xs font-bold text-gray-800 leading-normal mt-0.5">92+ (8220)874287</span>
                     </div>
                   </a>
 
                   <div className="flex flex-col gap-2">
                     <Button className="w-full bg-neutral-900 hover:bg-black text-white font-semibold rounded-xl py-2.5 shadow-sm text-sm">
-                      New Registration
+                      {t("navbar.newRegistration")}
                     </Button>
                     <Button variant="outline" className="w-full font-semibold border-gray-300 text-gray-900 hover:bg-gray-50 rounded-xl py-2.5 text-sm shadow-xs">
-                      Log In
+                      {t("navbar.logIn")}
                     </Button>
                   </div>
                 </div>
@@ -278,14 +289,14 @@ export default function Navbar() {
               className="py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
               aria-current="page"
             >
-              Home
+              {t("navbar.home")}
             </a>
             
             <a 
               href="#" 
               className="py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
             >
-              About
+              {t("navbar.about")}
             </a>
 
             <div className="relative group flex items-center h-full">
@@ -293,12 +304,12 @@ export default function Navbar() {
                 className="flex items-center gap-1.5 py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
                 aria-expanded="false"
               >
-                <span>Scheme Info</span>
+                <span>{t("navbar.schemeInfo")}</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
               </button>
               <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-white border border-gray-200 rounded-lg shadow-md py-2 z-50">
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">Pledge Scheme Guidelines</a>
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">Benefits & Incentives</a>
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.schemeGuidelines")}</a>
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.schemeBenefits")}</a>
               </div>
             </div>
 
@@ -307,13 +318,13 @@ export default function Navbar() {
                 className="flex items-center gap-1.5 py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
                 aria-expanded="false"
               >
-                <span>Services</span>
+                <span>{t("navbar.services")}</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
               </button>
               <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-white border border-gray-200 rounded-lg shadow-md py-2 z-50">
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">Online Application</a>
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">Track Status</a>
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">Grievance Redressal</a>
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.serviceApplication")}</a>
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.serviceTrack")}</a>
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.serviceGrievance")}</a>
               </div>
             </div>
 
@@ -322,12 +333,12 @@ export default function Navbar() {
                 className="flex items-center gap-1.5 py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
                 aria-expanded="false"
               >
-                <span>Approved Parks</span>
+                <span>{t("navbar.approvedParks")}</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
               </button>
               <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-white border border-gray-200 rounded-lg shadow-md py-2 z-50">
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">State Level Directory</a>
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">District Level Directory</a>
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.stateDirectory")}</a>
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.districtDirectory")}</a>
               </div>
             </div>
 
@@ -335,14 +346,14 @@ export default function Navbar() {
               href="#" 
               className="py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
             >
-              FAQs
+              {t("navbar.faqs")}
             </a>
             
             <a 
               href="#" 
               className="py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
             >
-              Contact
+              {t("navbar.contact")}
             </a>
           </nav>
 
@@ -351,12 +362,12 @@ export default function Navbar() {
             <button 
               className="h-[34px] px-4 rounded-[10px] bg-gradient-to-b from-[#2d2d2d] to-[#0a0a0a] text-white text-[13px] font-medium cursor-pointer shadow-[0_2px_5px_rgba(0,0,0,0.35),inset_0_1px_0px_rgba(255,255,255,0.15)] hover:from-[#202020] hover:to-[#000000] active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
             >
-              New Registration
+              {t("navbar.newRegistration")}
             </button>
             <button 
               className="h-[34px] px-[16px] rounded-[10px] bg-white text-[#202124] text-[13px] font-medium cursor-pointer border border-[#d1d5db] shadow-[0_1px_4px_rgba(0,0,0,0.08)] hover:bg-gray-50 active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
             >
-              Log In
+              {t("navbar.logIn")}
             </button>
           </div>
         </div>

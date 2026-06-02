@@ -1,0 +1,26 @@
+{
+  "navbar": {
+    "dateFallback": "Thursday, 28 May 2026 05:10 pm",
+    "helpdesk": "Official Helpdesk",
+    "languageLabel": "Language / भाषा",
+    "searchPlaceholder": "Search portal...",
+    "title": "Directorate of Industries & Enterprise Promotion",
+    "subtitle": "GOVERNMENT OF UTTAR PRADESH — PLEDGE PORTAL",
+    "home": "Home",
+    "about": "About",
+    "schemeInfo": "Scheme Info",
+    "schemeGuidelines": "Pledge Scheme Guidelines",
+    "schemeBenefits": "Benefits & Incentives",
+    "services": "Services",
+    "serviceApplication": "Online Application",
+    "serviceTrack": "Track Status",
+    "serviceGrievance": "Grievance Redressal",
+    "approvedParks": "Approved Parks",
+    "stateDirectory": "State Level Directory",
+    "districtDirectory": "District Level Directory",
+    "faqs": "FAQs",
+    "contact": "Contact",
+    "newRegistration": "New Registration",
+    "logIn": "Log In"
+  }
+}

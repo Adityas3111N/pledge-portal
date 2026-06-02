@@ -1,0 +1,26 @@
+{
+  "navbar": {
+    "dateFallback": "गुरुवार, 28 मई 2026 05:10 अपराह्न",
+    "helpdesk": "आधिकारिक हेल्पडेस्क",
+    "languageLabel": "Language / भाषा",
+    "searchPlaceholder": "पोर्टल खोजें...",
+    "title": "उद्योग एवं उद्यम प्रोत्साहन निदेशालय",
+    "subtitle": "उत्तर प्रदेश सरकार — प्लेज पोर्टल",
+    "home": "मुख्य पृष्ठ",
+    "about": "हमारे बारे में",
+    "schemeInfo": "योजना की जानकारी",
+    "schemeGuidelines": "प्लेज योजना दिशानिर्देश",
+    "schemeBenefits": "लाभ एवं प्रोत्साहन",
+    "services": "सेवाएं",
+    "serviceApplication": "ऑनलाइन आवेदन",
+    "serviceTrack": "स्थिति ट्रैक करें",
+    "serviceGrievance": "शिकायत निवारण",
+    "approvedParks": "स्वीकृत पार्क",
+    "stateDirectory": "राज्य स्तरीय निर्देशिका",
+    "districtDirectory": "जिला स्तरीय निर्देशिका",
+    "faqs": "अक्सर पूछे जाने वाले प्रश्न",
+    "contact": "संपर्क करें",
+    "newRegistration": "नया पंजीकरण",
+    "logIn": "लॉग इन करें"
+  }
+}
