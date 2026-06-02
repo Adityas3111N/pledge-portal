@@ -1,41 +1,187 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Dependencies
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+node_modules/
 
-# testing
-/coverage
+# Next.js
 
-# next.js
-/.next/
-/out/
+.next/
+out/
 
-# production
-/build
+# Production
 
-# misc
-.DS_Store
-*.pem
+dist/
+build/
 
-# debug
+# Logs
+
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
+pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# Environment Variables
 
-# vercel
-.vercel
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# typescript
+# Keep examples
+
+!.env.example
+
+# TypeScript
+
 *.tsbuildinfo
 next-env.d.ts
+
+# Coverage
+
+coverage/
+.nyc_output/
+
+# Testing
+
+playwright-report/
+test-results/
+tests/results/
+
+# Storybook
+
+storybook-static/
+
+# Cache
+
+.cache/
+.parcel-cache/
+.turbo/
+
+# Vercel
+
+.vercel/
+
+# IDEs
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS Files
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary Files
+
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Package Managers
+
+.pnp
+.pnp.js
+
+# Lockfiles (Keep exactly one)
+
+# package-lock.json
+
+# yarn.lock
+
+# pnpm-lock.yaml
+
+# Cursor
+
+.cursor/cache/
+.cursor/index/
+.cursor/chats/
+.cursor/tmp/
+
+# Local AI Artifacts
+
+.ai/
+.llm/
+.prompts/
+
+# Generated Reports
+
+reports/
+exports/
+generated/
+
+# Database
+
+*.sqlite
+*.sqlite3
+
+# Uploads
+
+uploads/
+public/uploads/
+
+# Backup Files
+
+*.bak
+*.backup
+*.old
+
+# Certificates / Secrets
+
+*.pem
+*.key
+*.crt
+*.p12
+
+# Misc
+
+*.swp
+*.swo
+*.pid
+
+# Debug
+
+debug.log
+
+# Generated API Clients
+
+generated-api/
+
+# Generated Types
+
+generated-types/
+
+# Bundle Analysis
+
+.analyze/
+
+# Lighthouse
+
+.lighthouseci/
+
+# Local Documentation Builds
+
+docs/.vitepress/dist/
+docs/dist/
+
+# MCP
+
+.mcp/
+
+# Ignore local overrides
+
+*.local.ts
+*.local.js
+*.local.json
