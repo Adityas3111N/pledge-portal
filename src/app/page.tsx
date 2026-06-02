@@ -16,33 +16,6 @@ import {
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 bg-primary rounded-lg flex items-center justify-center">
-              <Building2 className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <h1 className="font-bold text-lg">Pledge Portal</h1>
-              <p className="text-xs text-muted-foreground">Government of Uttar Pradesh</p>
-            </div>
-          </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <a href="#features" className="text-sm hover:text-primary transition-colors">
-              Features
-            </a>
-            <a href="#process" className="text-sm hover:text-primary transition-colors">
-              Process
-            </a>
-            <a href="#stats" className="text-sm hover:text-primary transition-colors">
-              Statistics
-            </a>
-            <Button>Login</Button>
-          </nav>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center space-y-6">
@@ -228,97 +201,6 @@ export default function HomePage() {
           </CardContent>
         </Card>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t bg-gray-50">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Building2 className="h-6 w-6 text-primary" />
-                <span className="font-bold">Pledge Portal</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Digital solution for seamless government application review and
-                approval processes.
-              </p>
-            </div>
-            <div>
-              <h5 className="font-semibold mb-4">Quick Links</h5>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    Guidelines
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    FAQs
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-semibold mb-4">For Users</h5>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    Promoter Login
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    District Portal
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    State Portal
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    Admin Panel
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-semibold mb-4">Legal</h5>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary">
-                    Accessibility
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>© 2024 Government of Uttar Pradesh. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

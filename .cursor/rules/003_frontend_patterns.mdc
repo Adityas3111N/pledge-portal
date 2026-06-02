@@ -37,18 +37,23 @@ Always:
 - Support keyboard navigation
 - Provide aria attributes when needed
 
-# Styling
+# Styling & Responsiveness
 
 Use:
 
 - Tailwind utilities
 - Design system tokens
+- Fluid responsive layouts (`max-w-[1280px]` container grids) to ensure seamless rendering across:
+  - Mobile screens (320px+)
+  - Standard/older government office monitors (1024x768, 1280x1024 resolutions)
+  - Desktop widescreen monitors and Macs (1440x900, 1920x1080, and high-res Retina displays)
 
 Avoid:
 
 - Inline styles
 - Magic numbers
 - Hardcoded colors
+- Fixed element widths that cause horizontal scrolling on smaller screens or visual breaking on low-res screens
 
 # Testing
 

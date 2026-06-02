@@ -577,7 +577,7 @@ Types:
 
 ---
 
-# Responsive Breakpoints
+# Responsive Breakpoints & Device Support
 
 ```css
 sm: 640px
@@ -586,6 +586,13 @@ lg: 1024px
 xl: 1280px
 2xl: 1536px
 ```
+
+## Device Support & Compatibility Standards
+
+- **Mobile Viewports (320px - 480px)**: Compact, touch-friendly layouts (e.g. standard smartphone screens).
+- **Tablet / Small Laptops (768px - 1024px)**: Transition states. Ensure no layout overlap.
+- **Government Office Monitors (1024x768 or 1280x1024 resolutions)**: Prioritize horizontal fitting. Ensure that at a standard 1024px width, navigation elements do not wrap awkwardly and contrast ratios remain highly readable under office lighting.
+- **Mac / Widescreen Displays (1440px - 1920px+)**: Set absolute content container boundaries at `max-w-[1280px]` (centered horizontally via `mx-auto`) to prevent layout stretching and maintain readable text line lengths.
 
 ---
 
