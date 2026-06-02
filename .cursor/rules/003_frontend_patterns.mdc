@@ -61,6 +61,18 @@ Avoid:
 - Hardcoded colors
 - Fixed element widths that cause horizontal scrolling on smaller screens or visual breaking on low-res screens
 
+# Internationalization (i18n)
+
+Always:
+- Use `useTranslation` hook from `@/hooks/useTranslation` to resolve strings dynamically.
+- Store copy key-value pairs in `src/core/i18n/en/common.json` and `src/core/i18n/hi/common.json`.
+- Enforce SSR hydration guards (mounted state checking) in client components using translations.
+- Format all dynamic dates, times, and numeric currency values per user locale (`hi-IN` / `en-US`).
+- Keep text container widths flexible (`break-words`, `min-w-0`) to handle length differences between English and Hindi content.
+
+Avoid:
+- Hardcoded strings in user-facing TSX templates.
+
 # Testing
 
 For business logic:

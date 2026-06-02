@@ -45,3 +45,17 @@
   - All public layouts must explicitly accommodate bilingual elements (e.g. English/Hindi) cleanly.
 - **High-Trust Branding**:
   - Official State/National emblems and titles must be kept highly visible, structurally respected, and recognizable.
+
+## Internationalization (i18n)
+
+- **Zero Hardcoded User-Facing Text**:
+  - All public-facing text labels, subtitles, button names, alerts, input placeholders, and help messages must be decoupled into localization files.
+  - English strings must be declared in [en/common.json](file:///e:/Playground/pledge-portal/src/core/i18n/en/common.json).
+  - Corresponding Hindi strings must be declared in [hi/common.json](file:///e:/Playground/pledge-portal/src/core/i18n/hi/common.json).
+- **Use the useTranslation Hook**:
+  - Components must retrieve strings dynamically using `const { t } = useTranslation()`.
+  - Use structured, nested key strings (e.g. `t('navbar.title')`) for neat category organization.
+- **Dynamic Date & Time Formatting**:
+  - All dynamic dates, times, or calendars must format output dynamically using the selected language's locale (e.g. `en-US` or `hi-IN`).
+- **Strict Hydration Safety**:
+  - Any client-side components using persistent i18n state must ensure proper hydration guards (checking if mounted) to prevent Next.js SSR hydration warnings.
