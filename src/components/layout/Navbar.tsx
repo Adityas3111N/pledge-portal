@@ -131,90 +131,136 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <div className="block lg:hidden">
-            <Sheet>
+            <Sheet onOpenChange={(open) => { if (!open) setActiveDropdown(null); }}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon-sm" className="text-gray-900" aria-label="Open navigation menu">
                   <Menu className="w-6 h-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[350px] p-6 bg-white flex flex-col gap-6">
-                <SheetHeader>
-                  <SheetTitle className="text-left font-bold text-[#202124]">PLEDGE PORTAL</SheetTitle>
-                </SheetHeader>
+              <SheetContent side="right" className="w-[300px] sm:w-[350px] p-5 bg-white flex flex-col gap-5 overflow-y-auto no-scrollbar">
+                {/* Official Government Branding Header */}
+                <div className="flex items-center gap-2.5 pb-4 border-b border-gray-100">
+                  <div className="w-[34px] h-[34px] rounded-full border-[1.5px] border-[#fc661e] flex items-center justify-center bg-white flex-shrink-0">
+                    <img 
+                      src="/upgovlogo.png" 
+                      alt="Government of Uttar Pradesh Emblem" 
+                      className="w-[22px] h-[22px] object-contain" 
+                    />
+                  </div>
+                  <div className="flex flex-col min-w-0">
+                    <span className="font-bold text-xs text-[#202124] tracking-tight leading-none uppercase">UP PLEDGE PORTAL</span>
+                    <span className="text-[8.5px] font-bold text-[#5f6368] uppercase mt-1 tracking-wider leading-none">Govt. of Uttar Pradesh</span>
+                  </div>
+                </div>
+
+                {/* Bilingual Language Switcher */}
+                <div className="flex items-center justify-between bg-gray-50 border border-gray-100 p-2 rounded-xl">
+                  <span className="text-[11px] font-bold text-gray-500 ml-1.5">Language / भाषा</span>
+                  <div className="flex gap-1">
+                    <button className="px-2.5 py-1 text-[11px] rounded-lg font-bold bg-[#fc661e] text-white hover:bg-orange-600 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">
+                      English
+                    </button>
+                    <button className="px-2.5 py-1 text-[11px] rounded-lg font-medium text-gray-700 hover:bg-gray-100 transition-colors focus-visible:ring-2 focus-visible:ring-gray-300 focus-visible:outline-none">
+                      हिन्दी
+                    </button>
+                  </div>
+                </div>
                 
+                {/* Search Bar */}
                 <div className="relative w-full">
                   <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
                   <input
                     type="text"
                     placeholder="Search portal..."
-                    className="w-full pl-9 pr-4 py-2 border rounded-lg text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full pl-9 pr-4 py-2 border border-gray-200 rounded-xl text-xs bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#fc661e] focus:border-transparent font-medium"
                   />
                 </div>
 
-                <nav className="flex flex-col gap-4 text-sm font-medium text-[#424242]">
-                  <a href="#" className="hover:text-[#fc661e] py-1 border-b border-gray-50">Home</a>
-                  <a href="#" className="hover:text-[#fc661e] py-1 border-b border-gray-50">About</a>
+                {/* Structured Scheme Navigation */}
+                <nav className="flex flex-col gap-1 text-xs font-semibold text-[#424242]" aria-label="Mobile Navigation Drawer">
+                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">Home</a>
+                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">About</a>
                   
-                  <div>
+                  <div className="border-b border-gray-50">
                     <button 
                       onClick={() => toggleDropdown("schemeInfo")}
-                      className="w-full flex items-center justify-between hover:text-[#fc661e] py-1 border-b border-gray-50 text-left"
+                      aria-expanded={activeDropdown === "schemeInfo"}
+                      className="w-full flex items-center justify-between hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg text-left transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
                     >
                       <span>Scheme Info</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "schemeInfo" ? "rotate-180" : ""}`} />
+                      <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${activeDropdown === "schemeInfo" ? "rotate-180" : ""}`} />
                     </button>
                     {activeDropdown === "schemeInfo" && (
-                      <div className="pl-4 mt-2 flex flex-col gap-2 text-xs text-gray-600">
-                        <a href="#" className="hover:text-[#fc661e] py-1">Pledge Scheme Guidelines</a>
-                        <a href="#" className="hover:text-[#fc661e] py-1">Benefits & Incentives</a>
+                      <div className="pl-6 pb-2.5 flex flex-col gap-1.5 text-[11px] text-gray-600 bg-gray-50/50 rounded-lg mt-1 p-1.5">
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">Pledge Scheme Guidelines</a>
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">Benefits & Incentives</a>
                       </div>
                     )}
                   </div>
 
-                  <div>
+                  <div className="border-b border-gray-50">
                     <button 
                       onClick={() => toggleDropdown("services")}
-                      className="w-full flex items-center justify-between hover:text-[#fc661e] py-1 border-b border-gray-50 text-left"
+                      aria-expanded={activeDropdown === "services"}
+                      className="w-full flex items-center justify-between hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg text-left transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
                     >
                       <span>Services</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "services" ? "rotate-180" : ""}`} />
+                      <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${activeDropdown === "services" ? "rotate-180" : ""}`} />
                     </button>
                     {activeDropdown === "services" && (
-                      <div className="pl-4 mt-2 flex flex-col gap-2 text-xs text-gray-600">
-                        <a href="#" className="hover:text-[#fc661e] py-1">Online Application</a>
-                        <a href="#" className="hover:text-[#fc661e] py-1">Track Status</a>
-                        <a href="#" className="hover:text-[#fc661e] py-1">Grievance Redressal</a>
+                      <div className="pl-6 pb-2.5 flex flex-col gap-1.5 text-[11px] text-gray-600 bg-gray-50/50 rounded-lg mt-1 p-1.5">
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">Online Application</a>
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">Track Status</a>
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">Grievance Redressal</a>
                       </div>
                     )}
                   </div>
 
-                  <div>
+                  <div className="border-b border-gray-50">
                     <button 
                       onClick={() => toggleDropdown("approvedParks")}
-                      className="w-full flex items-center justify-between hover:text-[#fc661e] py-1 border-b border-gray-50 text-left"
+                      aria-expanded={activeDropdown === "approvedParks"}
+                      className="w-full flex items-center justify-between hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg text-left transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
                     >
                       <span>Approved Parks</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "approvedParks" ? "rotate-180" : ""}`} />
+                      <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${activeDropdown === "approvedParks" ? "rotate-180" : ""}`} />
                     </button>
                     {activeDropdown === "approvedParks" && (
-                      <div className="pl-4 mt-2 flex flex-col gap-2 text-xs text-gray-600">
-                        <a href="#" className="hover:text-[#fc661e] py-1">State Level Directory</a>
-                        <a href="#" className="hover:text-[#fc661e] py-1">District Level Directory</a>
+                      <div className="pl-6 pb-2.5 flex flex-col gap-1.5 text-[11px] text-gray-600 bg-gray-50/50 rounded-lg mt-1 p-1.5">
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">State Level Directory</a>
+                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">District Level Directory</a>
                       </div>
                     )}
                   </div>
 
-                  <a href="#" className="hover:text-[#fc661e] py-1 border-b border-gray-50">FAQs</a>
-                  <a href="#" className="hover:text-[#fc661e] py-1 border-b border-gray-50">Contact</a>
+                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">FAQs</a>
+                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">Contact</a>
                 </nav>
 
-                <div className="mt-auto flex flex-col gap-3 pt-6 border-t">
-                  <Button className="w-full bg-neutral-900 hover:bg-black text-white font-semibold rounded-xl shadow-lg">
-                    New Registration
-                  </Button>
-                  <Button variant="outline" className="w-full font-semibold border-gray-300 text-gray-900 hover:bg-gray-50 rounded-xl shadow-sm">
-                    Log In
-                  </Button>
+                <div className="mt-auto flex flex-col gap-3 pt-4 border-t border-gray-100">
+                  {/* Helpdesk Callout */}
+                  <a 
+                    href="tel:+928220874287" 
+                    className="flex items-center gap-2.5 p-2.5 bg-orange-50/50 hover:bg-orange-50 border border-orange-100/50 rounded-xl transition-all focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+                    aria-label="Call Helpdesk at 92+ (8220)874287"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-orange-100/50 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-4 h-4 text-[#fc661e]" />
+                    </div>
+                    <div className="flex flex-col min-w-0">
+                      <span className="text-[9px] text-orange-600 font-bold uppercase tracking-wider leading-none">Official Helpdesk</span>
+                      <span className="text-xs font-bold text-gray-800 leading-normal mt-0.5">92+ (8220)874287</span>
+                    </div>
+                  </a>
+
+                  <div className="flex flex-col gap-2">
+                    <Button className="w-full bg-neutral-900 hover:bg-black text-white font-semibold rounded-xl py-2.5 shadow-sm text-sm">
+                      New Registration
+                    </Button>
+                    <Button variant="outline" className="w-full font-semibold border-gray-300 text-gray-900 hover:bg-gray-50 rounded-xl py-2.5 text-sm shadow-xs">
+                      Log In
+                    </Button>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>

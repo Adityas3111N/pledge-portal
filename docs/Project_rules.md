@@ -29,3 +29,19 @@
 
 - No any
 - Strict TypeScript only
+
+## Accessibility & Mobile Design (Government Portal Standards)
+
+- **WCAG 2.1 AA Compliance Mandatory**:
+  - Focus indicators must be highly visible (`focus-visible:ring-2 focus-visible:ring-[#fc661e]`).
+  - Screen reader attributes (`aria-expanded`, `aria-label`, `aria-controls`) must be set for all interactive/toggling states.
+  - Interactive menus and mobile drawers must manage keyboard focus trap correctly.
+  - Color contrast ratio must meet 4.5:1 minimum standard for all normal body text.
+- **Mobile Fluidity & Collision Prevention**:
+  - Avoid fixed layouts that cause page-wide horizontal scrollbars.
+  - Set `flex-shrink-0` on critical navigation, dates, or language items to prevent squeeze collisions.
+  - Use responsive text sizes (e.g. `text-[9.5px]` scaling to `text-[13px]`) and layout swaps (like `shortTime` on mobile, `currentTime` on desktop) to fit key information seamlessly on a single row without wrapping or cutoffs.
+- **Bilingual Interface Support**:
+  - All public layouts must explicitly accommodate bilingual elements (e.g. English/Hindi) cleanly.
+- **High-Trust Branding**:
+  - Official State/National emblems and titles must be kept highly visible, structurally respected, and recognizable.

@@ -34,19 +34,25 @@ Always:
 
 - Label inputs
 - Use semantic HTML
-- Support keyboard navigation
-- Provide aria attributes when needed
+- Support keyboard navigation and focus trapping inside active modals/drawers
+- Provide explicit aria attributes (e.g. `aria-expanded`, `aria-label`, `aria-controls`) for interactive toggle components
+- Enforce highly visible focus states (`focus-visible:ring-2 focus-visible:ring-[#fc661e]`) for all keyboard navigators
+- Adhere strictly to WCAG 2.1 AA contrast ratios
 
-# Styling & Responsiveness
+# Styling & Responsiveness (Official Government Portal Standards)
 
 Use:
 
 - Tailwind utilities
 - Design system tokens
-- Fluid responsive layouts (`max-w-[1280px]` container grids) to ensure seamless rendering across:
-  - Mobile screens (320px+)
+- Fluid responsive layouts to ensure seamless rendering across:
+  - Mobile screens (320px+) with no horizontal scroll breaks
   - Standard/older government office monitors (1024x768, 1280x1024 resolutions)
   - Desktop widescreen monitors and Macs (1440x900, 1920x1080, and high-res Retina displays)
+- Dynamic content adapters for mobile layout safety:
+  - `flex-shrink-0` on critical items (dates, icons, badges) to prevent text squeezing/collisions
+  - Swapping detailed layout blocks (like full date strings) with compact formats on small viewports
+- Clean institutional styling with official state emblem integration, bilingual language support (English/Hindi), and prominent helpdesk links.
 
 Avoid:
 
