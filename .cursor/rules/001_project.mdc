@@ -1,0 +1,45 @@
+---
+description: Core project rules and engineering principles
+globs: ["src/**/*"]
+alwaysApply: true
+---
+
+# Project
+
+Tech Stack:
+
+- Next.js App Router
+- TypeScript
+- Tailwind CSS v4
+- Shadcn UI
+- React Hook Form
+- Zod
+- TanStack Query
+- Zustand
+
+# Engineering Principles
+
+- Simplicity over cleverness
+- Explicit over implicit
+- Composition over inheritance
+- Accessibility is mandatory
+- Security by default
+- Types are contracts
+- APIs are the source of truth
+- Optimize for maintainability
+
+# Never
+
+- Use any
+- Disable TypeScript checks
+- Add unnecessary abstractions
+- Duplicate business logic
+- Ignore accessibility requirements
+
+# Always
+
+- Use strict typing
+- Use reusable components
+- Prefer server components
+- Validate external data
+- Write maintainable code

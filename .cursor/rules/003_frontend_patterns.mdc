@@ -1,0 +1,77 @@
+---
+description: Frontend implementation standards
+globs: ["src/**/*.{ts,tsx}"]
+alwaysApply: true
+---
+
+# Components
+
+Prefer:
+
+- Server Components
+
+Use Client Components only when necessary.
+
+# Forms
+
+Always use:
+
+- React Hook Form
+- Zod validation
+
+Never use useState for large forms.
+
+# Tables
+
+- Use reusable table components
+- Support loading states
+- Support empty states
+- Support error states
+
+# Accessibility
+
+Always:
+
+- Label inputs
+- Use semantic HTML
+- Support keyboard navigation
+- Provide aria attributes when needed
+
+# Styling
+
+Use:
+
+- Tailwind utilities
+- Design system tokens
+
+Avoid:
+
+- Inline styles
+- Magic numbers
+- Hardcoded colors
+
+# Testing
+
+For business logic:
+
+- Write unit tests
+
+For API integrations:
+
+- Write integration tests
+
+For critical user journeys:
+
+- Write E2E tests
+
+Always test:
+
+- Validation
+- Permissions
+- Data transformations
+- Complex calculations
+
+Do not write tests for:
+- Simple presentational components
+- Third-party libraries
+- Framework behavior

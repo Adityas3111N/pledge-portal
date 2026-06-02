@@ -1,0 +1,54 @@
+---
+description: Government platform business constraints
+globs: ["src/**/*"]
+alwaysApply: true
+---
+
+# Permissions
+
+Never:
+
+- Hardcode permissions
+- Hardcode roles
+
+Always:
+
+- Read permissions from API
+- Use permission guards
+- Hide unauthorized actions
+
+# Bilingual Support
+
+All user-facing text must support:
+
+- English
+- Hindi
+
+Never hardcode display strings.
+
+Use translation keys.
+
+# Auditability
+
+Actions that change data should support:
+
+- user tracking
+- timestamps
+- audit logs
+
+# Data Integrity
+
+Never trust frontend validation alone.
+
+Backend remains source of truth.
+
+# Government Platform Standards
+
+Prioritize:
+
+- reliability
+- accessibility
+- maintainability
+- security
+
+over visual effects or clever implementations.

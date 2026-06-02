@@ -1,0 +1,54 @@
+---
+description: Architecture and dependency rules
+globs: ["src/**/*"]
+alwaysApply: true
+---
+
+# Architecture
+
+Business logic must never live inside:
+
+- page.tsx
+- layout.tsx
+- UI components
+
+# Data Flow
+
+API
+↓
+Service Layer
+↓
+React Query Hook
+↓
+Feature Component
+↓
+UI Component
+
+# Never
+
+- Call fetch directly inside components
+- Call axios directly inside components
+- Put API logic in UI
+- Share state between features
+
+# Always
+
+- Use service functions
+- Use query hooks
+- Use feature folders
+- Keep components presentational
+
+# State
+
+Use React Query for:
+
+- server state
+- caching
+- mutations
+
+Use Zustand only for:
+
+- UI preferences
+- temporary client state
+
+Never store server state in Zustand.
