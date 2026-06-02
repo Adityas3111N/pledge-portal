@@ -12,34 +12,13 @@ import {
   TrendingUp,
   ArrowRight,
 } from "lucide-react";
+import Hero from "@/components/layout/Hero";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <Badge variant="secondary" className="mb-4">
-            Endorsed by Government of Uttar Pradesh
-          </Badge>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Digital Portal for{" "}
-            <span className="text-primary">Seamless Government Review</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Streamlined pledge and development application review system for
-            faster, transparent, and efficient processing
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button size="lg" className="gap-2">
-              Get Started <ArrowRight className="h-4 w-4" />
-            </Button>
-            <Button size="lg" variant="outline">
-              Learn More
-            </Button>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* Stats Section */}
       <section id="stats" className="bg-primary text-white py-16">

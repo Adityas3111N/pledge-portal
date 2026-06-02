@@ -1,0 +1,44 @@
+---
+description: Standards and rules for writing structured, technical, and meaningful Git commit messages
+globs: ["*"]
+alwaysApply: true
+---
+
+# Git Commit Message Guidelines
+
+All commits must follow standard engineering best practices based on the Conventional Commits specification.
+
+## Commit Message Format
+
+```
+<type>(<scope>): <subject>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+### 1. Types
+- `feat`: A new user-facing feature or capability
+- `fix`: A bug fix or corrective adjustment
+- `docs`: Documentation changes only
+- `style`: Changes that do not affect the meaning of the code (formatting, missing semi-colons, etc.)
+- `refactor`: A code change that neither fixes a bug nor adds a feature (restructuring)
+- `perf`: A code change that improves performance
+- `test`: Adding missing tests or correcting existing tests
+- `chore`: Changes to the build process, auxiliary tools, or library upgrades
+
+### 2. Scope
+- Should specify the module, feature area, or component affected (e.g., `hero`, `navbar`, `i18n`, `config`).
+- Must be lowercase and wrapped in parentheses.
+
+### 3. Subject (Header)
+- **Use the imperative mood** in the subject line (e.g., "implement overlay" instead of "implemented overlay" or "implements overlay").
+- Limit the header to 50 characters (hard limit at 72).
+- Do not capitalize the first letter of the subject.
+- Do not end the subject line with a period.
+
+### 4. Body (Optional)
+- Use the body to explain **what** changed and **why** (rationale), rather than **how** (the code shows how).
+- Limit line length to 72 characters.
+- Separate the subject from the body with a blank line.

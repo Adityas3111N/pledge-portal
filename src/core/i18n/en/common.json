@@ -22,5 +22,11 @@
     "contact": "Contact",
     "newRegistration": "New Registration",
     "logIn": "Log In"
+  },
+  "hero": {
+    "titlePart1": "Digital Portal",
+    "titlePart2": "for Seamless Government Review",
+    "description": "PLEDGE Confidential Industrial Park Project is a strategic initiative focused on developing a secure and innovative industrial park designed to foster cutting-edge manufacturing.",
+    "checkEligibility": "Check Eligibility"
   }
 }
