@@ -132,6 +132,29 @@
       "title": "Registration",
       "description": "Register with mobile OTP. Complete profile with entity details, KYC, and bank info."
     }
+  },
+  "coreOfferings": {
+    "titlePart1": "Our Core",
+    "titlePart2": "Offerings",
+    "description": "Our dedicated team is committed to delivering exceptional results through personalized strategies and continuous improvement.",
+    "items": {
+      "item1": {
+        "title": "Eligibility Assessment",
+        "description": "There are twelve essential Infrastructure Standards that must be adhered."
+      },
+      "item2": {
+        "title": "Document Guidance System",
+        "description": "There are twelve essential Infrastructure Standards that must be adhered."
+      },
+      "item3": {
+        "title": "Infrastructure Standards",
+        "description": "There are twelve essential Infrastructure Standards that must be adhered."
+      },
+      "item4": {
+        "title": "Infrastructure Standards",
+        "description": "There are twelve essential Infrastructure Standards that must be adhered."
+      }
+    }
   }
 }
 

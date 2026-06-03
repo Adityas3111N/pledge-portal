@@ -17,6 +17,7 @@ import Endorsements from "@/components/layout/Endorsements";
 import KeyInitiatives from "@/components/layout/KeyInitiatives";
 import PledgeGlance from "@/components/layout/PledgeGlance";
 import ApplicationFlow from "@/components/layout/ApplicationFlow";
+import CoreOfferings from "@/components/layout/CoreOfferings";
 
 export default function HomePage() {
   return (
@@ -37,6 +38,9 @@ export default function HomePage() {
 
       {/* Application Flow */}
       <ApplicationFlow />
+
+      {/* Core Offerings */}
+      <CoreOfferings />
 
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">

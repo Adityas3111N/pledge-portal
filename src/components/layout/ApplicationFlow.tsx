@@ -19,7 +19,7 @@ export default function ApplicationFlow() {
   const { t } = useTranslation();
 
   return (
-    <section id="process" className="relative bg-white pt-0 md:pt-0 pb-16 md:pb-24 overflow-hidden">
+    <section id="process" className="relative bg-white pt-0 md:pt-0 pb-4 md:pb-6 overflow-hidden">
       {/* Orange Shape Decoration */}
       <div className="absolute right-0 top-0 md:top-10 w-[62px] h-[257px] select-none pointer-events-none hidden md:block rotate-180">
         <img
