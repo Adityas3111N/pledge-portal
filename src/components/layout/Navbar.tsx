@@ -59,36 +59,36 @@ export default function Navbar() {
   return (
     <header className="w-full flex flex-col z-50 relative bg-bg-surface font-sans">
       {/* ── 1. TOP UTILITY STRIP (Orange Banner) ── */}
-      <div className="bg-brand-primary text-text-inverse py-2 text-[9.5px] min-[360px]:text-[11px] sm:text-[13px] font-medium whitespace-nowrap overflow-x-auto no-scrollbar">
+      <div className="bg-brand-primary text-text-inverse py-2 text-[11px] lg:text-[14px] font-medium whitespace-nowrap overflow-x-auto no-scrollbar">
         <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-3 sm:px-4 md:px-6 lg:px-[42px] flex justify-between items-center gap-4">
-          <div className="opacity-95 tabular-nums tracking-wide flex-shrink-0">
+          <div className="opacity-95 tabular-nums tracking-wide flex-shrink-0 font-medium">
             <span className="inline sm:hidden">{shortTime || t("navbar.dateFallback")}</span>
             <span className="hidden sm:inline">{currentTime || t("navbar.dateFallback")}</span>
           </div>
 
-          <div className="flex items-center gap-1.5 sm:gap-3.5 opacity-95 text-[9.5px] min-[360px]:text-[11px] sm:text-[13px] flex-shrink-0">
+          <div className="flex items-center gap-1 lg:gap-1.5 opacity-95 text-[11px] lg:text-[14px] flex-shrink-0">
             <a 
               href="tel:+928220874287" 
               className="hover:underline transition-colors font-medium flex items-center gap-1"
             >
-              <Phone className="w-3 h-3 text-text-inverse fill-none stroke-[2.5]" />
+              <Phone className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-text-inverse fill-none stroke-[2.5]" />
               <span>92+ (8220)874287</span>
             </a>
-            <span className="opacity-40">|</span>
+            <span className="opacity-40 px-1">|</span>
             <button 
               className="hover:opacity-80 transition-opacity focus:outline-none flex items-center justify-center"
               aria-label="Search"
             >
-              <Search className="w-3.5 h-3.5 stroke-[2.5] text-text-inverse" />
+              <Search className="w-3.5 h-3.5 lg:w-4 lg:h-4 stroke-[2.5] text-text-inverse" />
             </button>
-            <span className="opacity-40">|</span>
+            <span className="opacity-40 px-1">|</span>
             <button 
               onClick={() => setLanguage(language === "en" ? "hi" : "en")}
               className="hover:opacity-85 transition-opacity focus:outline-none flex items-center gap-0.5 font-semibold"
               aria-label="Switch Language / भाषा बदलें"
             >
               <span className="underline">{language === "en" ? "हिन्दी" : "English"}</span>
-              <ChevronDown className="w-3 h-3 text-text-inverse stroke-[2.5]" />
+              <ChevronDown className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-text-inverse stroke-[2.5]" />
             </button>
           </div>
         </div>
@@ -100,7 +100,8 @@ export default function Navbar() {
           <div className="flex items-center gap-2 sm:gap-3.5 min-w-0">
             {/* UP Gov Emblem */}
             <div 
-              className="w-[36px] h-[36px] sm:w-[52px] sm:h-[52px] md:w-[56px] md:h-[56px] rounded-full border-[2px] border-brand-primary flex items-center justify-center bg-bg-surface flex-shrink-0"
+              className="w-[36px] h-[36px] sm:w-[52px] sm:h-[52px] md:w-[56px] md:h-[56px] rounded-full border-[1px] flex items-center justify-center bg-bg-surface flex-shrink-0"
+              style={{ borderColor: "var(--color-brand-primary)" }}
             >
               <img 
                 src="/upgovlogo.png" 
@@ -144,7 +145,7 @@ export default function Navbar() {
               <SheetContent side="right" className="w-[300px] sm:w-[350px] p-5 bg-bg-surface flex flex-col gap-5 overflow-y-auto no-scrollbar">
                 {/* Official Government Branding Header */}
                 <div className="flex items-center gap-2.5 pb-4 border-b border-border-medium">
-                  <div className="w-[34px] h-[34px] rounded-full border-[1.5px] border-brand-primary flex items-center justify-center bg-bg-surface flex-shrink-0">
+                  <div className="w-[34px] h-[34px] rounded-full border-[1.5px] border-[#FF6E28] flex items-center justify-center bg-bg-surface flex-shrink-0">
                     <img 
                       src="/upgovlogo.png" 
                       alt="Government of Uttar Pradesh Emblem" 
@@ -279,13 +280,13 @@ export default function Navbar() {
       </div>
 
       {/* ── 3. DESKTOP NAVIGATION BAR ── */}
-      <div className="hidden lg:block bg-bg-surface border-b border-border-medium shadow-xs">
-        <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-4 md:px-6 lg:px-[42px] flex justify-between items-center h-[48px]">
+      <div className="hidden lg:block bg-bg-surface border-b border-border-light shadow-xs">
+        <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-[42px] py-2 flex justify-between items-center h-[65px]">
           {/* Navigation Links */}
-          <nav className="flex items-center gap-7 xl:gap-9 text-sm font-medium text-text-muted h-full" aria-label="Main Navigation">
+          <nav className="flex items-center justify-between w-[739px] h-[49px] py-3 text-[14px] font-medium text-text-muted" aria-label="Main Navigation">
             <a 
               href="#" 
-              className="py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
+              className="px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
               aria-current="page"
             >
               {t("navbar.home")}
@@ -293,18 +294,18 @@ export default function Navbar() {
             
             <a 
               href="#" 
-              className="py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
+              className="px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
             >
               {t("navbar.about")}
             </a>
 
-            <div className="relative group flex items-center h-full">
+            <div className="relative group flex items-center h-[25px]">
               <button 
-                className="flex items-center gap-1.5 py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
+                className="flex items-center gap-1 px-[10px] py-[2px] h-[25px] hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
                 aria-expanded="false"
               >
                 <span>{t("navbar.schemeInfo")}</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
+                <ChevronDown className="w-[13px] h-[13px] opacity-60 group-hover:rotate-180 transition-transform duration-200" />
               </button>
               <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-bg-surface border border-border-medium rounded-lg shadow-md py-2 z-50">
                 <a href="#" className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary">{t("navbar.schemeGuidelines")}</a>
@@ -312,13 +313,13 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div className="relative group flex items-center h-full">
+            <div className="relative group flex items-center h-[25px]">
               <button 
-                className="flex items-center gap-1.5 py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
+                className="flex items-center gap-1 px-[10px] py-[2px] h-[25px] hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
                 aria-expanded="false"
               >
                 <span>{t("navbar.services")}</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
+                <ChevronDown className="w-[13px] h-[13px] opacity-60 group-hover:rotate-180 transition-transform duration-200" />
               </button>
               <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-bg-surface border border-border-medium rounded-lg shadow-md py-2 z-50">
                 <a href="#" className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary">{t("navbar.serviceApplication")}</a>
@@ -327,13 +328,13 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div className="relative group flex items-center h-full">
+            <div className="relative group flex items-center h-[25px]">
               <button 
-                className="flex items-center gap-1.5 py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
+                className="flex items-center gap-1 px-[10px] py-[2px] h-[25px] hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
                 aria-expanded="false"
               >
                 <span>{t("navbar.approvedParks")}</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
+                <ChevronDown className="w-[13px] h-[13px] opacity-60 group-hover:rotate-180 transition-transform duration-200" />
               </button>
               <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-bg-surface border border-border-medium rounded-lg shadow-md py-2 z-50">
                 <a href="#" className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary">{t("navbar.stateDirectory")}</a>
@@ -343,28 +344,28 @@ export default function Navbar() {
 
             <a 
               href="#" 
-              className="py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
+              className="px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
             >
               {t("navbar.faqs")}
             </a>
             
             <a 
               href="#" 
-              className="py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
+              className="px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
             >
               {t("navbar.contact")}
             </a>
           </nav>
 
           {/* CTA Buttons */}
-          <div className="flex items-center gap-[6px]">
+          <div className="flex items-center gap-[6px] h-[38px]">
             <button 
-              className="h-[34px] px-4 rounded-[10px] bg-gradient-to-b from-[#2d2d2d] to-[#0a0a0a] text-text-inverse text-[13px] font-medium cursor-pointer shadow-[0_2px_5px_rgba(0,0,0,0.35),inset_0_1px_0px_rgba(255,255,255,0.15)] hover:from-[#202020] hover:to-[#000000] active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
+              className="h-[38px] px-[12px] py-[10px] rounded-[8px] bg-gradient-to-b from-[#1B1B1B] to-[#000000] text-text-inverse text-[13px] font-medium cursor-pointer border border-[#1B1B1B] shadow-[inset_0_4px_8px_rgba(255,255,255,0.25)] hover:from-[#202020] hover:to-[#000000] active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none flex items-center justify-center"
             >
               {t("navbar.newRegistration")}
             </button>
             <button 
-              className="h-[34px] px-[16px] rounded-[10px] bg-bg-surface text-text-primary text-[13px] font-medium cursor-pointer border border-border-light shadow-[0_1px_4px_rgba(0,0,0,0.08)] hover:bg-bg-subtle active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
+              className="h-[38px] px-[12px] py-[10px] rounded-[8px] bg-bg-surface text-text-primary text-[13px] font-medium cursor-pointer border border-[#CFCFCF] shadow-[inset_0_4px_8px_rgba(185,185,185,0.25)] hover:bg-bg-subtle active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none flex items-center justify-center"
             >
               {t("navbar.logIn")}
             </button>
