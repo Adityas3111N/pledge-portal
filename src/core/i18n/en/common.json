@@ -155,6 +155,38 @@
         "description": "There are twelve essential Infrastructure Standards that must be adhered."
       }
     }
+  },
+  "governmentOrders": {
+    "titlePart1": "Government Orders",
+    "titlePart2": "(Shasanadesh)",
+    "description": "Our six key objectives are designed to guide our efforts and ensure success across all areas of our project.",
+    "items": {
+      "item1": {
+        "title": "Shasanadesh No. 10/2023",
+        "description": "Scheme launch — 10-50 acre private industrial parks",
+        "date": "01.02.2023"
+      },
+      "item2": {
+        "title": "Shasanadesh No. 10/2023",
+        "description": "Scheme launch — 10-50 acre private industrial parks",
+        "date": "01.02.2023"
+      },
+      "item3": {
+        "title": "Shasanadesh No. 10/2023",
+        "description": "Scheme launch — 10-50 acre private industrial parks",
+        "date": "01.02.2023"
+      },
+      "item4": {
+        "title": "Shasanadesh No. 10/2023",
+        "description": "Scheme launch — 10-50 acre private industrial parks",
+        "date": "01.02.2023"
+      },
+      "item5": {
+        "title": "Shasanadesh No. 10/2023",
+        "description": "Scheme launch — 10-50 acre private industrial parks",
+        "date": "01.02.2023"
+      }
+    }
   }
 }
 

@@ -31,14 +31,13 @@ export default function CoreOfferings() {
   const { t } = useTranslation();
 
   return (
-    <section className="w-full bg-white pt-4 pb-16 md:pb-24 overflow-hidden relative">
-      {/* Green Shape Decoration */}
-      <div className="absolute right-0 top-4/5 -translate-y-1/2 w-[54px] h-[315px] select-none pointer-events-none hidden md:block rotate-180">
+    <section className="w-full bg-white pt-4 pb-16 md:pb-24 relative">
+      {/* Green Shape Decoration - positioned to overlap into the section below */}
+      <div className="absolute right-0 bottom-0 translate-y-1/2 w-[54px] h-[315px] select-none pointer-events-none hidden md:block z-20">
         <img
           src="/green-shape-coreoffering_section.svg"
           alt="Green decorative shape"
           className="w-full h-full object-contain"
-          style={{ transform: 'rotate(-180deg)' }}
         />
       </div>
 
