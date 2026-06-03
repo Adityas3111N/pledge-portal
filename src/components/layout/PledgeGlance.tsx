@@ -112,7 +112,7 @@ export default function PledgeGlance() {
   ];
 
   return (
-    <section className="w-full bg-bg-surface font-sans pt-0 pb-20 relative overflow-visible flex items-center -mt-4">
+    <section className="w-full bg-bg-surface font-sans pt-8 md:pt-0 pb-16 md:pb-24 relative overflow-visible flex items-center mt-0 md:-mt-4">
       
       {/* Decorative Green Organic Leaf Shape on the Left */}
       <div className="absolute left-0 top-[20px] w-[74px] h-[418px] select-none pointer-events-none hidden lg:block">
@@ -123,39 +123,40 @@ export default function PledgeGlance() {
         />
       </div>
 
-      <div className="w-full max-w-[1360px] 2xl:max-w-[1700px] mx-auto px-6 md:px-12 lg:px-20 xl:px-32 relative lg:h-[557px] flex flex-col lg:flex-row justify-between items-end gap-6 lg:gap-8">
+      <div className="w-full max-w-[1088px] mx-auto px-6 md:px-12 relative lg:h-[557px] flex flex-col lg:flex-row justify-between items-end gap-6 lg:gap-8">
         
         {/* Left Column: Text & Stats */}
         <div className="w-full lg:w-[48%] xl:w-[530px] lg:h-[450px] flex flex-col justify-between z-10 lg:pt-2">
           <div>
             {/* Heading */}
             <h2
-              className="text-text-primary text-[24px] md:text-[32px] font-sans font-medium mb-3"
-              style={{ lineHeight: "110%" }}
+              className="text-text-primary text-[6.5vw] min-[450px]:text-[28px] md:text-[32px] font-sans font-medium mb-3 leading-[100%] md:leading-[110%] whitespace-nowrap tracking-tight md:tracking-normal"
             >
               <span className="text-brand-accent">{t("pledgeGlance.titlePart1")}</span>{" "}
               {t("pledgeGlance.titlePart2")}
             </h2>
 
             {/* Sub-description */}
-            <p className="text-xs md:text-sm text-text-secondary leading-relaxed mb-6">
+            <p className="text-[16px] md:text-sm text-text-secondary leading-[27px] md:leading-relaxed mb-6 font-sans font-normal">
               {t("pledgeGlance.description")}
             </p>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 md:gap-4">
               {statsItems.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col justify-between p-5 rounded-[12px] bg-bg-surface border border-border-medium shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all duration-300 min-h-[125px] w-full"
+                  className="flex flex-col justify-between p-3 md:p-5 rounded-[12px] bg-bg-surface border border-border-medium shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all duration-300 min-h-[100px] md:min-h-[125px] w-full"
                 >
-                  <div className="flex items-center gap-3">
-                    {item.icon}
-                    <span className="text-xl md:text-2xl font-bold text-text-primary leading-none">
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="scale-75 md:scale-100 origin-left">
+                      {item.icon}
+                    </div>
+                    <span className="text-lg md:text-2xl font-bold text-text-primary leading-none">
                       {item.value}
                     </span>
                   </div>
-                  <div className="text-[10px] md:text-xs font-semibold text-text-secondary tracking-wider leading-snug uppercase mt-3 max-w-[90px]">
+                  <div className="text-[9px] md:text-xs font-semibold text-text-secondary tracking-wider leading-snug uppercase mt-2 md:mt-3 max-w-[90px]">
                     {item.label}
                   </div>
                 </div>

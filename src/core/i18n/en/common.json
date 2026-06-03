@@ -123,6 +123,15 @@
     },
     "mapTitleHindi": "उत्तर प्रदेश",
     "mapTitleEnglish": "UTTAR PRADESH"
+  },
+  "applicationFlow": {
+    "titlePart1": "Our Application",
+    "titlePart2": "Flow",
+    "description": "Our dedicated team is committed to delivering exceptional results through personalized strategies and continuous improvement.",
+    "step": {
+      "title": "Registration",
+      "description": "Register with mobile OTP. Complete profile with entity details, KYC, and bank info."
+    }
   }
 }
 

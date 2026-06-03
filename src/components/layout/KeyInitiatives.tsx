@@ -53,12 +53,12 @@ export default function KeyInitiatives() {
   ];
 
   return (
-    <section className="w-full bg-bg-surface font-sans py-16 flex items-center border-t border-border-light">
-      <div className="w-full max-w-[1293px] 2xl:max-w-[1600px] mx-auto px-4 md:px-8 xl:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch lg:h-[423px]">
+    <section className="w-full bg-bg-surface font-sans pt-16 pb-4 md:pb-8 flex items-center border-t border-border-light">
+      <div className="w-full max-w-[1293px] mx-auto px-4 md:px-8 xl:px-0">
+        <div className="flex flex-col lg:flex-row justify-between items-stretch lg:h-[423px] gap-8 lg:gap-12">
           
           {/* Left Column: Scheme at a Glance */}
-          <div className="lg:col-span-7 flex flex-col justify-between h-full">
+          <div className="w-full lg:w-[58%] flex flex-col justify-between h-full">
             <div>
               {/* Heading */}
               <h2
@@ -94,8 +94,8 @@ export default function KeyInitiatives() {
           </div>
 
           {/* Right Column: Key Initiatives Block */}
-          <div className="lg:col-span-5 flex h-full">
-            <div className="w-full bg-brand-primary rounded-[16px] p-6 md:p-10 flex flex-col justify-between items-start text-text-inverse relative overflow-hidden shadow-lg h-full">
+          <div className="w-full lg:w-[38%] flex h-full mt-6 lg:mt-0">
+            <div className="w-[calc(100%+2rem)] md:w-full bg-brand-primary rounded-none md:rounded-[16px] -ml-4 md:ml-0 px-6 py-10 md:p-10 flex flex-col justify-between items-start text-text-inverse relative overflow-hidden shadow-lg h-full">
 
               
               {/* Subtle design pattern background overlay */}

@@ -19,9 +19,8 @@ export default function Hero() {
       const secondLine = parts.slice(1).join(" ");
       return (
         <h1 
-          className="text-[32px] lg:text-[40px] xl:text-[64px] 2xl:text-[72px] tracking-normal"
+          className="text-[32px] lg:text-[40px] xl:text-[64px] 2xl:text-[72px] tracking-normal font-sans"
           style={{
-            fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif",
             fontWeight: 500,
             lineHeight: "100%",
           }}
@@ -34,9 +33,8 @@ export default function Hero() {
     } else {
       return (
         <h1 
-          className="text-[32px] lg:text-[40px] xl:text-[64px] 2xl:text-[72px] tracking-normal"
+          className="text-[32px] lg:text-[40px] xl:text-[64px] 2xl:text-[72px] tracking-normal font-sans"
           style={{
-            fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif",
             fontWeight: 500,
             lineHeight: "100%",
           }}
@@ -55,10 +53,7 @@ export default function Hero() {
       const firstLineWhite = parts[0] || "";
       return (
         <h1 
-          className="text-[36px] sm:text-[44px] tracking-normal font-medium leading-[100%]"
-          style={{
-            fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif",
-          }}
+          className="text-[36px] sm:text-[44px] tracking-normal font-medium leading-[100%] font-sans"
         >
           <span className="text-black">{titlePart1}</span>{" "}
           <span className="text-white">{firstLineWhite}</span>
@@ -72,10 +67,7 @@ export default function Hero() {
     } else {
       return (
         <h1 
-          className="text-[36px] sm:text-[44px] tracking-normal font-medium leading-[100%]"
-          style={{
-            fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif",
-          }}
+          className="text-[36px] sm:text-[44px] tracking-normal font-medium leading-[100%] font-sans"
         >
           <span className="text-black">{titlePart1}</span>
           <span className="text-white block mt-2">निर्बाध</span>
