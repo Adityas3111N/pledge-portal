@@ -74,16 +74,16 @@ export default function Footer() {
     <footer className="w-full bg-bg-surface border-t border-border-light mt-auto font-sans">
       {/* ── MAIN FOOTER CONTENT — Figma: 1440w, padding 48/80, gap 33 ── */}
       <div
-        className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[80px] py-8 lg:py-[48px] flex flex-col"
+        className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[40px] xl:px-[80px] py-8 lg:py-[48px] flex flex-col"
         style={{ gap: "33px" }}
       >
         {/* Top section — Figma: 1280w, h-208, gap 48 */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-[48px]">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-[48px] overflow-hidden">
           {/* Column 1: Branding & Social */}
           <div className="flex flex-col gap-5 lg:max-w-[300px] shrink-0">
             {/* Logo + Title */}
             <div className="flex items-center gap-2.5">
-              <div className="w-[36px] h-[36px] rounded-full border-[2px] border-brand-primary flex items-center justify-center bg-bg-surface flex-shrink-0">
+              <div className="w-[36px] h-[36px] rounded-full border-[1px] flex items-center justify-center bg-bg-surface flex-shrink-0" style={{ borderColor: "var(--color-brand-primary)" }}>
                 <img
                   src="/upgovlogo.png"
                   alt="Government of Uttar Pradesh emblem"
@@ -169,7 +169,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Contact Us */}
-          <div className="flex flex-col gap-4 min-w-[240px]">
+          <div className="flex flex-col gap-4">
             <h3 className="text-xs font-bold text-text-primary uppercase tracking-[0.08em]">
               {t("footer.contactUs")}
             </h3>
@@ -193,7 +193,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-brand-primary shrink-0 mt-0.5" />
-                <span className="text-[11px] text-text-muted font-medium leading-relaxed">
+                <span className="text-[11px] text-text-muted font-medium leading-relaxed break-words">
                   {t("footer.address")}
                 </span>
               </li>
@@ -204,7 +204,7 @@ export default function Footer() {
 
       {/* ── BOTTOM BAR — Figma: 1280w, h-48, gap 48 ── */}
       <div className="w-full">
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[80px] border-t border-border-light">
+        <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[40px] xl:px-[80px] border-t border-border-light">
           {/* Desktop bottom bar */}
           <div className="hidden lg:flex items-center justify-between h-[48px] gap-[48px]">
             {/* Left Side */}

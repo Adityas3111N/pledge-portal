@@ -14,15 +14,23 @@ import {
 } from "lucide-react";
 import Hero from "@/components/layout/Hero";
 import Endorsements from "@/components/layout/Endorsements";
+import KeyInitiatives from "@/components/layout/KeyInitiatives";
+import PledgeGlance from "@/components/layout/PledgeGlance";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 overflow-x-hidden">
       {/* Hero Section */}
       <Hero />
 
       {/* Endorsements Section */}
       <Endorsements />
+
+      {/* Key Initiatives / Scheme at a Glance */}
+      <KeyInitiatives />
+
+      {/* PLEDGE Scheme at a Glance (Map & Stats) */}
+      <PledgeGlance />
 
       {/* Stats Section */}
       <section id="stats" className="bg-primary text-white py-16">

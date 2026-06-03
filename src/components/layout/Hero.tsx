@@ -19,7 +19,7 @@ export default function Hero() {
       const secondLine = parts.slice(1).join(" ");
       return (
         <h1 
-          className="text-[32px] lg:text-[48px] xl:text-[64px] tracking-normal"
+          className="text-[32px] lg:text-[40px] xl:text-[64px] 2xl:text-[72px] tracking-normal"
           style={{
             fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif",
             fontWeight: 500,
@@ -34,7 +34,7 @@ export default function Hero() {
     } else {
       return (
         <h1 
-          className="text-[32px] lg:text-[48px] xl:text-[64px] tracking-normal"
+          className="text-[32px] lg:text-[40px] xl:text-[64px] 2xl:text-[72px] tracking-normal"
           style={{
             fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif",
             fontWeight: 500,
@@ -109,24 +109,17 @@ export default function Hero() {
         <img 
           src="/hero-layer.png" 
           alt="" 
-          className="absolute top-0 h-full z-20 pointer-events-none select-none"
+          className="absolute top-0 h-full z-20 pointer-events-none select-none lg:w-[710px] 2xl:w-[900px]"
           style={{
             left: "calc(50% - 720px)",
-            width: "710px",
           }}
         />
 
         {/* Centered Content Wrapper (1440px grid align) */}
-        <div className="relative w-full max-w-[1440px] mx-auto h-full pointer-events-none">
+        <div className="relative w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto h-full pointer-events-none">
           {/* 3. Text & Content Overlaid on the Left Orange Layer */}
           <div 
-            className="absolute z-30 flex flex-col justify-start pointer-events-auto"
-            style={{
-              left: "73px",
-              top: "171px",
-              width: "480px",
-              height: "407px",
-            }}
+            className="absolute z-30 flex flex-col justify-start pointer-events-auto lg:left-[40px] xl:left-[73px] 2xl:left-[100px] lg:top-[171px] lg:w-[400px] xl:w-[480px] 2xl:w-[560px] h-[407px]"
           >
             {renderDesktopTitle()}
             

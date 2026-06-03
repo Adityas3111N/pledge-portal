@@ -74,7 +74,7 @@ export default function Endorsements() {
       `}</style>
 
       <div 
-        className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[80px] flex flex-col justify-center"
+        className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[40px] xl:px-[80px] flex flex-col justify-center"
         style={{ minHeight: "378px" }}
       >
         {/* Section Heading */}

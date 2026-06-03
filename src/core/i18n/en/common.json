@@ -73,6 +73,58 @@
         "role": "Hon'ble Minister of State, Industrial Development, Uttar Pradesh"
       }
     }
+  },
+  "keyInitiatives": {
+    "leftTitle": "Scheme at a",
+    "leftTitleAccent": "Glance",
+    "rightTitle": "KEY INITIATIVES",
+    "rightDescription": "Supporting enterprises through investor-friendly policies, digital governance, infrastructure development, and transparent approval systems. The Directorate of Industries & Enterprise Promotion is committed to enabling investment, accelerating industrial growth, and creating a transparent business ecosystem through progressive policies and digital governance.",
+    "ctaButton": "Learn more about us",
+    "items": {
+      "item1": {
+        "title": "Instant Eligibility Assessment",
+        "description": "Get preliminary insights based on your business profile and investment category."
+      },
+      "item2": {
+        "title": "Customized Investment Recommendations",
+        "description": "Receive tailored suggestions that align with your goals and risk tolerance."
+      },
+      "item3": {
+        "title": "Real-Time Market Analysis",
+        "description": "Access up-to-date market trends and data to inform your investment decisions."
+      },
+      "item4": {
+        "title": "Instant Eligibility Assessment",
+        "description": "Get preliminary insights based on your business profile and investment category."
+      }
+    }
+  },
+  "pledgeGlance": {
+    "titlePart1": "PLEDGE",
+    "titlePart2": "Scheme at a Glance",
+    "description": "The PLEDGE scheme is supported and managed by high-ranking officials within the government, ensuring strong leadership and oversight throughout its implementation.",
+    "stats": {
+      "item1": {
+        "value": "20K+",
+        "label": "HAPPY CUSTOMERS"
+      },
+      "item2": {
+        "value": "20K+",
+        "label": "HAPPY CUSTOMERS"
+      },
+      "item3": {
+        "value": "20K+",
+        "label": "HAPPY CUSTOMERS"
+      },
+      "item4": {
+        "value": "20K+",
+        "label": "HAPPY CUSTOMERS"
+      }
+    },
+    "mapTitleHindi": "उत्तर प्रदेश",
+    "mapTitleEnglish": "UTTAR PRADESH"
   }
 }
+
+
 

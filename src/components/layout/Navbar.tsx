@@ -60,7 +60,7 @@ export default function Navbar() {
     <header className="w-full flex flex-col z-50 relative bg-bg-surface font-sans">
       {/* ── 1. TOP UTILITY STRIP (Orange Banner) ── */}
       <div className="bg-brand-primary text-text-inverse py-2 text-[9.5px] min-[360px]:text-[11px] sm:text-[13px] font-medium whitespace-nowrap overflow-x-auto no-scrollbar">
-        <div className="w-full px-3 sm:px-4 md:px-6 lg:px-[42px] flex justify-between items-center gap-4">
+        <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-3 sm:px-4 md:px-6 lg:px-[42px] flex justify-between items-center gap-4">
           <div className="opacity-95 tabular-nums tracking-wide flex-shrink-0">
             <span className="inline sm:hidden">{shortTime || t("navbar.dateFallback")}</span>
             <span className="hidden sm:inline">{currentTime || t("navbar.dateFallback")}</span>
@@ -95,7 +95,7 @@ export default function Navbar() {
       </div>
 
       <div className="bg-bg-surface font-sans border-b border-border-light">
-        <div className="w-full px-3 sm:px-4 md:px-6 lg:px-[42px] py-3 flex justify-between items-center gap-3">
+        <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-3 sm:px-4 md:px-6 lg:px-[42px] py-3 flex justify-between items-center gap-3">
           {/* Left: Emblem + Title */}
           <div className="flex items-center gap-2 sm:gap-3.5 min-w-0">
             {/* UP Gov Emblem */}
@@ -280,7 +280,7 @@ export default function Navbar() {
 
       {/* ── 3. DESKTOP NAVIGATION BAR ── */}
       <div className="hidden lg:block bg-bg-surface border-b border-border-medium shadow-xs">
-        <div className="w-full px-4 md:px-6 lg:px-[42px] flex justify-between items-center h-[48px]">
+        <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-4 md:px-6 lg:px-[42px] flex justify-between items-center h-[48px]">
           {/* Navigation Links */}
           <nav className="flex items-center gap-7 xl:gap-9 text-sm font-medium text-text-muted h-full" aria-label="Main Navigation">
             <a 
