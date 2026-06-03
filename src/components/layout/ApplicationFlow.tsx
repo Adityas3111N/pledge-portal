@@ -47,7 +47,7 @@ export default function ApplicationFlow() {
 
       {/* Flow Path View */}
       <div 
-        className="relative w-full max-w-[1440px] mr-auto aspect-[1440/931] z-10"
+        className="relative w-full max-w-[1440px] mx-auto aspect-[1440/931] z-10"
         style={{ containerType: 'inline-size' }}
       >
           <Image
