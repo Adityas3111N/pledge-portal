@@ -53,7 +53,7 @@ export default function Endorsements() {
   ];
 
   return (
-    <section className="w-full bg-white overflow-hidden font-sans pt-16 pb-8 flex items-center">
+    <section className="w-full bg-bg-surface overflow-hidden font-sans pt-16 pb-8 flex items-center">
       <style>{`
         @keyframes marquee-ltr {
           0% {
@@ -80,39 +80,35 @@ export default function Endorsements() {
         {/* Section Heading */}
         <div className="text-center w-full flex flex-col items-center justify-center">
           <h2 
-            className="text-center text-black text-[24px] md:text-[32px] max-w-none w-full mx-auto"
+            className="text-center text-text-primary text-[24px] md:text-[32px] max-w-none w-full mx-auto font-sans"
             style={{ 
-              fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif",
               fontWeight: 500,
               lineHeight: "100%",
             }}
           >
             {isHindi ? (
               <>
-                <span className="text-[#e8500a]">{t("endorsements.brand")}</span>{" "}
+                <span className="text-brand-accent">{t("endorsements.brand")}</span>{" "}
                 {t("endorsements.title")}
               </>
             ) : (
               <>
                 {t("endorsements.title")}{" "}
-                <span className="text-[#e8500a]">{t("endorsements.brand")}</span>
+                <span className="text-brand-accent">{t("endorsements.brand")}</span>
               </>
             )}
           </h2>
-          <p 
-            className="text-sm md:text-base text-black font-normal leading-relaxed mt-3 px-2 max-w-3xl mx-auto"
-            style={{ fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif" }}
-          >
+          <p className="text-sm md:text-base text-text-primary font-normal leading-relaxed mt-3 px-2 max-w-3xl mx-auto font-sans">
             {t("endorsements.description")}
           </p>
         </div>
 
-        {/* Divider with Sun Icon - Very small top margin, 46px bottom margin */}
+        {/* Divider with Sun Icon */}
         <div className="relative flex items-center justify-center mt-4 md:mt-5 mb-[46px]">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t" style={{ borderColor: "#fc661e" }}></div>
+            <div className="w-full border-t border-brand-primary"></div>
           </div>
-          <div className="relative bg-white px-5 z-10 flex items-center justify-center">
+          <div className="relative bg-bg-surface px-5 z-10 flex items-center justify-center">
             <img
               src="/sun.png"
               alt="Sun emblem"
@@ -124,26 +120,26 @@ export default function Endorsements() {
         {/* Marquee Container */}
         <div className="relative w-full overflow-hidden">
           {/* Gradient fade overlays for sides */}
-          <div className="absolute inset-y-0 left-0 w-8 md:w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-8 md:w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-8 md:w-20 bg-gradient-to-r from-bg-surface to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-8 md:w-20 bg-gradient-to-l from-bg-surface to-transparent z-10 pointer-events-none" />
 
           {/* Scrolling content */}
           <div className="animate-marquee-ltr gap-x-8 md:gap-x-12">
             {repeatedOfficials.map((official, idx) => (
               <div
                 key={`${official.id}-${idx}`}
-                className="flex flex-col items-center justify-center text-center gap-4 py-4 px-6 md:px-8 border-r-[2px] border-dotted border-[#5f6368] last:border-0 shrink-0 w-[180px] md:w-[220px]"
+                className="flex flex-col items-center justify-center text-center gap-4 py-4 px-6 md:px-8 border-r-[2px] border-dotted border-text-secondary last:border-0 shrink-0 w-[180px] md:w-[220px]"
               >
                 {/* Circular Gradient Border Wrapper */}
                 <div 
-                  className="w-[104px] h-[104px] md:w-[114px] md:h-[114px] rounded-full flex items-center justify-center p-[3px] shadow-md shrink-0 bg-white"
+                  className="w-[104px] h-[104px] md:w-[114px] md:h-[114px] rounded-full flex items-center justify-center p-[3px] shadow-md shrink-0"
                   style={{
-                    background: "linear-gradient(to bottom, #fc661e 0%, rgba(252, 102, 30, 0) 90%)"
+                    background: "linear-gradient(to bottom, var(--color-brand-primary) 0%, rgba(255, 110, 40, 0) 90%)"
                   }}
                 >
-                  {/* Inner White container ensuring a gap around the image */}
-                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center p-[3px]">
-                    <div className="w-full h-full rounded-full overflow-hidden bg-gray-50">
+                  {/* Inner white container ensuring a gap around the image */}
+                  <div className="w-full h-full rounded-full bg-bg-surface flex items-center justify-center p-[3px]">
+                    <div className="w-full h-full rounded-full overflow-hidden bg-bg-subtle">
                       <img
                         src={official.image}
                         alt={official.name}
@@ -155,16 +151,10 @@ export default function Endorsements() {
 
                 {/* Text details */}
                 <div className="flex flex-col items-center min-w-0">
-                  <span 
-                    className="text-sm md:text-base font-bold text-[#202124] leading-tight"
-                    style={{ fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif" }}
-                  >
+                  <span className="text-sm md:text-base font-bold text-text-primary leading-tight font-sans">
                     {official.name}
                   </span>
-                  <span 
-                    className="text-xs md:text-sm font-normal text-[#5f6368] leading-tight mt-1"
-                    style={{ fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif" }}
-                  >
+                  <span className="text-xs md:text-sm font-normal text-text-secondary leading-tight mt-1 font-sans">
                     {official.role}
                   </span>
                 </div>

@@ -1,13 +1,25 @@
 @import "tailwindcss";
 
+/*
+ * Import Layer 1 — Primitive tokens (raw palette)
+ * Never reference these in components. Use semantic tokens below.
+ */
+@import "../styles/theme.css";
+
+/* ─────────────────────────────────────────────────────────────────────────
+ * Layer 2 — SEMANTIC TOKENS
+ * Maps primitive tokens to their purpose/intent.
+ * These are the values components and Tailwind classes should use.
+ * ───────────────────────────────────────────────────────────────────────── */
 :root {
+  /* ── Shadcn/UI required vars (do not remove) ── */
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
   --card: 0 0% 100%;
   --card-foreground: 222.2 84% 4.9%;
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
-  --primary: 15 100% 50%;
+  --primary: 19 100% 58%;            /* #FF6E28 in HSL */
   --primary-foreground: 0 0% 100%;
   --secondary: 210 40% 96.1%;
   --secondary-foreground: 222.2 47.4% 11.2%;
@@ -19,10 +31,97 @@
   --destructive-foreground: 210 40% 98%;
   --border: 214.3 31.8% 91.4%;
   --input: 214.3 31.8% 91.4%;
-  --ring: 15 100% 50%;
+  --ring: 19 100% 58%;               /* #FF6E28 in HSL */
   --radius: 0.5rem;
+
+  /* ── Brand ───────────────────────────────────── */
+  --color-brand-primary:      var(--primitive-orange-500); /* #FF6E28 — CTAs, icons, links, active states */
+  --color-brand-accent:       var(--primitive-orange-600); /* #E85818 — heading accent word ("Uttar Pradesh") */
+  --color-brand-hover:        var(--primitive-orange-700); /* #C44510 — hover on brand interactive elements */
+  --color-brand-light:        var(--primitive-orange-300); /* #FF9A6A — light brand tint (badges, tags) */
+  --color-brand-subtle:       var(--primitive-orange-200); /* #FFB899 — very light bg tint */
+
+  /* ── Text ────────────────────────────────────── */
+  --color-text-primary:       var(--primitive-gray-900);   /* #202124 — headings, nav items */
+  --color-text-secondary:     var(--primitive-gray-500);   /* #5F6368 — subtitles, captions, footer items */
+  --color-text-muted:         var(--primitive-gray-600);   /* #424242 — body links, muted labels */
+  --color-text-disabled:      var(--primitive-gray-400);   /* #A0AEC0 — disabled/placeholder */
+  --color-text-inverse:       var(--primitive-white);      /* on dark/brand backgrounds */
+  --color-text-brand:         var(--primitive-orange-500); /* #FF6E28 — text in brand color */
+  --color-text-brand-accent:  var(--primitive-orange-600); /* #E85818 — dark brand text (headings) */
+
+  /* ── Backgrounds ─────────────────────────────── */
+  --color-bg-page:            var(--primitive-gray-50);    /* #F8F8F8 — overall page bg */
+  --color-bg-surface:         var(--primitive-white);      /* #FFFFFF — cards, forms, dialogs */
+  --color-bg-subtle:          var(--primitive-gray-100);   /* #F5F0E8 — cream-tinted sections */
+  --color-bg-subtle-dark:     var(--primitive-gray-150);   /* #EDE8DF — darker cream areas */
+
+  /* ── Borders ─────────────────────────────────── */
+  --color-border-light:       var(--primitive-gray-300);   /* #D6D6D6 — footer top, section dividers */
+  --color-border-medium:      var(--primitive-gray-200);   /* #E2E8F0 — card borders, inputs */
+  --color-border-brand:       var(--primitive-orange-500); /* #FF6E28 — active input, focus ring */
+
+  /* ── Government ──────────────────────────────── */
+  --color-gov-navy:           var(--primitive-navy-500);   /* #1A2B5F — official headings/nav */
+  --color-gov-navy-light:     var(--primitive-navy-600);   /* #2A3F7F — hover on navy */
+  --color-gov-green:          var(--primitive-green-600);  /* #2D7A3A — gov approval/success */
+
+  /* ── Status / Application workflow ───────────── */
+  --color-status-success:     var(--primitive-green-500);  /* Completed, Approved */
+  --color-status-error:       var(--primitive-red-500);    /* Error, Rejected */
+  --color-status-warning:     var(--primitive-yellow-500); /* Under Review */
+  --color-status-info:        var(--primitive-blue-500);   /* Submitted */
+  --color-status-draft:       var(--primitive-gray-500);   /* Draft */
 }
 
+/* ─────────────────────────────────────────────────────────────────────────
+ * Layer 3 — Tailwind @theme
+ * Registers semantic tokens as Tailwind utility classes.
+ * e.g. bg-brand-primary, text-text-secondary, border-border-light
+ * ───────────────────────────────────────────────────────────────────────── */
+@theme inline {
+  /* Brand */
+  --color-brand-primary:      var(--color-brand-primary);
+  --color-brand-accent:       var(--color-brand-accent);
+  --color-brand-hover:        var(--color-brand-hover);
+  --color-brand-light:        var(--color-brand-light);
+  --color-brand-subtle:       var(--color-brand-subtle);
+
+  /* Text */
+  --color-text-primary:       var(--color-text-primary);
+  --color-text-secondary:     var(--color-text-secondary);
+  --color-text-muted:         var(--color-text-muted);
+  --color-text-disabled:      var(--color-text-disabled);
+  --color-text-inverse:       var(--color-text-inverse);
+  --color-text-brand:         var(--color-text-brand);
+  --color-text-brand-accent:  var(--color-text-brand-accent);
+
+  /* Backgrounds */
+  --color-bg-page:            var(--color-bg-page);
+  --color-bg-surface:         var(--color-bg-surface);
+  --color-bg-subtle:          var(--color-bg-subtle);
+
+  /* Borders */
+  --color-border-light:       var(--color-border-light);
+  --color-border-medium:      var(--color-border-medium);
+  --color-border-brand:       var(--color-border-brand);
+
+  /* Government */
+  --color-gov-navy:           var(--color-gov-navy);
+  --color-gov-navy-light:     var(--color-gov-navy-light);
+  --color-gov-green:          var(--color-gov-green);
+
+  /* Status */
+  --color-status-success:     var(--color-status-success);
+  --color-status-error:       var(--color-status-error);
+  --color-status-warning:     var(--color-status-warning);
+  --color-status-info:        var(--color-status-info);
+  --color-status-draft:       var(--color-status-draft);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+ * Global base styles
+ * ───────────────────────────────────────────────────────────────────────── */
 * {
   border-color: hsl(var(--border));
 }
@@ -32,6 +131,7 @@ body {
   color: hsl(var(--foreground));
 }
 
+/* Scrollbar utility */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

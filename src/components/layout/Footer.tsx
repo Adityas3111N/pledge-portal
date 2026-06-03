@@ -71,7 +71,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-white border-t border-[#d6d6d6] mt-auto font-sans">
+    <footer className="w-full bg-bg-surface border-t border-border-light mt-auto font-sans">
       {/* ── MAIN FOOTER CONTENT — Figma: 1440w, padding 48/80, gap 33 ── */}
       <div
         className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[80px] py-8 lg:py-[48px] flex flex-col"
@@ -83,10 +83,7 @@ export default function Footer() {
           <div className="flex flex-col gap-5 lg:max-w-[300px] shrink-0">
             {/* Logo + Title */}
             <div className="flex items-center gap-2.5">
-              <div
-                className="w-[36px] h-[36px] rounded-full border-[2px] flex items-center justify-center bg-white flex-shrink-0"
-                style={{ borderColor: "#fc661e" }}
-              >
+              <div className="w-[36px] h-[36px] rounded-full border-[2px] border-brand-primary flex items-center justify-center bg-bg-surface flex-shrink-0">
                 <img
                   src="/upgovlogo.png"
                   alt="Government of Uttar Pradesh emblem"
@@ -94,17 +91,17 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col min-w-0">
-                <span className="text-[13px] sm:text-sm font-bold text-[#202124] leading-tight tracking-tight">
+                <span className="text-[13px] sm:text-sm font-bold text-text-primary leading-tight tracking-tight">
                   {t("navbar.title")}
                 </span>
-                <span className="text-[8px] sm:text-[9px] font-bold text-[#5f6368] tracking-wider uppercase leading-tight mt-0.5">
+                <span className="text-[8px] sm:text-[9px] font-bold text-text-secondary tracking-wider uppercase leading-tight mt-0.5">
                   {t("navbar.subtitle")}
                 </span>
               </div>
             </div>
 
             {/* Description */}
-            <p className="text-[13px] text-[#5f6368] leading-relaxed font-normal">
+            <p className="text-[13px] text-text-secondary leading-relaxed font-normal">
               {t("footer.description")}
             </p>
 
@@ -115,7 +112,7 @@ export default function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="text-[#424242] hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm"
+                  className="text-text-muted hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                 >
                   {social.icon}
                 </a>
@@ -124,14 +121,14 @@ export default function Footer() {
 
             {/* Store Badges Placeholder */}
             <div className="flex items-center gap-2">
-              <div className="w-[72px] h-[24px] bg-gray-200 rounded-[4px]" />
-              <div className="w-[72px] h-[24px] bg-gray-200 rounded-[4px]" />
+              <div className="w-[72px] h-[24px] bg-border-medium rounded-[4px]" />
+              <div className="w-[72px] h-[24px] bg-border-medium rounded-[4px]" />
             </div>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className="flex flex-col gap-4 min-w-[160px]">
-            <h3 className="text-xs font-bold text-[#202124] uppercase tracking-[0.08em]">
+            <h3 className="text-xs font-bold text-text-primary uppercase tracking-[0.08em]">
               {t("footer.quickLinks")}
             </h3>
             <nav aria-label="Quick links">
@@ -140,7 +137,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-[11px] text-[#5f6368] hover:text-[#fc661e] transition-colors font-medium focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm"
+                      className="text-[11px] text-text-secondary hover:text-brand-primary transition-colors font-medium focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                     >
                       {link.label}
                     </a>
@@ -152,7 +149,7 @@ export default function Footer() {
 
           {/* Column 3: Government Resources */}
           <div className="flex flex-col gap-4 min-w-[200px]">
-            <h3 className="text-xs font-bold text-[#202124] uppercase tracking-[0.08em]">
+            <h3 className="text-xs font-bold text-text-primary uppercase tracking-[0.08em]">
               {t("footer.govResources")}
             </h3>
             <nav aria-label="Government resources">
@@ -161,7 +158,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-[11px] text-[#5f6368] hover:text-[#fc661e] transition-colors font-medium focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm"
+                      className="text-[11px] text-text-secondary hover:text-brand-primary transition-colors font-medium focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                     >
                       {link.label}
                     </a>
@@ -173,30 +170,30 @@ export default function Footer() {
 
           {/* Column 4: Contact Us */}
           <div className="flex flex-col gap-4 min-w-[240px]">
-            <h3 className="text-xs font-bold text-[#202124] uppercase tracking-[0.08em]">
+            <h3 className="text-xs font-bold text-text-primary uppercase tracking-[0.08em]">
               {t("footer.contactUs")}
             </h3>
             <ul className="flex flex-col gap-3">
               <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#fc661e] shrink-0" />
-                <span className="text-[11px] text-[#424242] font-medium">{t("footer.phone")}</span>
+                <Phone className="w-4 h-4 text-brand-primary shrink-0" />
+                <span className="text-[11px] text-text-muted font-medium">{t("footer.phone")}</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#fc661e] shrink-0" />
+                <Mail className="w-4 h-4 text-brand-primary shrink-0" />
                 <a
                   href="mailto:pledge.up@gov.in"
-                  className="text-[11px] text-[#424242] font-medium hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm"
+                  className="text-[11px] text-text-muted font-medium hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                 >
                   {t("footer.email")}
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#fc661e] shrink-0" />
-                <span className="text-[11px] text-[#424242] font-medium">{t("footer.tollFree")}</span>
+                <Phone className="w-4 h-4 text-brand-primary shrink-0" />
+                <span className="text-[11px] text-text-muted font-medium">{t("footer.tollFree")}</span>
               </li>
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#fc661e] shrink-0 mt-0.5" />
-                <span className="text-[11px] text-[#424242] font-medium leading-relaxed">
+                <MapPin className="w-4 h-4 text-brand-primary shrink-0 mt-0.5" />
+                <span className="text-[11px] text-text-muted font-medium leading-relaxed">
                   {t("footer.address")}
                 </span>
               </li>
@@ -207,11 +204,11 @@ export default function Footer() {
 
       {/* ── BOTTOM BAR — Figma: 1280w, h-48, gap 48 ── */}
       <div className="w-full">
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[80px] border-t border-[#d6d6d6]">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[80px] border-t border-border-light">
           {/* Desktop bottom bar */}
           <div className="hidden lg:flex items-center justify-between h-[48px] gap-[48px]">
             {/* Left Side */}
-            <div className="flex items-center gap-[48px] text-[13px] text-[#5f6368] font-normal">
+            <div className="flex items-center gap-[48px] text-[13px] text-text-secondary font-normal">
               <span>{t("footer.copyright")}</span>
               <span>{t("footer.visitor")}</span>
             </div>
@@ -222,7 +219,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="text-sm font-medium text-[#424242] hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm"
+                    className="text-sm font-medium text-text-muted hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                   >
                     {t("navbar.home")}
                   </a>
@@ -232,34 +229,34 @@ export default function Footer() {
                 <li className="relative group">
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
-                    className="flex items-center gap-1 text-sm font-medium text-[#424242] hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm"
+                    className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                     aria-expanded={servicesOpen}
                     aria-haspopup="true"
                   >
                     <span>{t("navbar.services")}</span>
                     <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
                   </button>
-                  {/* Dropdown panel — visible on hover (desktop) or click */}
+                  {/* Dropdown panel */}
                   <div
-                    className={`absolute bottom-full left-0 mb-2 w-48 bg-white border border-gray-200 rounded-lg shadow-md py-2 z-50 ${
+                    className={`absolute bottom-full left-0 mb-2 w-48 bg-bg-surface border border-border-medium rounded-lg shadow-md py-2 z-50 ${
                       servicesOpen ? "block" : "hidden group-hover:block"
                     }`}
                   >
                     <a
                       href="#"
-                      className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e] transition-colors"
+                      className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary transition-colors"
                     >
                       {t("navbar.serviceApplication")}
                     </a>
                     <a
                       href="#"
-                      className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e] transition-colors"
+                      className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary transition-colors"
                     >
                       {t("navbar.serviceTrack")}
                     </a>
                     <a
                       href="#"
-                      className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e] transition-colors"
+                      className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary transition-colors"
                     >
                       {t("navbar.serviceGrievance")}
                     </a>
@@ -269,7 +266,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="text-sm font-medium text-[#424242] hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm"
+                    className="text-sm font-medium text-text-muted hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                   >
                     {t("footer.blog")}
                   </a>
@@ -277,7 +274,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="text-sm font-medium text-[#424242] hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm"
+                    className="text-sm font-medium text-text-muted hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                   >
                     {t("footer.helpCenter")}
                   </a>
@@ -285,7 +282,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="text-sm font-medium text-[#424242] hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm"
+                    className="text-sm font-medium text-text-muted hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                   >
                     {t("navbar.about")}
                   </a>
@@ -297,7 +294,7 @@ export default function Footer() {
           {/* Mobile bottom bar */}
           <div className="flex lg:hidden flex-col items-center gap-6 py-6">
             {/* Copyright centered */}
-            <p className="text-xs text-[#5f6368] font-normal text-center">
+            <p className="text-xs text-text-secondary font-normal text-center">
               {t("footer.copyright")}
             </p>
 
@@ -305,27 +302,27 @@ export default function Footer() {
             <nav aria-label="Footer navigation mobile">
               <ul className="flex flex-wrap items-center justify-center gap-x-2.5 sm:gap-x-6 gap-y-2">
                 <li>
-                  <a href="#" className="text-[11px] sm:text-xs font-normal text-[#0f172a] hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm">
+                  <a href="#" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
                     {t("navbar.home")}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-[11px] sm:text-xs font-normal text-[#0f172a] hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm">
+                  <a href="#" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
                     {t("navbar.services")}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-[11px] sm:text-xs font-normal text-[#0f172a] hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm">
+                  <a href="#" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
                     {t("footer.blog")}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-[11px] sm:text-xs font-normal text-[#0f172a] hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm">
+                  <a href="#" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
                     {t("footer.helpCenter")}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-[11px] sm:text-xs font-normal text-[#0f172a] hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none rounded-sm">
+                  <a href="#" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
                     {t("navbar.about")}
                   </a>
                 </li>

@@ -57,9 +57,9 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-full flex flex-col z-50 relative bg-white font-sans">
+    <header className="w-full flex flex-col z-50 relative bg-bg-surface font-sans">
       {/* ── 1. TOP UTILITY STRIP (Orange Banner) ── */}
-      <div className="bg-[#fc661e] text-white py-2 text-[9.5px] min-[360px]:text-[11px] sm:text-[13px] font-medium whitespace-nowrap overflow-x-auto no-scrollbar">
+      <div className="bg-brand-primary text-text-inverse py-2 text-[9.5px] min-[360px]:text-[11px] sm:text-[13px] font-medium whitespace-nowrap overflow-x-auto no-scrollbar">
         <div className="w-full px-3 sm:px-4 md:px-6 lg:px-[42px] flex justify-between items-center gap-4">
           <div className="opacity-95 tabular-nums tracking-wide flex-shrink-0">
             <span className="inline sm:hidden">{shortTime || t("navbar.dateFallback")}</span>
@@ -71,7 +71,7 @@ export default function Navbar() {
               href="tel:+928220874287" 
               className="hover:underline transition-colors font-medium flex items-center gap-1"
             >
-              <Phone className="w-3 h-3 text-white fill-none stroke-[2.5]" />
+              <Phone className="w-3 h-3 text-text-inverse fill-none stroke-[2.5]" />
               <span>92+ (8220)874287</span>
             </a>
             <span className="opacity-40">|</span>
@@ -79,7 +79,7 @@ export default function Navbar() {
               className="hover:opacity-80 transition-opacity focus:outline-none flex items-center justify-center"
               aria-label="Search"
             >
-              <Search className="w-3.5 h-3.5 stroke-[2.5] text-white" />
+              <Search className="w-3.5 h-3.5 stroke-[2.5] text-text-inverse" />
             </button>
             <span className="opacity-40">|</span>
             <button 
@@ -88,20 +88,19 @@ export default function Navbar() {
               aria-label="Switch Language / भाषा बदलें"
             >
               <span className="underline">{language === "en" ? "हिन्दी" : "English"}</span>
-              <ChevronDown className="w-3 h-3 text-white stroke-[2.5]" />
+              <ChevronDown className="w-3 h-3 text-text-inverse stroke-[2.5]" />
             </button>
           </div>
         </div>
       </div>
 
-      <div className="bg-white font-sans" style={{ borderBottom: "1px solid #D6D6D6" }}>
+      <div className="bg-bg-surface font-sans border-b border-border-light">
         <div className="w-full px-3 sm:px-4 md:px-6 lg:px-[42px] py-3 flex justify-between items-center gap-3">
           {/* Left: Emblem + Title */}
           <div className="flex items-center gap-2 sm:gap-3.5 min-w-0">
             {/* UP Gov Emblem */}
             <div 
-              className="w-[36px] h-[36px] sm:w-[52px] sm:h-[52px] md:w-[56px] md:h-[56px] rounded-full border-[2px] flex items-center justify-center bg-white flex-shrink-0"
-              style={{ borderColor: "#fc661e" }}
+              className="w-[36px] h-[36px] sm:w-[52px] sm:h-[52px] md:w-[56px] md:h-[56px] rounded-full border-[2px] border-brand-primary flex items-center justify-center bg-bg-surface flex-shrink-0"
             >
               <img 
                 src="/upgovlogo.png" 
@@ -111,10 +110,10 @@ export default function Navbar() {
             </div>
 
             <div className="flex flex-col min-w-0">
-              <h2 className="font-bold text-[#202124] text-[10px] min-[360px]:text-[11.5px] min-[400px]:text-[13px] sm:text-[17px] md:text-[20px] leading-tight tracking-tight whitespace-nowrap">
+              <h2 className="font-bold text-text-primary text-[10px] min-[360px]:text-[11.5px] min-[400px]:text-[13px] sm:text-[17px] md:text-[20px] leading-tight tracking-tight whitespace-nowrap">
                 {t("navbar.title")}
               </h2>
-              <p className="text-[6.5px] min-[360px]:text-[7.5px] min-[400px]:text-[8.5px] sm:text-[11px] font-bold text-[#5f6368] tracking-wider mt-0.5 uppercase whitespace-nowrap">
+              <p className="text-[6.5px] min-[360px]:text-[7.5px] min-[400px]:text-[8.5px] sm:text-[11px] font-bold text-text-secondary tracking-wider mt-0.5 uppercase whitespace-nowrap">
                 {t("navbar.subtitle")}
               </p>
             </div>
@@ -138,14 +137,14 @@ export default function Navbar() {
           <div className="block lg:hidden">
             <Sheet onOpenChange={(open) => { if (!open) setActiveDropdown(null); }}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon-sm" className="text-gray-900" aria-label="Open navigation menu">
+                <Button variant="ghost" size="icon-sm" className="text-text-primary" aria-label="Open navigation menu">
                   <Menu className="w-6 h-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[350px] p-5 bg-white flex flex-col gap-5 overflow-y-auto no-scrollbar">
+              <SheetContent side="right" className="w-[300px] sm:w-[350px] p-5 bg-bg-surface flex flex-col gap-5 overflow-y-auto no-scrollbar">
                 {/* Official Government Branding Header */}
-                <div className="flex items-center gap-2.5 pb-4 border-b border-gray-100">
-                  <div className="w-[34px] h-[34px] rounded-full border-[1.5px] border-[#fc661e] flex items-center justify-center bg-white flex-shrink-0">
+                <div className="flex items-center gap-2.5 pb-4 border-b border-border-medium">
+                  <div className="w-[34px] h-[34px] rounded-full border-[1.5px] border-brand-primary flex items-center justify-center bg-bg-surface flex-shrink-0">
                     <img 
                       src="/upgovlogo.png" 
                       alt="Government of Uttar Pradesh Emblem" 
@@ -153,24 +152,24 @@ export default function Navbar() {
                     />
                   </div>
                   <div className="flex flex-col min-w-0">
-                    <span className="font-bold text-xs text-[#202124] tracking-tight leading-none uppercase">UP PLEDGE PORTAL</span>
-                    <span className="text-[8.5px] font-bold text-[#5f6368] uppercase mt-1 tracking-wider leading-none">Govt. of Uttar Pradesh</span>
+                    <span className="font-bold text-xs text-text-primary tracking-tight leading-none uppercase">UP PLEDGE PORTAL</span>
+                    <span className="text-[8.5px] font-bold text-text-secondary uppercase mt-1 tracking-wider leading-none">Govt. of Uttar Pradesh</span>
                   </div>
                 </div>
 
                 {/* Bilingual Language Switcher */}
-                <div className="flex items-center justify-between bg-gray-50 border border-gray-100 p-2 rounded-xl">
-                  <span className="text-[11px] font-bold text-gray-500 ml-1.5">{t("navbar.languageLabel")}</span>
+                <div className="flex items-center justify-between bg-bg-subtle border border-border-medium p-2 rounded-xl">
+                  <span className="text-[11px] font-bold text-text-secondary ml-1.5">{t("navbar.languageLabel")}</span>
                   <div className="flex gap-1">
                     <button 
                       onClick={() => setLanguage("en")}
-                      className={`px-2.5 py-1 text-[11px] rounded-lg font-bold transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none ${language === "en" ? "bg-[#fc661e] text-white" : "text-gray-700 hover:bg-gray-100"}`}
+                      className={`px-2.5 py-1 text-[11px] rounded-lg font-bold transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none ${language === "en" ? "bg-brand-primary text-text-inverse" : "text-text-muted hover:bg-border-medium"}`}
                     >
                       English
                     </button>
                     <button 
                       onClick={() => setLanguage("hi")}
-                      className={`px-2.5 py-1 text-[11px] rounded-lg font-bold transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none ${language === "hi" ? "bg-[#fc661e] text-white" : "text-gray-700 hover:bg-gray-100"}`}
+                      className={`px-2.5 py-1 text-[11px] rounded-lg font-bold transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none ${language === "hi" ? "bg-brand-primary text-text-inverse" : "text-text-muted hover:bg-border-medium"}`}
                     >
                       हिन्दी
                     </button>
@@ -179,88 +178,88 @@ export default function Navbar() {
                 
                 {/* Search Bar */}
                 <div className="relative w-full">
-                  <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
+                  <Search className="absolute left-3 top-2.5 h-4 w-4 text-text-secondary" />
                   <input
                     type="text"
                     placeholder={t("navbar.searchPlaceholder")}
-                    className="w-full pl-9 pr-4 py-2 border border-gray-200 rounded-xl text-xs bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#fc661e] focus:border-transparent font-medium"
+                    className="w-full pl-9 pr-4 py-2 border border-border-medium rounded-xl text-xs bg-bg-subtle focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent font-medium"
                   />
                 </div>
 
                 {/* Structured Scheme Navigation */}
-                <nav className="flex flex-col gap-1 text-xs font-semibold text-[#424242]" aria-label="Mobile Navigation Drawer">
-                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">{t("navbar.home")}</a>
-                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">{t("navbar.about")}</a>
+                <nav className="flex flex-col gap-1 text-xs font-semibold text-text-muted" aria-label="Mobile Navigation Drawer">
+                  <a href="#" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary active:bg-bg-subtle p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.home")}</a>
+                  <a href="#" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary active:bg-bg-subtle p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.about")}</a>
                   
-                  <div className="border-b border-gray-50">
+                  <div className="border-b border-border-medium">
                     <button 
                       onClick={() => toggleDropdown("schemeInfo")}
                       aria-expanded={activeDropdown === "schemeInfo"}
-                      className="w-full flex items-center justify-between hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg text-left transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+                      className="w-full flex items-center justify-between hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary p-2.5 rounded-lg text-left transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
                     >
                       <span>{t("navbar.schemeInfo")}</span>
-                      <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${activeDropdown === "schemeInfo" ? "rotate-180" : ""}`} />
+                      <ChevronDown className={`w-4 h-4 text-text-secondary transition-transform ${activeDropdown === "schemeInfo" ? "rotate-180" : ""}`} />
                     </button>
                     {activeDropdown === "schemeInfo" && (
-                      <div className="pl-6 pb-2.5 flex flex-col gap-1.5 text-[11px] text-gray-600 bg-gray-50/50 rounded-lg mt-1 p-1.5">
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.schemeGuidelines")}</a>
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.schemeBenefits")}</a>
+                      <div className="pl-6 pb-2.5 flex flex-col gap-1.5 text-[11px] text-text-secondary bg-bg-subtle rounded-lg mt-1 p-1.5">
+                        <a href="#" className="hover:text-brand-primary py-1 px-2 rounded hover:bg-bg-subtle transition-colors">{t("navbar.schemeGuidelines")}</a>
+                        <a href="#" className="hover:text-brand-primary py-1 px-2 rounded hover:bg-bg-subtle transition-colors">{t("navbar.schemeBenefits")}</a>
                       </div>
                     )}
                   </div>
 
-                  <div className="border-b border-gray-50">
+                  <div className="border-b border-border-medium">
                     <button 
                       onClick={() => toggleDropdown("services")}
                       aria-expanded={activeDropdown === "services"}
-                      className="w-full flex items-center justify-between hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg text-left transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+                      className="w-full flex items-center justify-between hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary p-2.5 rounded-lg text-left transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
                     >
                       <span>{t("navbar.services")}</span>
-                      <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${activeDropdown === "services" ? "rotate-180" : ""}`} />
+                      <ChevronDown className={`w-4 h-4 text-text-secondary transition-transform ${activeDropdown === "services" ? "rotate-180" : ""}`} />
                     </button>
                     {activeDropdown === "services" && (
-                      <div className="pl-6 pb-2.5 flex flex-col gap-1.5 text-[11px] text-gray-600 bg-gray-50/50 rounded-lg mt-1 p-1.5">
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.serviceApplication")}</a>
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.serviceTrack")}</a>
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.serviceGrievance")}</a>
+                      <div className="pl-6 pb-2.5 flex flex-col gap-1.5 text-[11px] text-text-secondary bg-bg-subtle rounded-lg mt-1 p-1.5">
+                        <a href="#" className="hover:text-brand-primary py-1 px-2 rounded hover:bg-bg-subtle transition-colors">{t("navbar.serviceApplication")}</a>
+                        <a href="#" className="hover:text-brand-primary py-1 px-2 rounded hover:bg-bg-subtle transition-colors">{t("navbar.serviceTrack")}</a>
+                        <a href="#" className="hover:text-brand-primary py-1 px-2 rounded hover:bg-bg-subtle transition-colors">{t("navbar.serviceGrievance")}</a>
                       </div>
                     )}
                   </div>
 
-                  <div className="border-b border-gray-50">
+                  <div className="border-b border-border-medium">
                     <button 
                       onClick={() => toggleDropdown("approvedParks")}
                       aria-expanded={activeDropdown === "approvedParks"}
-                      className="w-full flex items-center justify-between hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg text-left transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+                      className="w-full flex items-center justify-between hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary p-2.5 rounded-lg text-left transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
                     >
                       <span>{t("navbar.approvedParks")}</span>
-                      <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${activeDropdown === "approvedParks" ? "rotate-180" : ""}`} />
+                      <ChevronDown className={`w-4 h-4 text-text-secondary transition-transform ${activeDropdown === "approvedParks" ? "rotate-180" : ""}`} />
                     </button>
                     {activeDropdown === "approvedParks" && (
-                      <div className="pl-6 pb-2.5 flex flex-col gap-1.5 text-[11px] text-gray-600 bg-gray-50/50 rounded-lg mt-1 p-1.5">
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.stateDirectory")}</a>
-                        <a href="#" className="hover:text-[#fc661e] active:text-[#fc661e] active:bg-orange-50/75 py-1 px-2 rounded hover:bg-gray-50 transition-colors">{t("navbar.districtDirectory")}</a>
+                      <div className="pl-6 pb-2.5 flex flex-col gap-1.5 text-[11px] text-text-secondary bg-bg-subtle rounded-lg mt-1 p-1.5">
+                        <a href="#" className="hover:text-brand-primary py-1 px-2 rounded hover:bg-bg-subtle transition-colors">{t("navbar.stateDirectory")}</a>
+                        <a href="#" className="hover:text-brand-primary py-1 px-2 rounded hover:bg-bg-subtle transition-colors">{t("navbar.districtDirectory")}</a>
                       </div>
                     )}
                   </div>
 
-                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">{t("navbar.faqs")}</a>
-                  <a href="#" className="hover:text-[#fc661e] hover:bg-gray-50 active:text-[#fc661e] active:bg-orange-50/75 p-2.5 rounded-lg border-b border-gray-50 transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none">{t("navbar.contact")}</a>
+                  <a href="#" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.faqs")}</a>
+                  <a href="#" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.contact")}</a>
                 </nav>
 
-                <div className="mt-auto flex flex-col gap-3 pt-4 border-t border-gray-100">
+                <div className="mt-auto flex flex-col gap-3 pt-4 border-t border-border-medium">
                   {/* Helpdesk Callout */}
                   <a 
                     href="tel:+928220874287" 
-                    className="flex items-center gap-2.5 p-2.5 bg-orange-50/50 hover:bg-orange-50 border border-orange-100/50 rounded-xl transition-all focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+                    className="flex items-center gap-2.5 p-2.5 bg-bg-subtle hover:bg-bg-subtle border border-border-medium rounded-xl transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
                     aria-label="Call Helpdesk at 92+ (8220)874287"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-orange-100/50 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-4 h-4 text-[#fc661e]" />
+                    <div className="w-8 h-8 rounded-lg bg-brand-subtle flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-4 h-4 text-brand-primary" />
                     </div>
                     <div className="flex flex-col min-w-0">
-                      <span className="text-[9px] text-orange-600 font-bold uppercase tracking-wider leading-none">{t("navbar.helpdesk")}</span>
-                      <span className="text-xs font-bold text-gray-800 leading-normal mt-0.5">92+ (8220)874287</span>
+                      <span className="text-[9px] text-brand-accent font-bold uppercase tracking-wider leading-none">{t("navbar.helpdesk")}</span>
+                      <span className="text-xs font-bold text-text-primary leading-normal mt-0.5">92+ (8220)874287</span>
                     </div>
                   </a>
 
@@ -268,7 +267,7 @@ export default function Navbar() {
                     <Button className="w-full bg-neutral-900 hover:bg-black text-white font-semibold rounded-xl py-2.5 shadow-sm text-sm">
                       {t("navbar.newRegistration")}
                     </Button>
-                    <Button variant="outline" className="w-full font-semibold border-gray-300 text-gray-900 hover:bg-gray-50 rounded-xl py-2.5 text-sm shadow-xs">
+                    <Button variant="outline" className="w-full font-semibold border-border-light text-text-primary hover:bg-bg-subtle rounded-xl py-2.5 text-sm shadow-xs">
                       {t("navbar.logIn")}
                     </Button>
                   </div>
@@ -280,13 +279,13 @@ export default function Navbar() {
       </div>
 
       {/* ── 3. DESKTOP NAVIGATION BAR ── */}
-      <div className="hidden lg:block bg-white border-b border-gray-200 shadow-xs">
+      <div className="hidden lg:block bg-bg-surface border-b border-border-medium shadow-xs">
         <div className="w-full px-4 md:px-6 lg:px-[42px] flex justify-between items-center h-[48px]">
           {/* Navigation Links */}
-          <nav className="flex items-center gap-7 xl:gap-9 text-sm font-medium text-[#424242] h-full" aria-label="Main Navigation">
+          <nav className="flex items-center gap-7 xl:gap-9 text-sm font-medium text-text-muted h-full" aria-label="Main Navigation">
             <a 
               href="#" 
-              className="py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+              className="py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
               aria-current="page"
             >
               {t("navbar.home")}
@@ -294,78 +293,78 @@ export default function Navbar() {
             
             <a 
               href="#" 
-              className="py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+              className="py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
             >
               {t("navbar.about")}
             </a>
 
             <div className="relative group flex items-center h-full">
               <button 
-                className="flex items-center gap-1.5 py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+                className="flex items-center gap-1.5 py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
                 aria-expanded="false"
               >
                 <span>{t("navbar.schemeInfo")}</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
               </button>
-              <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-white border border-gray-200 rounded-lg shadow-md py-2 z-50">
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.schemeGuidelines")}</a>
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.schemeBenefits")}</a>
+              <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-bg-surface border border-border-medium rounded-lg shadow-md py-2 z-50">
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary">{t("navbar.schemeGuidelines")}</a>
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary">{t("navbar.schemeBenefits")}</a>
               </div>
             </div>
 
             <div className="relative group flex items-center h-full">
               <button 
-                className="flex items-center gap-1.5 py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+                className="flex items-center gap-1.5 py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
                 aria-expanded="false"
               >
                 <span>{t("navbar.services")}</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
               </button>
-              <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-white border border-gray-200 rounded-lg shadow-md py-2 z-50">
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.serviceApplication")}</a>
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.serviceTrack")}</a>
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.serviceGrievance")}</a>
+              <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-bg-surface border border-border-medium rounded-lg shadow-md py-2 z-50">
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary">{t("navbar.serviceApplication")}</a>
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary">{t("navbar.serviceTrack")}</a>
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary">{t("navbar.serviceGrievance")}</a>
               </div>
             </div>
 
             <div className="relative group flex items-center h-full">
               <button 
-                className="flex items-center gap-1.5 py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+                className="flex items-center gap-1.5 py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
                 aria-expanded="false"
               >
                 <span>{t("navbar.approvedParks")}</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
               </button>
-              <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-white border border-gray-200 rounded-lg shadow-md py-2 z-50">
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.stateDirectory")}</a>
-                <a href="#" className="block px-4 py-2 text-xs font-medium text-[#424242] hover:bg-gray-50 hover:text-[#fc661e]">{t("navbar.districtDirectory")}</a>
+              <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-bg-surface border border-border-medium rounded-lg shadow-md py-2 z-50">
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary">{t("navbar.stateDirectory")}</a>
+                <a href="#" className="block px-4 py-2 text-xs font-medium text-text-muted hover:bg-bg-subtle hover:text-brand-primary">{t("navbar.districtDirectory")}</a>
               </div>
             </div>
 
             <a 
               href="#" 
-              className="py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+              className="py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
             >
               {t("navbar.faqs")}
             </a>
             
             <a 
               href="#" 
-              className="py-2 hover:text-[#fc661e] transition-colors focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+              className="py-2 hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
             >
               {t("navbar.contact")}
             </a>
           </nav>
 
-          {/* CTA Buttons — exact specs: h-[34px], gap-[6px], glossy black + white with shadows */}
+          {/* CTA Buttons */}
           <div className="flex items-center gap-[6px]">
             <button 
-              className="h-[34px] px-4 rounded-[10px] bg-gradient-to-b from-[#2d2d2d] to-[#0a0a0a] text-white text-[13px] font-medium cursor-pointer shadow-[0_2px_5px_rgba(0,0,0,0.35),inset_0_1px_0px_rgba(255,255,255,0.15)] hover:from-[#202020] hover:to-[#000000] active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+              className="h-[34px] px-4 rounded-[10px] bg-gradient-to-b from-[#2d2d2d] to-[#0a0a0a] text-text-inverse text-[13px] font-medium cursor-pointer shadow-[0_2px_5px_rgba(0,0,0,0.35),inset_0_1px_0px_rgba(255,255,255,0.15)] hover:from-[#202020] hover:to-[#000000] active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
             >
               {t("navbar.newRegistration")}
             </button>
             <button 
-              className="h-[34px] px-[16px] rounded-[10px] bg-white text-[#202124] text-[13px] font-medium cursor-pointer border border-[#d1d5db] shadow-[0_1px_4px_rgba(0,0,0,0.08)] hover:bg-gray-50 active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:outline-none"
+              className="h-[34px] px-[16px] rounded-[10px] bg-bg-surface text-text-primary text-[13px] font-medium cursor-pointer border border-border-light shadow-[0_1px_4px_rgba(0,0,0,0.08)] hover:bg-bg-subtle active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
             >
               {t("navbar.logIn")}
             </button>

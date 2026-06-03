@@ -51,106 +51,89 @@ Mandatory:
 
 # Brand Colors
 
-## Primary Orange
+> **Source of truth:** `src/styles/theme.css` (primitives) and `src/app/globals.css` (semantic tokens).
+> Never hardcode hex values in components. Use the Tailwind classes or CSS variables listed below.
 
-Used for:
+## Token System Overview
 
-* Primary CTA
-* Hero sections
-* Important actions
-* Active states
+The design system uses a **3-layer token architecture**:
 
-```css
-#F97316
-```
-
-Tailwind:
-
-```css
-bg-orange-500
-```
+| Layer | File | Purpose |
+|---|---|---|
+| Primitive | `src/styles/theme.css` | Raw hex values — never use directly in components |
+| Semantic | `src/app/globals.css` | Intent-based CSS vars — what components reference |
+| Utility | `tailwind.config.ts` + `@theme` | Auto-generated Tailwind classes |
 
 ---
 
-## Dark Orange
+## Brand Orange (Primary)
 
-Used for:
+**Hex:** `#FF6E28`
 
-* Hover states
-* Emphasis
+Used for CTA buttons, active states, icons, interactive links, and focus rings.
 
-```css
-#EA580C
-```
+| Token | Class | Hex | Use |
+|---|---|---|---|
+| `--color-brand-primary` | `bg-brand-primary` / `text-brand-primary` | `#FF6E28` | Primary CTAs, active nav, icons |
+| `--color-brand-accent` | `text-brand-accent` | `#E85818` | Accent word in section headings |
+| `--color-brand-hover` | `hover:bg-brand-hover` | `#C44510` | Hover on brand-colored elements |
+| `--color-brand-light` | `bg-brand-light` | `#FF9A6A` | Badges, tags, soft highlights |
+| `--color-brand-subtle` | `bg-brand-subtle` | `#FFB899` | Very light brand tint backgrounds |
 
 ---
 
 ## Government Green
 
-Used for:
+Used for success states, approval badges, completion indicators.
 
-* Success
-* Approval
-* Completion
-
-```css
-#15803D
-```
+| Token | Class | Hex |
+|---|---|---|
+| `--color-gov-green` | `text-gov-green` / `bg-gov-green` | `#2D7A3A` |
 
 ---
 
 ## Government Navy
 
-Used for:
+Used for official headings, navigation, formal information blocks.
 
-* Headings
-* Navigation
-* Official information
-
-```css
-#1E3A5F
-```
+| Token | Class | Hex |
+|---|---|---|
+| `--color-gov-navy` | `text-gov-navy` / `bg-gov-navy` | `#1A2B5F` |
+| `--color-gov-navy-light` | `text-gov-navy-light` | `#2A3F7F` |
 
 ---
 
-## Neutral Background
+## Neutral / Surface
 
-```css
-#F8F8F8
-```
-
-Used for page backgrounds.
-
----
-
-## Surface White
-
-```css
-#FFFFFF
-```
-
-Used for:
-
-* Cards
-* Tables
-* Forms
-* Dialogs
+| Token | Class | Hex | Use |
+|---|---|---|---|
+| `--color-bg-page` | `bg-bg-page` | `#F8F8F8` | Page background |
+| `--color-bg-surface` | `bg-bg-surface` | `#FFFFFF` | Cards, forms, dialogs |
+| `--color-bg-subtle` | `bg-bg-subtle` | `#F5F0E8` | Cream-tinted section backgrounds |
 
 ---
 
-## Error
+## Status Colors
 
-```css
-#DC2626
-```
+| Status | Token | Tailwind Class | Hex |
+|---|---|---|---|
+| Success / Approved / Completed | `--color-status-success` | `text-status-success` | `#16A34A` |
+| Error / Rejected | `--color-status-error` | `text-status-error` | `#DC2626` |
+| Warning / Under Review | `--color-status-warning` | `text-status-warning` | `#D97706` |
+| Info / Submitted | `--color-status-info` | `text-status-info` | `#3B82F6` |
+| Draft | `--color-status-draft` | `text-status-draft` | `#5F6368` |
 
 ---
 
-## Warning
+## Text Colors
 
-```css
-#D97706
-```
+| Token | Class | Hex | Use |
+|---|---|---|---|
+| `--color-text-primary` | `text-text-primary` | `#202124` | Headings, nav items |
+| `--color-text-secondary` | `text-text-secondary` | `#5F6368` | Subtitles, captions, footer items |
+| `--color-text-muted` | `text-text-muted` | `#424242` | Body links, muted labels |
+| `--color-text-inverse` | `text-text-inverse` | `#FFFFFF` | Text on dark/brand backgrounds |
+| `--color-text-brand` | `text-text-brand` | `#FF6E28` | Brand-colored body text |
 
 ---
 
@@ -158,13 +141,15 @@ Used for:
 
 ## Primary Font
 
-Geist
+**Google Sans Flex** (with fallback to Google Sans, then sans-serif)
 
-Fallback:
+Configured in `tailwind.config.ts` as `font-sans`.
 
 ```css
-sans-serif
+font-family: 'Google Sans Flex', 'Google Sans', sans-serif;
 ```
+
+Usage in Tailwind: `font-sans` (default on all elements via `body`).
 
 ---
 

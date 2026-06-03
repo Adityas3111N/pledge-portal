@@ -1,0 +1,51 @@
+/**
+ * PRIMITIVE TOKENS
+ * ─────────────────────────────────────────────────────────────
+ * Raw, immutable palette values. These are the "what" —
+ * they have no semantic meaning and must NOT be used directly
+ * in components or feature code.
+ *
+ * To use a color in a component, always reference a SEMANTIC
+ * token defined in globals.css (e.g. var(--color-brand-primary)
+ * or the Tailwind class bg-brand-primary).
+ *
+ * Source of truth: all hex values live here and nowhere else.
+ * ─────────────────────────────────────────────────────────────
+ */
+
+:root {
+  /* ── Orange palette (Brand) ─────────────────── */
+  --primitive-orange-200: #FFB899; /* very light tint                  */
+  --primitive-orange-300: #FF9A6A; /* light — e.g. disabled brand state */
+  --primitive-orange-400: #FF8248; /* medium-light                      */
+  --primitive-orange-500: #FF6E28; /* ★ PRIMARY BRAND COLOR             */
+  --primitive-orange-600: #E85818; /* dark — headings accent            */
+  --primitive-orange-700: #C44510; /* darker — strong emphasis          */
+  --primitive-orange-800: #9E360B; /* deepest — rarely used             */
+
+  /* ── Neutral / Gray palette ─────────────────── */
+  --primitive-gray-50:  #F8F8F8;   /* page background                   */
+  --primitive-gray-100: #F5F0E8;   /* cream tinted surface              */
+  --primitive-gray-150: #EDE8DF;   /* cream dark surface                */
+  --primitive-gray-200: #E2E8F0;   /* card / input border               */
+  --primitive-gray-300: #D6D6D6;   /* dividers, footer borders          */
+  --primitive-gray-400: #A0AEC0;   /* placeholder text                  */
+  --primitive-gray-500: #5F6368;   /* secondary text                    */
+  --primitive-gray-600: #424242;   /* muted body text                   */
+  --primitive-gray-700: #2D3748;   /* dense body text                   */
+  --primitive-gray-900: #202124;   /* primary text / headings           */
+  --primitive-black:    #000000;
+  --primitive-white:    #FFFFFF;
+
+  /* ── Government palette ─────────────────────── */
+  --primitive-navy-500: #1A2B5F;   /* gov navy                          */
+  --primitive-navy-600: #2A3F7F;   /* gov navy light                    */
+  --primitive-green-600: #2D7A3A;  /* gov green (approval, success)     */
+
+  /* ── Status palette ─────────────────────────── */
+  --primitive-red-500:    #DC2626; /* error / danger / reject           */
+  --primitive-yellow-500: #D97706; /* warning / under-review            */
+  --primitive-blue-500:   #3B82F6; /* info / submitted                  */
+  --primitive-green-500:  #16A34A; /* success / completed               */
+  --primitive-teal-500:   #0D9488; /* conditional approval              */
+}

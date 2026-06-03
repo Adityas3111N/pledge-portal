@@ -1,0 +1,127 @@
+---
+description: Design token system — enforces correct color and style token usage
+globs: ["src/**/*.{ts,tsx,css}"]
+alwaysApply: true
+---
+
+# Design Token System
+
+This project uses a **3-layer design token architecture**. All colors, spacing,
+and typography values must come from this system — never use hardcoded values.
+
+---
+
+## Token Layers
+
+### Layer 1 — Primitives (`src/styles/theme.css`)
+Raw palette values. **Never reference these in components.**
+They exist only to be consumed by semantic tokens.
+
+```css
+/* ✅ Correct — used only inside globals.css */
+--color-brand-primary: var(--primitive-orange-500);
+
+/* ❌ Wrong — primitives used directly in a component */
+<div className="bg-[var(--primitive-orange-500)]">
+```
+
+### Layer 2 — Semantic tokens (`src/app/globals.css`)
+Intent-based names. **Always use these in components.**
+
+### Layer 3 — Tailwind utilities (generated from @theme)
+Tailwind utility classes are auto-generated from semantic tokens.
+**These are what you write in JSX.**
+
+---
+
+## Token Reference
+
+### Brand
+| Purpose | Tailwind Class | CSS Variable | Hex |
+|---|---|---|---|
+| Primary CTA, icons, links, active states | `bg-brand-primary` | `--color-brand-primary` | `#FF6E28` |
+| Heading accent word (e.g. "Uttar Pradesh") | `text-brand-accent` | `--color-brand-accent` | `#E85818` |
+| Hover on brand elements | `hover:bg-brand-hover` | `--color-brand-hover` | `#C44510` |
+| Light brand badge/tag | `bg-brand-light` | `--color-brand-light` | `#FF9A6A` |
+
+### Text
+| Purpose | Tailwind Class | CSS Variable | Hex |
+|---|---|---|---|
+| Headings, nav items | `text-text-primary` | `--color-text-primary` | `#202124` |
+| Subtitles, captions, footer items | `text-text-secondary` | `--color-text-secondary` | `#5F6368` |
+| Body links, muted labels | `text-text-muted` | `--color-text-muted` | `#424242` |
+| On dark / brand backgrounds | `text-text-inverse` | `--color-text-inverse` | `#FFFFFF` |
+| Brand-colored text | `text-text-brand` | `--color-text-brand` | `#FF6E28` |
+
+### Backgrounds
+| Purpose | Tailwind Class | CSS Variable | Hex |
+|---|---|---|---|
+| Page background | `bg-bg-page` | `--color-bg-page` | `#F8F8F8` |
+| Cards, forms, dialogs | `bg-bg-surface` | `--color-bg-surface` | `#FFFFFF` |
+| Cream-tinted sections | `bg-bg-subtle` | `--color-bg-subtle` | `#F5F0E8` |
+
+### Borders
+| Purpose | Tailwind Class | CSS Variable | Hex |
+|---|---|---|---|
+| Footer top, section dividers | `border-border-light` | `--color-border-light` | `#D6D6D6` |
+| Card borders, inputs | `border-border-medium` | `--color-border-medium` | `#E2E8F0` |
+| Active input, focus ring | `focus:border-border-brand` | `--color-border-brand` | `#FF6E28` |
+
+### Status (Application Workflow)
+| Status | Tailwind Class | Hex |
+|---|---|---|
+| Approved / Completed | `text-status-success` | `#16A34A` |
+| Rejected / Error | `text-status-error` | `#DC2626` |
+| Under Review | `text-status-warning` | `#D97706` |
+| Submitted | `text-status-info` | `#3B82F6` |
+| Draft | `text-status-draft` | `#5F6368` |
+
+### Government
+| Purpose | Tailwind Class | Hex |
+|---|---|---|
+| Official headings / nav | `text-gov-navy` | `#1A2B5F` |
+| Gov success / approval | `text-gov-green` | `#2D7A3A` |
+
+---
+
+## Rules
+
+### ❌ Never Do This
+```tsx
+/* Hardcoded hex */
+<div className="text-[#FF6E28] bg-[#202124]" />
+
+/* Arbitrary CSS variable (primitive) */
+<div className="text-[var(--primitive-orange-500)]" />
+
+/* Hardcoded color in tailwind.config */
+brand: { orange: "#FF6E28" }   // ← wrong, put in theme.css
+```
+
+### ✅ Always Do This
+```tsx
+/* Semantic Tailwind class */
+<div className="text-brand-primary bg-text-primary" />
+
+/* Or CSS variable (semantic) in className */
+<div style={{ color: "var(--color-brand-primary)" }} />
+```
+
+---
+
+## Adding a New Token
+
+1. **Add the raw hex** to `src/styles/theme.css` under the appropriate palette group
+2. **Create a semantic token** in `src/app/globals.css` `:root` block
+3. **Register in `@theme`** block in `globals.css`
+4. **Add to `tailwind.config.ts`** so the Tailwind class is available
+5. **Document it** in `docs/Design_systems.md`
+
+---
+
+## Focus Ring Standard
+
+All interactive elements must use the brand focus ring:
+```tsx
+className="focus-visible:ring-2 focus-visible:ring-[var(--color-brand-primary)] focus-visible:outline-none"
+```
