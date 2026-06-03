@@ -1,0 +1,178 @@
+"use client";
+
+import React from "react";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguageStore } from "@/store/language.store";
+
+export default function Endorsements() {
+  const { t } = useTranslation();
+  const { language } = useLanguageStore();
+  const isHindi = language === "hi";
+
+  const officials = [
+    {
+      id: "modi",
+      name: t("endorsements.officials.modi.name"),
+      role: t("endorsements.officials.modi.role"),
+      image: "/narendramodi.png"
+    },
+    {
+      id: "yogi",
+      name: t("endorsements.officials.yogi.name"),
+      role: t("endorsements.officials.yogi.role"),
+      image: "/yogiji.png"
+    },
+    {
+      id: "patel",
+      name: t("endorsements.officials.patel.name"),
+      role: t("endorsements.officials.patel.role"),
+      image: "/anandibenpatel.jpg"
+    },
+    {
+      id: "nandi",
+      name: t("endorsements.officials.nandi.name"),
+      role: t("endorsements.officials.nandi.role"),
+      image: "/nandgopalgupta.jpg"
+    },
+    {
+      id: "saini",
+      name: t("endorsements.officials.saini.name"),
+      role: t("endorsements.officials.saini.role"),
+      image: "/jaswantsinghsaini.jpg"
+    }
+  ];
+
+  // Repeat the array to ensure seamless infinite looping on wider viewports
+  const repeatedOfficials = [
+    ...officials,
+    ...officials,
+    ...officials,
+    ...officials,
+    ...officials,
+    ...officials
+  ];
+
+  return (
+    <section className="w-full bg-white overflow-hidden font-sans pt-16 pb-8 flex items-center">
+      <style>{`
+        @keyframes marquee-ltr {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+        .animate-marquee-ltr {
+          display: flex;
+          width: max-content;
+          animation: marquee-ltr 75s linear infinite;
+        }
+        .animate-marquee-ltr:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
+      <div 
+        className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[80px] flex flex-col justify-center"
+        style={{ minHeight: "378px" }}
+      >
+        {/* Section Heading */}
+        <div className="text-center w-full flex flex-col items-center justify-center">
+          <h2 
+            className="text-center text-black text-[24px] md:text-[32px] max-w-none w-full mx-auto"
+            style={{ 
+              fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif",
+              fontWeight: 500,
+              lineHeight: "100%",
+            }}
+          >
+            {isHindi ? (
+              <>
+                <span className="text-[#e8500a]">{t("endorsements.brand")}</span>{" "}
+                {t("endorsements.title")}
+              </>
+            ) : (
+              <>
+                {t("endorsements.title")}{" "}
+                <span className="text-[#e8500a]">{t("endorsements.brand")}</span>
+              </>
+            )}
+          </h2>
+          <p 
+            className="text-sm md:text-base text-black font-normal leading-relaxed mt-3 px-2 max-w-3xl mx-auto"
+            style={{ fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif" }}
+          >
+            {t("endorsements.description")}
+          </p>
+        </div>
+
+        {/* Divider with Sun Icon - Very small top margin, 46px bottom margin */}
+        <div className="relative flex items-center justify-center mt-4 md:mt-5 mb-[46px]">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t" style={{ borderColor: "#fc661e" }}></div>
+          </div>
+          <div className="relative bg-white px-5 z-10 flex items-center justify-center">
+            <img
+              src="/sun.png"
+              alt="Sun emblem"
+              className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] object-contain select-none"
+            />
+          </div>
+        </div>
+
+        {/* Marquee Container */}
+        <div className="relative w-full overflow-hidden">
+          {/* Gradient fade overlays for sides */}
+          <div className="absolute inset-y-0 left-0 w-8 md:w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-8 md:w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+          {/* Scrolling content */}
+          <div className="animate-marquee-ltr gap-x-8 md:gap-x-12">
+            {repeatedOfficials.map((official, idx) => (
+              <div
+                key={`${official.id}-${idx}`}
+                className="flex flex-col items-center justify-center text-center gap-4 py-4 px-6 md:px-8 border-r-[2px] border-dotted border-[#5f6368] last:border-0 shrink-0 w-[180px] md:w-[220px]"
+              >
+                {/* Circular Gradient Border Wrapper */}
+                <div 
+                  className="w-[104px] h-[104px] md:w-[114px] md:h-[114px] rounded-full flex items-center justify-center p-[3px] shadow-md shrink-0 bg-white"
+                  style={{
+                    background: "linear-gradient(to bottom, #fc661e 0%, rgba(252, 102, 30, 0) 90%)"
+                  }}
+                >
+                  {/* Inner White container ensuring a gap around the image */}
+                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center p-[3px]">
+                    <div className="w-full h-full rounded-full overflow-hidden bg-gray-50">
+                      <img
+                        src={official.image}
+                        alt={official.name}
+                        className="w-full h-full object-cover select-none pointer-events-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Text details */}
+                <div className="flex flex-col items-center min-w-0">
+                  <span 
+                    className="text-sm md:text-base font-bold text-[#202124] leading-tight"
+                    style={{ fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif" }}
+                  >
+                    {official.name}
+                  </span>
+                  <span 
+                    className="text-xs md:text-sm font-normal text-[#5f6368] leading-tight mt-1"
+                    style={{ fontFamily: "'Google Sans Flex', 'Google Sans', sans-serif" }}
+                  >
+                    {official.role}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -13,12 +13,16 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Hero from "@/components/layout/Hero";
+import Endorsements from "@/components/layout/Endorsements";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       {/* Hero Section */}
       <Hero />
+
+      {/* Endorsements Section */}
+      <Endorsements />
 
       {/* Stats Section */}
       <section id="stats" className="bg-primary text-white py-16">

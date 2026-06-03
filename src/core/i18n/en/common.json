@@ -46,6 +46,33 @@
     "visitor": "Visitor : 23",
     "blog": "Blog",
     "helpCenter": "Help Center"
+  },
+  "endorsements": {
+    "title": "Endorsed by Government of",
+    "brand": "Uttar Pradesh",
+    "description": "The PLEDGE scheme is supported and managed by high-ranking officials within the government, ensuring strong leadership and oversight throughout its implementation.",
+    "officials": {
+      "modi": {
+        "name": "Shri Narendra Modi",
+        "role": "Hon'ble Prime Minister of India"
+      },
+      "yogi": {
+        "name": "Shri Yogi Adityanath",
+        "role": "Hon'ble Chief Minister, Uttar Pradesh"
+      },
+      "patel": {
+        "name": "Smt. Anandiben Patel",
+        "role": "Hon'ble Governor, Uttar Pradesh"
+      },
+      "nandi": {
+        "name": "Shri Nand Gopal Gupta 'Nandi'",
+        "role": "Hon'ble Minister of Industrial Development, Uttar Pradesh"
+      },
+      "saini": {
+        "name": "Shri Jaswant Singh Saini",
+        "role": "Hon'ble Minister of State, Industrial Development, Uttar Pradesh"
+      }
+    }
   }
 }
 

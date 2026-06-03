@@ -24,7 +24,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-noto-sans)", "sans-serif"],
+        sans: ["'Google Sans Flex'", "'Google Sans'", "sans-serif"],
         hindi: ["var(--font-noto-sans-devanagari)", "sans-serif"],
       },
     },
