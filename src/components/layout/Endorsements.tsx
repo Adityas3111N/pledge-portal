@@ -20,7 +20,7 @@ export default function Endorsements() {
       id: "yogi",
       name: t("endorsements.officials.yogi.name"),
       role: t("endorsements.officials.yogi.role"),
-      image: "/yogiji.png"
+      image: "/yogiji.jpg"
     },
     {
       id: "patel",
@@ -103,18 +103,26 @@ export default function Endorsements() {
           </p>
         </div>
 
-        {/* Divider with Sun Icon */}
+        {/* Divider with Sun Icon — half-width, orange, fades at both ends */}
         <div className="relative flex items-center justify-center mt-4 md:mt-5 mb-[46px]">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-brand-primary"></div>
-          </div>
-          <div className="relative bg-bg-surface px-5 z-10 flex items-center justify-center">
+          {/* Left fade arm */}
+          <div
+            className="h-px w-1/4"
+            style={{ background: "linear-gradient(to left, var(--color-brand-primary), transparent)" }}
+          />
+          {/* Sun icon */}
+          <div className="flex items-center justify-center px-4 shrink-0">
             <img
               src="/sun.png"
               alt="Sun emblem"
               className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] object-contain select-none"
             />
           </div>
+          {/* Right fade arm */}
+          <div
+            className="h-px w-1/4"
+            style={{ background: "linear-gradient(to right, var(--color-brand-primary), transparent)" }}
+          />
         </div>
 
         {/* Marquee Container */}
@@ -132,13 +140,13 @@ export default function Endorsements() {
               >
                 {/* Circular Gradient Border Wrapper */}
                 <div 
-                  className="w-[104px] h-[104px] md:w-[114px] md:h-[114px] rounded-full flex items-center justify-center p-[3px] shadow-md shrink-0"
+                  className="w-[104px] h-[104px] md:w-[114px] md:h-[114px] rounded-full flex items-center justify-center p-[1.5px] shadow-md shrink-0"
                   style={{
                     background: "linear-gradient(to bottom, var(--color-brand-primary) 0%, rgba(255, 110, 40, 0) 90%)"
                   }}
                 >
                   {/* Inner white container ensuring a gap around the image */}
-                  <div className="w-full h-full rounded-full bg-bg-surface flex items-center justify-center p-[3px]">
+                  <div className="w-full h-full rounded-full bg-bg-surface flex items-center justify-center p-[2px]">
                     <div className="w-full h-full rounded-full overflow-hidden bg-bg-subtle">
                       <img
                         src={official.image}
