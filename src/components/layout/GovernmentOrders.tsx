@@ -76,7 +76,7 @@ export default function GovernmentOrders() {
         </div>
 
         {/* Cards Row */}
-        <div className="w-full grid grid-cols-5 gap-3 md:gap-4">
+        <div className="w-full grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
           {orders.map((order, index) => {
             const isActive = index === 3;
             return (

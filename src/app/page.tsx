@@ -5,6 +5,9 @@ import PledgeGlance from "@/components/layout/PledgeGlance";
 import ApplicationFlow from "@/components/layout/ApplicationFlow";
 import CoreOfferings from "@/components/layout/CoreOfferings";
 import GovernmentOrders from "@/components/layout/GovernmentOrders";
+import FAQ from "@/components/layout/FAQ";
+import CTABanner from "@/components/layout/CTABanner";
+import PledgeWatermark from "@/components/layout/PledgeWatermark";
 
 export default function HomePage() {
   return (
@@ -29,6 +32,15 @@ export default function HomePage() {
 
       {/* Government Orders (Shasanadesh) */}
       <GovernmentOrders />
+
+      {/* FAQ */}
+      <FAQ />
+
+      {/* CTA Banner */}
+      <CTABanner />
+
+      {/* PLEDGE Watermark Footer Text */}
+      <PledgeWatermark />
     </div>
   );
 }

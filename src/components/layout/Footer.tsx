@@ -71,7 +71,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-bg-surface border-t border-border-light mt-auto font-sans">
+    <footer className="w-full bg-bg-surface mt-auto font-sans">
       {/* ── MAIN FOOTER CONTENT — Figma: 1440w, padding 48/80, gap 33 ── */}
       <div
         className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[40px] xl:px-[80px] py-8 lg:py-[48px] flex flex-col"

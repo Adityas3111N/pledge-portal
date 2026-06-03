@@ -187,6 +187,35 @@
         "date": "01.02.2023"
       }
     }
+  },
+  "faq": {
+    "titleLine1": "Got questions?",
+    "titleLine2": "We've got",
+    "titleAccent": "answers.",
+    "items": {
+      "item1": {
+        "question": "What exactly is an \"Pledge Schema\"?"
+      },
+      "item2": {
+        "question": "What is the minimum land area required?"
+      },
+      "item3": {
+        "question": "What financial benefits are available?"
+      },
+      "item4": {
+        "question": "What financial benefits are available?"
+      }
+    }
+  },
+  "ctaBanner": {
+    "connectTitle": "Connect With Us",
+    "phone": "92+ (8220)874287",
+    "website": "pledge.up.gov.in",
+    "titlePart1": "Unlock Your",
+    "titlePart2": "Industrial Park Potential",
+    "titlePart3": "with PLEDGE!",
+    "description": "Discover how PLEDGE can help you fully unlock and maximize the potential of your industrial park, driving growth and innovation like never before!",
+    "cta": "Start application"
   }
 }
 

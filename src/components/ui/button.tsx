@@ -19,6 +19,8 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
+        "gradient-dark":
+          "bg-gradient-to-b from-[#1B1B1B] to-[#000000] text-text-inverse border-[#1B1B1B] shadow-[inset_0_4px_8px_rgba(255,255,255,0.25)] hover:from-[#202020] hover:to-[#000000] active:scale-[0.98]",
       },
       size: {
         default:

@@ -359,11 +359,12 @@ export default function Navbar() {
 
           {/* CTA Buttons */}
           <div className="flex items-center gap-[6px] h-[38px]">
-            <button 
-              className="h-[38px] px-[12px] py-[10px] rounded-[8px] bg-gradient-to-b from-[#1B1B1B] to-[#000000] text-text-inverse text-[13px] font-medium cursor-pointer border border-[#1B1B1B] shadow-[inset_0_4px_8px_rgba(255,255,255,0.25)] hover:from-[#202020] hover:to-[#000000] active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none flex items-center justify-center"
+            <Button 
+              variant="gradient-dark"
+              className="h-[38px] px-[12px] py-[10px] rounded-[8px] text-[13px] font-medium"
             >
               {t("navbar.newRegistration")}
-            </button>
+            </Button>
             <button 
               className="h-[38px] px-[12px] py-[10px] rounded-[8px] bg-bg-surface text-text-primary text-[13px] font-medium cursor-pointer border border-[#CFCFCF] shadow-[inset_0_4px_8px_rgba(185,185,185,0.25)] hover:bg-bg-subtle active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none flex items-center justify-center"
             >
