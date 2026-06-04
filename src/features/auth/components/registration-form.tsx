@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { registrationSchema, RegistrationFormValues } from "../schemas/auth.schema";
 import { useFormPersist } from "@/hooks/useFormPersist";
 import { EntityTypes, Districts } from "@/constants/enums";
-import { User, FileText, LayoutGrid } from "lucide-react";
+import { User, FileText, LayoutGrid, ChevronRight } from "lucide-react";
 
 import { Input } from "@/components/ui/inputFields/input/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/inputFields/select/select";
@@ -202,25 +202,25 @@ export function RegistrationForm() {
           type="button" 
           onClick={handleSaveDraft} 
           variant="outline" 
-          className="h-[44px] w-full sm:w-auto px-8 border-gray-300 text-gray-800 font-medium rounded-lg"
+          className="hidden sm:flex h-[44px] w-full sm:w-auto px-8 border-gray-300 text-gray-800 font-medium rounded-lg"
         >
           {t("registration.saveDraft")}
         </Button>
-        <div className="flex w-full sm:w-[336px] max-w-full h-[44px] gap-[16px]">
+        <div className="flex w-full sm:w-[336px] max-w-full h-[44px] gap-[12px] sm:gap-[16px]">
           <Button 
             type="button" 
             onClick={handleReset} 
             variant="outline" 
-            className="h-full flex-1 px-0 border-gray-300 text-gray-800 font-medium rounded-lg"
+            className="h-full flex-1 px-0 border-gray-300 text-gray-800 font-medium rounded-lg text-[13px] sm:text-[14px]"
           >
             {t("registration.resetData")}
           </Button>
           <Button 
             type="submit" 
             disabled={isSubmitting}
-            className="h-full flex-[1.5] px-0 bg-brand-primary hover:bg-brand-primary/90 text-white font-medium rounded-lg text-[15px] sm:text-[16px] whitespace-nowrap"
+            className="h-full flex-[1.5] sm:flex-[1.8] px-0 bg-brand-primary hover:bg-brand-primary/90 text-white font-medium rounded-lg text-[13px] sm:text-[15px] whitespace-nowrap flex items-center justify-center gap-1"
           >
-            {t("registration.sendOtp")}
+            {t("registration.sendOtp")} <ChevronRight className="w-4 h-4" />
           </Button>
         </div>
       </div>

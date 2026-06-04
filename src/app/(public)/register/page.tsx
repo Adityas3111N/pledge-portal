@@ -46,10 +46,10 @@ export default function RegisterPage() {
            
            {/* Heading */}
            <div className="w-full flex flex-col gap-[12px] text-center px-2">
-              <h1 className="font-poppins font-medium text-[40px] leading-[1.2] text-[#1A1A1A] tracking-tight whitespace-nowrap">
-                 <span className="text-[#FF6A16]">{t("registration.pageTitle")}</span> {t("registration.pageSubtitle")}
+              <h1 className="font-poppins font-medium text-[32px] sm:text-[40px] leading-[1.2] text-[#1A1A1A] tracking-tight whitespace-normal sm:whitespace-nowrap max-w-[280px] sm:max-w-none mx-auto">
+                 <span className="text-[#FF6A16]">{t("registration.pageTitle")}</span> <br className="block sm:hidden" /> {t("registration.pageSubtitle")}
               </h1>
-              <p className="font-poppins font-normal text-[16px] leading-[26px] text-[#4B4B4B] max-w-[680px] mx-auto">
+              <p className="font-poppins font-normal text-[14px] sm:text-[16px] leading-[22px] sm:leading-[26px] text-[#4B4B4B] max-w-[680px] mx-auto">
                  {t("registration.pageDesc")}
               </p>
            </div>
