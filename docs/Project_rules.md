@@ -67,3 +67,10 @@
   - Format: `type(scope): description`
   - Valid types: `feat`, `fix`, `perf`, `refactor`, `style`, `docs`, `chore`, `test`.
   - Ensure descriptions are clear and concise.
+
+## Performance & Best Practices
+
+- **Image Optimization**: Never use standard `<img>` tags. Always use `next/image`. Above-the-fold images must have `priority`. Images with `fill` must be inside a `relative` positioned container.
+- **Lazy Loading**: Use `next/dynamic` to lazy-load Client Components that sit below the fold. This strictly controls the initial JS bundle size and main-thread work.
+- **React State**: Never sync external browser state (like `matchMedia`) inside a `useEffect`. Use `useSyncExternalStore` to prevent cascading renders and hydration errors.
+- **Font Optimization**: Fonts must use `next/font` and inject variables directly into the document `body` to avoid render-blocking requests.

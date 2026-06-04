@@ -1,0 +1,29 @@
+---
+description: Performance and Best Practices for Next.js
+globs: ["src/**/*.{ts,tsx}"]
+alwaysApply: true
+---
+
+# Performance & Best Practices
+
+To maintain a 100/100 Lighthouse score and world-class performance, follow these strict rules:
+
+## 1. Image Optimization
+- **NEVER** use standard HTML `<img>` tags.
+- **ALWAYS** use `next/image` (`<Image />`).
+- Images above the fold (like hero banners) MUST use the `priority` attribute to optimize Largest Contentful Paint (LCP).
+- When using `fill`, the parent container MUST have `relative`, `absolute`, or `fixed` positioning to prevent aspect ratio distortion and layout shifts.
+- Always utilize `sizes` for responsive imagery to prevent serving excessively large images to mobile users.
+
+## 2. Code Splitting & JavaScript Bundle
+- Client Components (`"use client"`) that are rendered below the fold MUST be lazy-loaded using `next/dynamic`.
+- Example: `const FAQ = dynamic(() => import('@/components/layout/FAQ'));`
+- This minimizes the main-thread workload and reduces unused JavaScript on initial load.
+
+## 3. Hydration & React State
+- Avoid using `useState` and `useEffect` to sync external state or browser APIs (like `matchMedia`), as this causes synchronous cascading re-renders.
+- **ALWAYS** use `useSyncExternalStore` for reading browser state to guarantee hydration safety and maximum performance.
+
+## 4. Fonts
+- Fonts MUST be loaded via `next/font/google` or `next/font/local` using CSS variables.
+- Ensure the font variable (e.g., `${inter.variable}`) is applied to the root layout `<body>` tag to prevent render-blocking HTTP requests.
