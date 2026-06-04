@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 
@@ -90,22 +91,32 @@ export default function Hero() {
             right: "0px",
           }}
         >
-          <img 
+          <Image 
             src="/hero-image.jpg" 
             alt="Official government review session group" 
-            className="w-full h-full object-cover object-[52%_center]"
+            fill
+            priority
+            sizes="100vw"
+            quality={90}
+            className="object-cover object-[52%_center]"
           />
         </div>
 
-        {/* 2. Hero Layer Orange Mask (Left Side overlaying Image - Narrower Width) */}
-        <img 
-          src="/hero-layer.png" 
-          alt="" 
+        <div 
           className="absolute top-0 h-full z-20 pointer-events-none select-none lg:w-[710px] 2xl:w-[900px]"
           style={{
             left: "calc(50% - 720px)",
           }}
-        />
+        >
+          <Image 
+            src="/hero-layer.png" 
+            alt="" 
+            fill
+            priority
+            sizes="(max-width: 1536px) 710px, 900px"
+            className="object-cover object-right"
+          />
+        </div>
 
         {/* Centered Content Wrapper (1440px grid align) */}
         <div className="relative w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto h-full pointer-events-none">
@@ -149,11 +160,16 @@ export default function Hero() {
         {/* Upper Orange Content Area with Jagged Background Overlay */}
         <div className="relative w-full pt-16 pb-32 px-6 sm:px-12 flex flex-col z-20">
           {/* Mobile Jagged Mask as the background container extending below */}
-          <img 
-            src="/hero-layer-mobile.png" 
-            alt="" 
-            className="absolute top-0 left-0 w-full h-[calc(100%+70px)] object-fill pointer-events-none select-none z-10"
-          />
+          <div className="absolute top-0 left-0 w-full h-[calc(100%+70px)] z-10 pointer-events-none select-none">
+            <Image 
+              src="/hero-layer-mobile.png" 
+              alt="" 
+              fill
+              priority
+              sizes="100vw"
+              className="object-fill"
+            />
+          </div>
 
           {/* Text and Button content on top of the background image */}
           <div className="relative z-20 flex flex-col gap-6 text-left">
@@ -173,10 +189,14 @@ export default function Hero() {
 
         {/* Lower Photo Area */}
         <div className="w-full aspect-[0.95] relative overflow-hidden z-10 mt-[-5px]">
-          <img 
+          <Image 
             src="/hero-image.jpg" 
             alt="Official government review session group" 
-            className="absolute inset-0 w-full h-full object-cover object-[48%_center]"
+            fill
+            priority
+            sizes="100vw"
+            quality={90}
+            className="object-cover object-[48%_center]"
           />
 
           {/* Carousel Navigation Arrows centered at the bottom of the photo */}

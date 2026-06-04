@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, ChevronDown } from "lucide-react";
+import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslation";
 
 const socialLinks = [
@@ -84,9 +85,11 @@ export default function Footer() {
             {/* Logo + Title */}
             <div className="flex items-center gap-2.5">
               <div className="w-[36px] h-[36px] rounded-full border-[1px] flex items-center justify-center bg-bg-surface flex-shrink-0" style={{ borderColor: "var(--color-brand-primary)" }}>
-                <img
+                <Image
                   src="/upgovlogo.png"
                   alt="Government of Uttar Pradesh emblem"
+                  width={24}
+                  height={24}
                   className="w-[24px] h-[24px] object-contain"
                 />
               </div>

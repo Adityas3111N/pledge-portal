@@ -1,12 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { 
-  ChevronDown, 
-  Menu, 
-  Search,
-  Phone
-} from "lucide-react";
+import { Search, Phone, Menu, ChevronDown } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { 
   Sheet, 
@@ -103,9 +99,11 @@ export default function Navbar() {
               className="w-[36px] h-[36px] sm:w-[52px] sm:h-[52px] md:w-[56px] md:h-[56px] rounded-full border-[1px] flex items-center justify-center bg-bg-surface flex-shrink-0"
               style={{ borderColor: "var(--color-brand-primary)" }}
             >
-              <img 
+              <Image 
                 src="/upgovlogo.png" 
                 alt="Government of Uttar Pradesh Logo" 
+                width={42}
+                height={42}
                 className="w-[24px] h-[24px] sm:w-[38px] sm:h-[38px] md:w-[42px] md:h-[42px] object-contain" 
               />
             </div>
@@ -122,15 +120,19 @@ export default function Navbar() {
 
           {/* Right: Partner logos (Desktop) */}
           <div className="hidden lg:flex items-center gap-6">
-            <img 
+            <Image 
               src="/makeinindialogo.png" 
               alt="Make in India" 
-              className="h-[58px] object-contain mix-blend-multiply contrast-[1.8] brightness-[1.1]" 
+              width={160}
+              height={58}
+              className="w-auto h-[58px] object-contain mix-blend-multiply contrast-[1.8] brightness-[1.1]" 
             />
-            <img 
+            <Image 
               src="/investinuplogo.png" 
               alt="Invest UP" 
-              className="h-[52px] object-contain mix-blend-multiply contrast-[1.5] brightness-[1.15]" 
+              width={160}
+              height={52}
+              className="w-auto h-[52px] object-contain mix-blend-multiply contrast-[1.5] brightness-[1.15]" 
             />
           </div>
 
@@ -146,9 +148,11 @@ export default function Navbar() {
                 {/* Official Government Branding Header */}
                 <div className="flex items-center gap-2.5 pb-4 border-b border-border-medium">
                   <div className="w-[34px] h-[34px] rounded-full border-[1.5px] border-[#FF6E28] flex items-center justify-center bg-bg-surface flex-shrink-0">
-                    <img 
+                    <Image 
                       src="/upgovlogo.png" 
                       alt="Government of Uttar Pradesh Emblem" 
+                      width={22}
+                      height={22}
                       className="w-[22px] h-[22px] object-contain" 
                     />
                   </div>

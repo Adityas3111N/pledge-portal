@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguageStore } from "@/store/language.store";
 
@@ -112,9 +113,11 @@ export default function Endorsements() {
           />
           {/* Sun icon */}
           <div className="flex items-center justify-center px-4 shrink-0">
-            <img
+            <Image
               src="/sun.png"
               alt="Sun emblem"
+              width={24}
+              height={24}
               className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] object-contain select-none"
             />
           </div>
@@ -147,11 +150,13 @@ export default function Endorsements() {
                 >
                   {/* Inner white container ensuring a gap around the image */}
                   <div className="w-full h-full rounded-full bg-bg-surface flex items-center justify-center p-[2px]">
-                    <div className="w-full h-full rounded-full overflow-hidden bg-bg-subtle">
-                      <img
+                    <div className="relative w-full h-full rounded-full overflow-hidden bg-bg-subtle">
+                      <Image
                         src={official.image}
                         alt={official.name}
-                        className="w-full h-full object-cover select-none pointer-events-none"
+                        fill
+                        sizes="114px"
+                        className="object-cover select-none pointer-events-none"
                       />
                     </div>
                   </div>

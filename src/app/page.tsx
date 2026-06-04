@@ -1,13 +1,15 @@
 import Hero from "@/components/layout/Hero";
 import Endorsements from "@/components/layout/Endorsements";
-import KeyInitiatives from "@/components/layout/KeyInitiatives";
-import PledgeGlance from "@/components/layout/PledgeGlance";
-import ApplicationFlow from "@/components/layout/ApplicationFlow";
-import CoreOfferings from "@/components/layout/CoreOfferings";
-import GovernmentOrders from "@/components/layout/GovernmentOrders";
-import FAQ from "@/components/layout/FAQ";
-import CTABanner from "@/components/layout/CTABanner";
-import PledgeWatermark from "@/components/layout/PledgeWatermark";
+import dynamic from "next/dynamic";
+
+const KeyInitiatives = dynamic(() => import("@/components/layout/KeyInitiatives"));
+const PledgeGlance = dynamic(() => import("@/components/layout/PledgeGlance"));
+const ApplicationFlow = dynamic(() => import("@/components/layout/ApplicationFlow"));
+const CoreOfferings = dynamic(() => import("@/components/layout/CoreOfferings"));
+const GovernmentOrders = dynamic(() => import("@/components/layout/GovernmentOrders"));
+const FAQ = dynamic(() => import("@/components/layout/FAQ"));
+const CTABanner = dynamic(() => import("@/components/layout/CTABanner"));
+const PledgeWatermark = dynamic(() => import("@/components/layout/PledgeWatermark"));
 
 export default function HomePage() {
   return (

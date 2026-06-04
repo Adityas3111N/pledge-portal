@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslation";
 
 const orders = [
@@ -43,10 +44,12 @@ export default function GovernmentOrders() {
     <section className="w-full relative overflow-hidden">
       {/* Full-width Background Image */}
       <div className="absolute inset-0 w-full h-full">
-        <img
+        <Image
           src="/bg_image_shashanadesh.png"
           alt=""
-          className="w-full h-full object-cover"
+          fill
+          sizes="100vw"
+          className="object-cover"
           aria-hidden="true"
         />
       </div>
