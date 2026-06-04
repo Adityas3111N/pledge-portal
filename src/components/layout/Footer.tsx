@@ -79,7 +79,7 @@ export default function Footer() {
         style={{ gap: "33px" }}
       >
         {/* Top section — Figma: 1280w, h-208, gap 48 */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-[48px] overflow-hidden">
+        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-[48px] overflow-hidden w-full">
           {/* Column 1: Branding & Social */}
           <div className="flex flex-col gap-5 lg:max-w-[300px] shrink-0">
             {/* Logo + Title */}
@@ -196,9 +196,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-brand-primary shrink-0 mt-0.5" />
-                <span className="text-[11px] text-text-muted font-medium leading-relaxed break-words">
-                  {t("footer.address")}
-                </span>
+                <div className="flex flex-col text-[11px] text-text-muted font-medium leading-relaxed break-words">
+                  {t("footer.address").split('\n').map((line, index) => (
+                    <span key={index}>{line}</span>
+                  ))}
+                </div>
               </li>
             </ul>
           </div>

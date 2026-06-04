@@ -4,11 +4,11 @@ import React from "react";
 
 export default function PledgeWatermark() {
   return (
-    <section className="w-full bg-white relative overflow-hidden flex items-start justify-center min-h-[150px] md:h-[400px] pt-12 md:pt-16">
+    <section className="w-full bg-white relative overflow-hidden flex items-center justify-center pt-10 md:pt-16 pb-6 md:pb-10">
       <div 
-        className="font-sans font-medium leading-[100%] select-none whitespace-nowrap"
+        className="font-sans font-medium leading-[0.85] select-none whitespace-nowrap text-center"
         style={{
-          fontSize: "clamp(120px, 28vw, 400px)",
+          fontSize: "clamp(60px, 22.5vw, 450px)",
           background: "linear-gradient(180deg, #DBDBDB 0%, #FFFFFF 75.89%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
