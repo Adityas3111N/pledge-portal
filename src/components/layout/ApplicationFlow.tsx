@@ -54,6 +54,7 @@ export default function ApplicationFlow() {
             src="/path.png"
             alt="Path"
             fill
+            sizes="100vw"
             className="object-contain"
             priority
           />
@@ -73,6 +74,7 @@ export default function ApplicationFlow() {
                   src="/location.png"
                   alt={`Location ${index + 1}`}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-contain hover:scale-110 transition-transform cursor-pointer drop-shadow-md"
                 />
                 

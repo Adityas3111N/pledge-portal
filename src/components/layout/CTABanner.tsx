@@ -32,6 +32,7 @@ export default function CTABanner() {
             src="/ram_mandir_image.svg"
             alt="Ram Mandir"
             fill
+            sizes="(max-width: 1024px) 100vw, 480px"
             className="object-contain object-bottom"
             unoptimized
           />
