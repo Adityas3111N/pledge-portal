@@ -17,7 +17,7 @@ To maintain a 100/100 Lighthouse score and world-class performance, follow these
 
 ## 2. Code Splitting & JavaScript Bundle
 - Client Components (`"use client"`) that are rendered below the fold MUST be lazy-loaded using `next/dynamic`.
-- Example: `const FAQ = dynamic(() => import('@/components/layout/FAQ'));`
+- Example: `const FAQ = dynamic(() => import('@/components/home/FAQ'));`
 - This minimizes the main-thread workload and reduces unused JavaScript on initial load.
 
 ## 3. Hydration & React State

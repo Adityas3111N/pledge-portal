@@ -47,6 +47,9 @@ pledge-portal/
 │   │   ├── layout.tsx
 │   │   └── page.tsx
 │   ├── components
+│   │   ├── home
+│   │   │   ├── Hero.tsx
+│   │   │   └── ... (other home-specific sections)
 │   │   ├── layout
 │   │   │   ├── Footer.tsx
 │   │   │   └── Navbar.tsx

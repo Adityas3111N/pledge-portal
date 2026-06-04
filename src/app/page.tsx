@@ -1,15 +1,15 @@
-import Hero from "@/components/layout/Hero";
-import Endorsements from "@/components/layout/Endorsements";
+import Hero from "@/components/home/Hero";
+import Endorsements from "@/components/home/Endorsements";
 import dynamic from "next/dynamic";
 
-const KeyInitiatives = dynamic(() => import("@/components/layout/KeyInitiatives"));
-const PledgeGlance = dynamic(() => import("@/components/layout/PledgeGlance"));
-const ApplicationFlow = dynamic(() => import("@/components/layout/ApplicationFlow"));
-const CoreOfferings = dynamic(() => import("@/components/layout/CoreOfferings"));
-const GovernmentOrders = dynamic(() => import("@/components/layout/GovernmentOrders"));
-const FAQ = dynamic(() => import("@/components/layout/FAQ"));
-const CTABanner = dynamic(() => import("@/components/layout/CTABanner"));
-const PledgeWatermark = dynamic(() => import("@/components/layout/PledgeWatermark"));
+const KeyInitiatives = dynamic(() => import("@/components/home/KeyInitiatives"));
+const PledgeGlance = dynamic(() => import("@/components/home/PledgeGlance"));
+const ApplicationFlow = dynamic(() => import("@/components/home/ApplicationFlow"));
+const CoreOfferings = dynamic(() => import("@/components/home/CoreOfferings"));
+const GovernmentOrders = dynamic(() => import("@/components/home/GovernmentOrders"));
+const FAQ = dynamic(() => import("@/components/home/FAQ"));
+const CTABanner = dynamic(() => import("@/components/home/CTABanner"));
+const PledgeWatermark = dynamic(() => import("@/components/home/PledgeWatermark"));
 
 export default function HomePage() {
   return (
