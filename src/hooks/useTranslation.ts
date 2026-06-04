@@ -1,22 +1,21 @@
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import { useLanguageStore, Language } from "@/store/language.store";
 import enTranslations from "@/core/i18n/en/common.json";
 import hiTranslations from "@/core/i18n/hi/common.json";
 
-const translations: Record<Language, any> = {
-  en: enTranslations,
-  hi: hiTranslations,
+const translations: Record<Language, Record<string, unknown>> = {
+  en: enTranslations as Record<string, unknown>,
+  hi: hiTranslations as Record<string, unknown>,
 };
+
+const emptySubscribe = () => () => {};
 
 export function useTranslation() {
   const language = useLanguageStore((state) => state.language);
   const setLanguage = useLanguageStore((state) => state.setLanguage);
   
   // Guard against hydration mismatch (Next.js SSR/Hydration)
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
   // Default to English translations during hydration (server/first client render)
   const activeLanguage = mounted ? language : "en";
@@ -24,17 +23,17 @@ export function useTranslation() {
 
   const t = (path: string): string => {
     const keys = path.split(".");
-    let current: any = activeDict;
+    let current: unknown = activeDict;
 
     for (const key of keys) {
       if (current && typeof current === "object" && key in current) {
-        current = current[key];
+        current = (current as Record<string, unknown>)[key];
       } else {
         // Fallback to English dictionary if key missing in active translation
-        let fallback: any = translations.en;
+        let fallback: unknown = translations.en;
         for (const fKey of keys) {
           if (fallback && typeof fallback === "object" && fKey in fallback) {
-            fallback = fallback[fKey];
+            fallback = (fallback as Record<string, unknown>)[fKey];
           } else {
             return path; // Return raw path if key is completely missing
           }

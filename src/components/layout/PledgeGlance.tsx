@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguageStore } from "@/store/language.store";
 
@@ -85,8 +86,6 @@ const SmileyIcon = () => (
 
 export default function PledgeGlance() {
   const { t } = useTranslation();
-  const { language } = useLanguageStore();
-  const isHindi = language === "hi";
 
   const statsItems = [
     {
@@ -116,10 +115,12 @@ export default function PledgeGlance() {
       
       {/* Decorative Green Organic Leaf Shape on the Left */}
       <div className="absolute left-0 top-[20px] w-[74px] h-[418px] select-none pointer-events-none hidden lg:block">
-        <img
+        <Image
           src="/green_shape.png"
           alt="Green decorative shape"
-          className="w-full h-full object-contain"
+          fill
+          sizes="74px"
+          className="object-contain"
         />
       </div>
 
@@ -169,10 +170,12 @@ export default function PledgeGlance() {
         <div className="w-full lg:w-[48%] xl:w-[520px] lg:h-[460px] relative mt-8 lg:mt-0 flex justify-center items-end">
           <div className="relative w-full h-full flex items-end justify-center">
             {/* Map Image */}
-            <img
+            <Image
               src="/upmap.png"
               alt="Uttar Pradesh Map"
-              className="h-full w-auto object-contain select-none pointer-events-none drop-shadow-md"
+              fill
+              sizes="(max-width: 1024px) 100vw, 520px"
+              className="object-contain select-none pointer-events-none drop-shadow-md"
             />
           </div>
         </div>
