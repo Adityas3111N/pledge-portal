@@ -125,6 +125,7 @@ export default function Navbar() {
               alt="Make in India" 
               width={160}
               height={58}
+              style={{ width: "auto" }}
               className="w-auto h-[58px] object-contain mix-blend-multiply contrast-[1.8] brightness-[1.1]" 
             />
             <Image 
@@ -132,6 +133,7 @@ export default function Navbar() {
               alt="Invest UP" 
               width={160}
               height={52}
+              style={{ width: "auto" }}
               className="w-auto h-[52px] object-contain mix-blend-multiply contrast-[1.5] brightness-[1.15]" 
             />
           </div>

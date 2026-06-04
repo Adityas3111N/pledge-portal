@@ -96,8 +96,7 @@ export default function Hero() {
             alt="Official government review session group" 
             fill
             priority
-            sizes="100vw"
-            quality={90}
+            sizes="(max-width: 1024px) 100vw, 60vw"
             className="object-cover object-[52%_center]"
           />
         </div>
@@ -166,7 +165,7 @@ export default function Hero() {
               alt="" 
               fill
               priority
-              sizes="100vw"
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-fill"
             />
           </div>
@@ -194,8 +193,7 @@ export default function Hero() {
             alt="Official government review session group" 
             fill
             priority
-            sizes="100vw"
-            quality={90}
+            sizes="(max-width: 1024px) 100vw, 60vw"
             className="object-cover object-[48%_center]"
           />
 

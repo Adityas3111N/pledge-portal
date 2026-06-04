@@ -207,13 +207,13 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── BOTTOM BAR — Figma: 1280w, h-48, gap 48 ── */}
+      {/* ── BOTTOM BAR ── */}
       <div className="w-full">
-        <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[40px] xl:px-[80px] border-t border-border-light">
+        <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[40px] xl:px-[80px]">
           {/* Desktop bottom bar */}
-          <div className="hidden lg:flex items-center justify-between h-[48px] gap-[48px]">
+          <div className="hidden lg:flex items-center justify-between border-t border-[#D9D9D9] w-full pt-8 pb-12 mt-4">
             {/* Left Side */}
-            <div className="flex items-center gap-[48px] text-[13px] text-text-secondary font-normal">
+            <div className="flex items-center gap-[48px] text-[13px] text-text-primary font-semibold">
               <span>{t("footer.copyright")}</span>
               <span>{t("footer.visitor")}</span>
             </div>
@@ -224,7 +224,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="text-sm font-medium text-text-muted hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
+                    className="text-[13px] font-semibold text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                   >
                     {t("navbar.home")}
                   </a>
@@ -234,7 +234,7 @@ export default function Footer() {
                 <li className="relative group">
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
-                    className="flex items-center gap-1 text-sm font-medium text-text-muted hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
+                    className="flex items-center gap-1 text-[13px] font-semibold text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                     aria-expanded={servicesOpen}
                     aria-haspopup="true"
                   >
@@ -271,7 +271,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="text-sm font-medium text-text-muted hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
+                    className="text-[13px] font-semibold text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                   >
                     {t("footer.blog")}
                   </a>
@@ -279,7 +279,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="text-sm font-medium text-text-muted hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
+                    className="text-[13px] font-semibold text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                   >
                     {t("footer.helpCenter")}
                   </a>
@@ -287,7 +287,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="text-sm font-medium text-text-muted hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
+                    className="text-[13px] font-semibold text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                   >
                     {t("navbar.about")}
                   </a>
