@@ -59,3 +59,11 @@
   - All dynamic dates, times, or calendars must format output dynamically using the selected language's locale (e.g. `en-US` or `hi-IN`).
 - **Strict Hydration Safety**:
   - Any client-side components using persistent i18n state must ensure proper hydration guards (checking if mounted) to prevent Next.js SSR hydration warnings.
+
+## Git & Version Control
+
+- **Conventional Commits Mandatory**:
+  - Every commit message must follow the Conventional Commits specification.
+  - Format: `type(scope): description`
+  - Valid types: `feat`, `fix`, `perf`, `refactor`, `style`, `docs`, `chore`, `test`.
+  - Ensure descriptions are clear and concise.

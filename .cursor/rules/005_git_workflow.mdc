@@ -1,0 +1,23 @@
+---
+description: Git and Version Control rules
+globs: ["*"]
+alwaysApply: true
+---
+
+# Git Workflow
+
+- **Conventional Commits**: Every commit message MUST follow the Conventional Commits specification.
+  - Format: `<type>(<scope>): <short description>`
+  - Example: `feat(auth): add user login functionality`
+  - Example: `style(nav): align navbar layouts and borders`
+  - Example: `perf(hooks): replace useEffect with useSyncExternalStore`
+
+# Valid Commit Types
+- `feat`: A new feature
+- `fix`: A bug fix
+- `perf`: A code change that improves performance
+- `refactor`: A code change that neither fixes a bug nor adds a feature
+- `style`: Changes that do not affect the meaning of the code (white-space, formatting, CSS adjustments)
+- `docs`: Documentation only changes
+- `chore`: Routine tasks, dependency updates, tooling changes
+- `test`: Adding missing tests or correcting existing tests
