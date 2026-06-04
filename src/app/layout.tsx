@@ -12,8 +12,7 @@ export const metadata: Metadata = {
   description: "Streamlined pledge and development review system endorsed by Government of Uttar Pradesh",
 };
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
 
 export default function RootLayout({
   children,
@@ -23,11 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased min-h-screen flex flex-col ${inter.variable}`} suppressHydrationWarning>
-        <Navbar />
-        <main className="flex-1">
+        <ConditionalLayout>
           {children}
-        </main>
-        <Footer />
+        </ConditionalLayout>
       </body>
     </html>
   );

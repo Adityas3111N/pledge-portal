@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Search, Phone, Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { 
   Sheet, 
@@ -271,8 +272,10 @@ export default function Navbar() {
                   </a>
 
                   <div className="flex flex-col gap-2">
-                    <Button className="w-full bg-neutral-900 hover:bg-black text-white font-semibold rounded-xl py-2.5 shadow-sm text-sm">
-                      {t("navbar.newRegistration")}
+                    <Button asChild className="w-full bg-neutral-900 hover:bg-black text-white font-semibold rounded-xl py-2.5 shadow-sm text-sm">
+                      <Link href="/register">
+                        {t("navbar.newRegistration")}
+                      </Link>
                     </Button>
                     <Button variant="outline" className="w-full font-semibold border-border-light text-text-primary hover:bg-bg-subtle rounded-xl py-2.5 text-sm shadow-xs">
                       {t("navbar.logIn")}
@@ -366,10 +369,13 @@ export default function Navbar() {
           {/* CTA Buttons */}
           <div className="flex items-center gap-[6px] h-[38px]">
             <Button 
+              asChild
               variant="gradient-dark"
-              className="h-[38px] px-[12px] py-[10px] rounded-[8px] text-[13px] font-medium"
+              className="cursor-pointer h-[38px] px-[12px] py-[10px] rounded-[8px] text-[13px] font-medium"
             >
-              {t("navbar.newRegistration")}
+              <Link href="/register">
+                {t("navbar.newRegistration")}
+              </Link>
             </Button>
             <button 
               className="h-[38px] px-[12px] py-[10px] rounded-[8px] bg-bg-surface text-text-primary text-[13px] font-medium cursor-pointer border border-[#CFCFCF] shadow-[inset_0_4px_8px_rgba(185,185,185,0.25)] hover:bg-bg-subtle active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none flex items-center justify-center"
