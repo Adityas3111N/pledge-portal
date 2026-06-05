@@ -197,7 +197,7 @@ export default function Navbar() {
                 {/* Structured Scheme Navigation */}
                 <nav className="flex flex-col gap-1 text-xs font-semibold text-text-muted" aria-label="Mobile Navigation Drawer">
                   <Link href="/" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary active:bg-bg-subtle p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.home")}</Link>
-                  <a href="#" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary active:bg-bg-subtle p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.about")}</a>
+                  <Link href="/about" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary active:bg-bg-subtle p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.about")}</Link>
                   
                   <div className="border-b border-border-medium">
                     <button 
@@ -321,12 +321,12 @@ export default function Navbar() {
               {t("navbar.home")}
             </Link>
             
-            <a 
-              href="#" 
+            <Link 
+              href="/about" 
               className="px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
             >
               {t("navbar.about")}
-            </a>
+            </Link>
 
             <div className="relative group flex items-center h-[25px]">
               <button 

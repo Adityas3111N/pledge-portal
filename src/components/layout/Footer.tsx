@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslation } from "@/hooks/useTranslation";
 
 const socialLinks = [
@@ -285,12 +286,12 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/about"
                     className="text-[13px] font-semibold text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                   >
                     {t("navbar.about")}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -327,9 +328,9 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
+                  <Link href="/about" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
                     {t("navbar.about")}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

@@ -9,7 +9,6 @@ const CoreOfferings = dynamic(() => import("@/components/home/CoreOfferings"));
 const GovernmentOrders = dynamic(() => import("@/components/home/GovernmentOrders"));
 const FAQ = dynamic(() => import("@/components/home/FAQ"));
 const CTABanner = dynamic(() => import("@/components/home/CTABanner"));
-const PledgeWatermark = dynamic(() => import("@/components/home/PledgeWatermark"));
 
 export default function HomePage() {
   return (
@@ -41,8 +40,6 @@ export default function HomePage() {
       {/* CTA Banner */}
       <CTABanner />
 
-      {/* PLEDGE Watermark Footer Text */}
-      <PledgeWatermark />
     </div>
   );
 }
