@@ -94,7 +94,7 @@ export default function Navbar() {
       <div className="bg-bg-surface font-sans border-b border-border-light">
         <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-3 sm:px-4 md:px-6 lg:px-[42px] py-3 flex justify-between items-center gap-3">
           {/* Left: Emblem + Title */}
-          <div className="flex items-center gap-2 sm:gap-3.5 min-w-0">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3.5 min-w-0 hover:opacity-90 transition-opacity">
             {/* UP Gov Emblem */}
             <div 
               className="w-[36px] h-[36px] sm:w-[52px] sm:h-[52px] md:w-[56px] md:h-[56px] rounded-full border-[1px] flex items-center justify-center bg-bg-surface flex-shrink-0"
@@ -117,7 +117,7 @@ export default function Navbar() {
                 {t("navbar.subtitle")}
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Right: Partner logos (Desktop) */}
           <div className="hidden lg:flex items-center gap-6">
@@ -149,7 +149,7 @@ export default function Navbar() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[350px] p-5 bg-bg-surface flex flex-col gap-5 overflow-y-auto no-scrollbar">
                 {/* Official Government Branding Header */}
-                <div className="flex items-center gap-2.5 pb-4 border-b border-border-medium">
+                <Link href="/" className="flex items-center gap-2.5 pb-4 border-b border-border-medium hover:opacity-90 transition-opacity">
                   <div className="w-[34px] h-[34px] rounded-full border-[1.5px] border-[#FF6E28] flex items-center justify-center bg-bg-surface flex-shrink-0">
                     <Image 
                       src="/upgovlogo.png" 
@@ -163,7 +163,7 @@ export default function Navbar() {
                     <span className="font-bold text-xs text-text-primary tracking-tight leading-none uppercase">UP PLEDGE PORTAL</span>
                     <span className="text-[8.5px] font-bold text-text-secondary uppercase mt-1 tracking-wider leading-none">Govt. of Uttar Pradesh</span>
                   </div>
-                </div>
+                </Link>
 
                 {/* Bilingual Language Switcher */}
                 <div className="flex items-center justify-between bg-bg-subtle border border-border-medium p-2 rounded-xl">
@@ -196,7 +196,7 @@ export default function Navbar() {
 
                 {/* Structured Scheme Navigation */}
                 <nav className="flex flex-col gap-1 text-xs font-semibold text-text-muted" aria-label="Mobile Navigation Drawer">
-                  <a href="#" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary active:bg-bg-subtle p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.home")}</a>
+                  <Link href="/" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary active:bg-bg-subtle p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.home")}</Link>
                   <a href="#" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary active:bg-bg-subtle p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.about")}</a>
                   
                   <div className="border-b border-border-medium">
@@ -277,9 +277,29 @@ export default function Navbar() {
                         {t("navbar.newRegistration")}
                       </Link>
                     </Button>
-                    <Button variant="outline" className="w-full font-semibold border-border-light text-text-primary hover:bg-bg-subtle rounded-xl py-2.5 text-sm shadow-xs">
-                      {t("navbar.logIn")}
-                    </Button>
+                    <div className="w-full border border-border-medium rounded-xl bg-bg-surface overflow-hidden">
+                      <button 
+                        onClick={() => toggleDropdown("loginMobile")}
+                        aria-expanded={activeDropdown === "loginMobile"}
+                        className="w-full flex items-center justify-between hover:bg-bg-subtle active:bg-bg-subtle p-2.5 text-left transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
+                      >
+                        <span className="font-semibold text-sm text-text-primary">{t("navbar.logIn")}</span>
+                        <ChevronDown className={`w-4 h-4 text-text-secondary transition-transform ${activeDropdown === "loginMobile" ? "rotate-180" : ""}`} />
+                      </button>
+                      {activeDropdown === "loginMobile" && (
+                        <div className="flex flex-col text-sm font-semibold bg-bg-subtle border-t border-border-medium">
+                          <Link href="/login/buyer" className="px-4 py-2.5 hover:text-brand-primary transition-colors text-text-primary border-b border-border-medium/50">
+                            Buyer Login
+                          </Link>
+                          <Link href="/login/promoter" className="px-4 py-2.5 hover:text-brand-primary transition-colors text-text-primary border-b border-border-medium/50">
+                            Promoter Login
+                          </Link>
+                          <Link href="/login/department" className="px-4 py-2.5 hover:text-brand-primary transition-colors text-text-primary">
+                            Department Login
+                          </Link>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </SheetContent>
@@ -293,13 +313,13 @@ export default function Navbar() {
         <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-[42px] py-2 flex justify-between items-center h-[65px]">
           {/* Navigation Links */}
           <nav className="flex items-center justify-between w-[739px] h-[49px] py-3 text-[14px] font-medium text-text-muted" aria-label="Main Navigation">
-            <a 
-              href="#" 
+            <Link 
+              href="/" 
               className="px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
               aria-current="page"
             >
               {t("navbar.home")}
-            </a>
+            </Link>
             
             <a 
               href="#" 
@@ -377,11 +397,27 @@ export default function Navbar() {
                 {t("navbar.newRegistration")}
               </Link>
             </Button>
-            <button 
-              className="h-[38px] px-[12px] py-[10px] rounded-[8px] bg-bg-surface text-text-primary text-[13px] font-medium cursor-pointer border border-[#CFCFCF] shadow-[inset_0_4px_8px_rgba(185,185,185,0.25)] hover:bg-bg-subtle active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none flex items-center justify-center"
-            >
-              {t("navbar.logIn")}
-            </button>
+            <div className="relative group flex items-center">
+              <button 
+                className="h-[38px] px-[12px] py-[10px] rounded-[8px] bg-bg-surface text-text-primary text-[13px] font-medium cursor-pointer border border-[#CFCFCF] shadow-[inset_0_4px_8px_rgba(185,185,185,0.25)] hover:bg-bg-subtle active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none flex items-center justify-center gap-1"
+              >
+                {t("navbar.logIn")}
+                <ChevronDown className="w-[14px] h-[14px] opacity-60 group-hover:rotate-180 transition-transform duration-200" />
+              </button>
+              <div className="absolute top-full right-0 pt-2 hidden group-hover:block w-48 z-50">
+                <div className="bg-bg-surface border border-border-medium rounded-lg shadow-md py-2">
+                  <Link href="/login/buyer" className="block px-4 py-2.5 text-[13px] font-medium text-text-primary hover:bg-bg-subtle hover:text-brand-primary border-b border-border-medium/50">
+                    Buyer Login
+                  </Link>
+                  <Link href="/login/promoter" className="block px-4 py-2.5 text-[13px] font-medium text-text-primary hover:bg-bg-subtle hover:text-brand-primary border-b border-border-medium/50">
+                    Promoter Login
+                  </Link>
+                  <Link href="/login/department" className="block px-4 py-2.5 text-[13px] font-medium text-text-primary hover:bg-bg-subtle hover:text-brand-primary">
+                    Department Login
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

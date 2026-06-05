@@ -245,7 +245,24 @@
     "resetData": "Reset data",
     "sendOtp": "Send OTP & Register"
   },
+  "login": {
+    "buyerLog": "Buyer Log In",
+    "promoterLog": "Promoter Log In",
+    "departmentLog": "Department Log In",
+    "inHere": "Here",
+    "pageDesc": "Log In to your account now to begin applying for opportunities and unlock all the features available to you.",
+    "enterDetails": "Enter Your Details",
+    "enterDetailsDesc": "Enter the details here carefully",
+    "email": "Email Address",
+    "password": "Password",
+    "submitBtn": "Send OTP & Register",
+    "departmentBtn": "Log In to Department Portal",
+    "newApplicant": "New applicant?",
+    "officerSignIn": "Officer Sign In",
+    "registerHere": "Register here"
+  },
   "errors": {
+    "passwordMin": "Password must be at least 6 characters",
     "fullNameMin": "Full Name must be at least 2 characters",
     "aadharExact": "Aadhar Card must be exactly 12 digits",
     "entityTypeReq": "Please select an entity type",
@@ -267,6 +284,7 @@
     "panNumber": "ABDJHE4923857",
     "gstNumber": "329857395",
     "email": "contact@company.com",
+    "password": "Enter your password",
     "contactNumber": "329857395"
   },
   "entities": {

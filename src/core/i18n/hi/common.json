@@ -243,9 +243,26 @@
     "otpNote": "इस नंबर पर OTP भेजा जाएगा",
     "saveDraft": "ड्राफ्ट के रूप में सहेजें",
     "resetData": "डेटा रीसेट करें",
-    "sendOtp": "OTP भेजें और पंजीकरण करें"
+    "sendOtp": "ओटीपी भेजें और रजिस्टर करें"
+  },
+  "login": {
+    "buyerLog": "क्रेता लॉग इन",
+    "promoterLog": "प्रमोटर लॉग इन",
+    "departmentLog": "विभाग लॉग इन",
+    "inHere": "यहाँ करें",
+    "pageDesc": "अवसरों के लिए आवेदन शुरू करने और उपलब्ध सभी सुविधाओं को अनलॉक करने के लिए अभी अपने खाते में लॉग इन करें।",
+    "enterDetails": "अपना विवरण दर्ज करें",
+    "enterDetailsDesc": "यहाँ विवरण सावधानी से दर्ज करें",
+    "email": "ईमेल पता",
+    "password": "पासवर्ड",
+    "submitBtn": "ओटीपी भेजें और रजिस्टर करें",
+    "departmentBtn": "विभाग पोर्टल में लॉग इन करें",
+    "newApplicant": "नए आवेदक?",
+    "officerSignIn": "अधिकारी साइन इन",
+    "registerHere": "यहाँ रजिस्टर करें"
   },
   "errors": {
+    "passwordMin": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए",
     "fullNameMin": "पूरा नाम कम से कम 2 अक्षरों का होना चाहिए",
     "aadharExact": "आधार कार्ड ठीक 12 अंकों का होना चाहिए",
     "entityTypeReq": "कृपया इकाई का प्रकार चुनें",
@@ -267,6 +284,7 @@
     "panNumber": "ABDJHE4923857",
     "gstNumber": "329857395",
     "email": "contact@company.com",
+    "password": "पासवर्ड दर्ज करें",
     "contactNumber": "329857395"
   },
   "entities": {
