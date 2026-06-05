@@ -45,11 +45,14 @@ export default function DepartmentLoginPage() {
             >
               <Image src="/upgovlogo.png" alt="UP Gov Logo" width={90} height={90} className="object-contain" />
               <div className="flex flex-col gap-4">
-                <h2 className="font-poppins font-semibold text-[22px] leading-[30px] text-[#1A1A1A]">
-                  Directorate of Industries and<br/>Enterprise Promotion
+                <h2 
+                  className="font-poppins font-semibold text-[22px] leading-[30px] text-[#1A1A1A]"
+                  style={{ whiteSpace: "pre-line" }}
+                >
+                  {t("login.directorateTitle")}
                 </h2>
                 <p className="font-poppins text-[14px] leading-[22px] text-[#4B4B4B] font-medium">
-                  Official Pledge Portal of the Government of Uttar Pradesh, designed to promote citizen engagement and commitment towards community development and social initiatives.
+                  {t("login.directorateDesc")}
                 </p>
               </div>
             </div>

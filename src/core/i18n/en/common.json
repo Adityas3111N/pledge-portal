@@ -259,7 +259,9 @@
     "departmentBtn": "Log In to Department Portal",
     "newApplicant": "New applicant?",
     "officerSignIn": "Officer Sign In",
-    "registerHere": "Register here"
+    "registerHere": "Register here",
+    "directorateTitle": "Directorate of Industries and\nEnterprise Promotion",
+    "directorateDesc": "Official Pledge Portal of the Government of Uttar Pradesh, designed to promote citizen engagement and commitment towards community development and social initiatives."
   },
   "errors": {
     "passwordMin": "Password must be at least 6 characters",
