@@ -284,6 +284,50 @@
     "heading": "Promoting Leadership and Enterprise for Development of Growth Engines",
     "subtext": "Fostering Leadership and Entrepreneurship to Drive the Development of Key Growth Engines"
   },
+  "keyStakeholders": {
+    "titlePart1": "Key",
+    "titlePart2": "Stakeholders",
+    "description": "Our six key objectives are designed to guide our efforts and ensure success across all areas of our project.",
+    "seeMore": "See more",
+    "tabs": [
+      {
+        "id": "promoter",
+        "label": "PRIVATE PROMOTER",
+        "title": "Private Promoter",
+        "description": "An individual or company that specializes in acquiring land with the purpose of developing it into an industrial park. This entity is responsible for planning, constructing necessary infrastructure, and managing the overall development process. Once the park is fully developed, they sell or lease individual plots to various industries and businesses, facilitating their establishment within the park and supporting economic growth in the area."
+      },
+      {
+        "id": "msme",
+        "label": "MSME ENTERPRISES",
+        "title": "MSME Enterprises",
+        "description": "Micro, Small, and Medium Enterprises that set up manufacturing or service units within the industrial park. They benefit from readymade infrastructure, plug-and-play facilities, and government incentives, enabling them to start operations quickly, scale production, and create local employment opportunities."
+      },
+      {
+        "id": "banks",
+        "label": "FINANCIAL INSTITUTIONS",
+        "title": "Financial Institutions",
+        "description": "Banks and credit agencies that provide essential funding, credit lines, and financial assistance to both the park promoters (for infrastructure development) and MSME buyers (for purchasing plots and setting up machinery), driving capital flow into the industrial ecosystem."
+      },
+      {
+        "id": "district",
+        "label": "DISTRICT ADMINISTRATION",
+        "title": "District Administration",
+        "description": "Local administrative bodies headed by the District Magistrate and DIC (District Industries Center) officers. They facilitate land approvals, verify local compliance, oversee law and order, and provide local single-window clearance assistance to promoters and MSMEs."
+      },
+      {
+        "id": "state",
+        "label": "STATE GOVERNMENT",
+        "title": "State Government",
+        "description": "The Government of Uttar Pradesh (MSME Department) which acts as the policy creator and regulator. They provide financial subsidies, interest rebates, stamp duty exemptions, and define the overall guidelines and standards for the PLEDGE scheme."
+      },
+      {
+        "id": "nodal",
+        "label": "NODAL AGENCIES",
+        "title": "Nodal Agencies",
+        "description": "Designated state agencies responsible for reviewing project reports, assessing eligibility, hosting the digital portal, and facilitating approvals between different departments to ensure a smooth, transparent process."
+      }
+    ]
+  },
   "errors": {
     "passwordMin": "Password must be at least 6 characters",
     "fullNameMin": "Full Name must be at least 2 characters",
