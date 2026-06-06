@@ -15,11 +15,12 @@ export function AboutBanner() {
         {/* Left Image Section (Desktop) */}
         <div className="hidden md:block absolute left-0 top-0 w-[50%] h-[318px] shrink-0 pointer-events-none z-0">
           <Image
-            src="/bg_image_sec3_about.jpg"
+            src="/bg_image_sec3_about.png"
             alt="Building"
             fill
-            className="object-cover object-left"
+            className="object-cover"
             style={{
+              objectPosition: "left 92%",
               maskImage: "linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
               WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
             }}
