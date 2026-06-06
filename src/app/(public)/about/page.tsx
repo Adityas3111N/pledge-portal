@@ -3,6 +3,7 @@ import { AboutHero } from "@/components/about/AboutHero";
 import { WhatIsPledge } from "@/components/about/WhatIsPledge";
 import { AboutBanner } from "@/components/about/AboutBanner";
 import KeyStakeholders from "@/components/about/KeyStakeholders";
+import SchemeObjectives from "@/components/about/SchemeObjectives";
 
 export default function AboutPage() {
   return (
@@ -11,6 +12,7 @@ export default function AboutPage() {
       <WhatIsPledge />
       <AboutBanner />
       <KeyStakeholders />
+      <SchemeObjectives />
     </>
   );
 }

@@ -64,7 +64,7 @@ export default function KeyStakeholders() {
             <div className="flex items-center justify-center my-6 w-full max-w-[650px] mx-auto">
               <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#FF5200]/30 to-[#FF5200]/50" />
               <div className="mx-4 w-[20px] h-[20px] relative shrink-0">
-                <Image src="/sun.png" alt="Sun icon" fill className="object-contain" />
+                <Image src="/sun.svg" alt="Sun icon" fill className="object-contain" />
               </div>
               <div className="flex-1 h-[1px] bg-gradient-to-l from-transparent via-[#FF5200]/30 to-[#FF5200]/50" />
             </div>

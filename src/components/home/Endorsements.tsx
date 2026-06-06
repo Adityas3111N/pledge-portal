@@ -114,7 +114,7 @@ export default function Endorsements() {
           {/* Sun icon */}
           <div className="flex items-center justify-center px-4 shrink-0">
             <Image
-              src="/sun.png"
+              src="/sun.svg"
               alt="Sun emblem"
               width={24}
               height={24}

@@ -328,6 +328,37 @@
       }
     ]
   },
+  "schemeObjectives": {
+    "titlePart1": "Our Scheme",
+    "titlePart2": "Objectives",
+    "description": "Our six key objectives are designed to guide our efforts and ensure success across all areas of our project.",
+    "items": [
+      {
+        "title": "Decentralize Industrialization",
+        "description": "Enable private sector participation in industrial park development across all districts."
+      },
+      {
+        "title": "Facilitate Access to Finance",
+        "description": "Create funding schemes and incentives to support small and medium enterprises in industrial sectors."
+      },
+      {
+        "title": "Strengthen Infrastructure",
+        "description": "Upgrade transportation and logistics networks to optimize supply chain efficiency."
+      },
+      {
+        "title": "Sustainable Manufacturing",
+        "description": "Implement green technologies and eco-friendly practices in all industrial zones."
+      },
+      {
+        "title": "Enhance Workforce Skills",
+        "description": "Develop targeted training programs to improve labor productivity and innovation capacity."
+      },
+      {
+        "title": "Foster Development",
+        "description": "Encourage collaboration between industry and academia to drive technological advancements."
+      }
+    ]
+  },
   "errors": {
     "passwordMin": "Password must be at least 6 characters",
     "fullNameMin": "Full Name must be at least 2 characters",

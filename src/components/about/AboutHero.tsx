@@ -58,14 +58,14 @@ export function AboutHero() {
         </div>
 
         {/* Main Title */}
-        <h1 className="w-full max-w-[374px] lg:max-w-[1219px] h-auto lg:min-h-[210px] font-medium text-[28px] lg:text-[56px] leading-[100%] lg:leading-[70px] tracking-normal text-center text-[#050505] break-words min-w-0">
+        <h1 className="w-full max-w-[374px] lg:max-w-[1219px] h-auto font-medium text-[28px] lg:text-[56px] leading-tight lg:leading-[70px] tracking-normal text-center text-[#050505] break-words min-w-0">
           {t("about.titlePart1")} <br className="hidden lg:block" />
           {t("about.titlePart2")} <br />
           <span className="text-[#FA7B3F]">{t("about.titlePart3")}</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="w-full lg:max-w-[800px] lg:min-h-[90px] font-medium text-[14px] lg:text-[16px] leading-[100%] tracking-normal text-center text-[#050505] break-words min-w-0 mt-0 lg:mt-0">
+        <p className="w-full lg:max-w-[800px] font-normal text-[14px] lg:text-[16px] leading-relaxed tracking-normal text-center text-[#050505] opacity-70 break-words min-w-0 mt-2">
           {t("about.description")}
         </p>
 

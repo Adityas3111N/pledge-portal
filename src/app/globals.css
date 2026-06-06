@@ -80,6 +80,9 @@
  * e.g. bg-brand-primary, text-text-secondary, border-border-light
  * ───────────────────────────────────────────────────────────────────────── */
 @theme inline {
+  --font-sans: var(--font-inter), "Google Sans Flex", "Google Sans", sans-serif;
+  --font-hindi: var(--font-noto-sans-devanagari), sans-serif;
+
   /* Brand */
   --color-brand-primary:      var(--color-brand-primary);
   --color-brand-accent:       var(--color-brand-accent);
