@@ -278,7 +278,11 @@
     "titleBlack2": "?",
     "p1": "PLEDGE stands for “Promoting Leadership and Enterprise for Development of Growth Engines”.",
     "p2": "A Government of Uttar Pradesh initiative under the MSME department enabling private industrial parks across all 75 districts with significant financial incentives.",
-    "p3": "Promoters acquire land, develop infrastructure per government specifications, and sell/lease plots to MSMEs — all under a structured, digitally-supervised framework."
+      "p3": "Promoters acquire land, develop infrastructure per government specifications, and sell/lease plots to MSMEs — all under a structured, digitally-supervised framework."
+  },
+  "aboutBanner": {
+    "heading": "Promoting Leadership and Enterprise for Development of Growth Engines",
+    "subtext": "Fostering Leadership and Entrepreneurship to Drive the Development of Key Growth Engines"
   },
   "errors": {
     "passwordMin": "Password must be at least 6 characters",

@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Gotu } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+});
+
+const gotu = Gotu({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-gotu",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased min-h-screen flex flex-col ${inter.variable}`} suppressHydrationWarning>
+      <body className={`font-sans antialiased min-h-screen flex flex-col ${inter.variable} ${gotu.variable}`} suppressHydrationWarning>
         <ConditionalLayout>
           {children}
         </ConditionalLayout>

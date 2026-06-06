@@ -11,7 +11,7 @@ export function WhatIsPledge() {
     <section className="relative z-50 w-full bg-transparent -mt-10 pb-16 md:pb-20 overflow-visible">
       {" "}
       {/* Orange Shape on the left */}
-      <div className="absolute left-0 top-0 w-[79px] sm:w-[49px] md:w-[69px] lg:w-[79px] pointer-events-none hidden xl:flex justify-start z-50 mt-[-20px]">
+      <div className="absolute left-0 top-0 w-[79px] sm:w-[49px] md:w-[69px] lg:w-[79px] pointer-events-none hidden lg:flex justify-start z-50 mt-[-20px]">
         <Image
           src="/orange_shape.svg"
           alt="Decorative orange shape"
