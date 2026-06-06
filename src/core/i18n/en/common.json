@@ -263,6 +263,15 @@
     "directorateTitle": "Directorate of Industries and\nEnterprise Promotion",
     "directorateDesc": "Official Pledge Portal of the Government of Uttar Pradesh, designed to promote citizen engagement and commitment towards community development and social initiatives."
   },
+  "about": {
+    "topLabel": "Building the Future of Industry in Uttar Pradesh",
+    "titlePart1": "Promoting Leadership and Enterprise",
+    "titlePart2": "for Development of Growth Engines",
+    "titlePart3": "(PLEDGE)",
+    "description": "Access industrial incentives, land support, approvals, and financial assistance through a single digital platform designed for ease, transparency, and efficiency.",
+    "servicesBtn": "See our services",
+    "learnMoreBtn": "Learn More"
+  },
   "errors": {
     "passwordMin": "Password must be at least 6 characters",
     "fullNameMin": "Full Name must be at least 2 characters",
