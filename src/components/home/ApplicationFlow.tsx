@@ -23,7 +23,7 @@ export default function ApplicationFlow() {
       {/* Orange Shape Decoration */}
       <div className="absolute right-0 top-0 md:top-10 w-[62px] h-[257px] select-none pointer-events-none hidden md:block rotate-180">
         <img
-          src="/orange_shape.png"
+          src="/orange_shape.svg"
           alt="Orange decorative shape"
           className="w-full h-full object-contain"
           style={{ transform: 'rotate(-180deg)' }}
