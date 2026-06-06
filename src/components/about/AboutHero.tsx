@@ -20,7 +20,7 @@ export function AboutHero() {
       />
 
       {/* 2. Map Background Layer */}
-      <div className="absolute pointer-events-none z-0 left-1/2 -translate-x-1/2 top-[446px] lg:top-[393px] w-[412px] max-w-full lg:max-w-none lg:w-[1250px] h-[188px] lg:h-[500px] opacity-60 lg:opacity-100">
+      <div className="absolute pointer-events-none z-0 left-1/2 -translate-x-1/2 top-[446px] md:top-[280px] lg:top-[393px] w-[412px] max-w-full md:w-full lg:max-w-none lg:w-[1250px] h-[188px] md:h-[350px] lg:h-[500px] opacity-60 md:opacity-80 lg:opacity-100">
         <Image
           src="/about_page_hero_bg.svg"
           alt="Map Background"
