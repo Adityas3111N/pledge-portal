@@ -21,12 +21,11 @@ export default function ApplicationFlow() {
   return (
     <section id="process" className="relative bg-white pt-0 md:pt-0 pb-4 md:pb-6 overflow-hidden">
       {/* Orange Shape Decoration */}
-      <div className="absolute right-0 top-0 md:top-10 w-[62px] h-[257px] select-none pointer-events-none hidden md:block rotate-180">
+      <div className="absolute right-0 top-0 md:top-10 w-[62px] h-[257px] select-none pointer-events-none hidden md:block -scale-x-100">
         <img
           src="/orange_shape.svg"
           alt="Orange decorative shape"
           className="w-full h-full object-contain"
-          style={{ transform: 'rotate(-180deg)' }}
         />
       </div>
       
