@@ -12,6 +12,11 @@ const faqKeys = [
 
 export default function FAQ() {
   const { t } = useTranslation();
+  const [openIndex, setOpenIndex] = React.useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <section className="w-full bg-[#F5F5F5] py-16 lg:py-20">
@@ -28,21 +33,35 @@ export default function FAQ() {
 
         {/* Right FAQ List */}
         <div className="w-full lg:w-[640px] flex flex-col gap-3">
-          {faqKeys.map((key, index) => (
-            <button
-              key={index}
-              type="button"
-              className="w-full min-h-[60px] h-auto flex items-center justify-between gap-[10px] px-5 py-4 bg-[#F5F5F5] rounded-[4px] cursor-pointer transition-colors duration-200 hover:bg-[#EBEBEB] group border-b border-[#E0E0E0]"
-              aria-expanded="false"
-            >
-              <span className="text-[#050505] text-[15px] md:text-[18.6px] font-medium leading-[22px] md:leading-[28px] tracking-[-0.2px] font-sans text-left align-middle">
-                {t(`${key}.question`)}
-              </span>
-              <span className="text-[#6C6C6C] text-[20px] font-light shrink-0 transition-transform duration-200 group-hover:text-[#F37021]">
-                +
-              </span>
-            </button>
-          ))}
+          {faqKeys.map((key, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div key={index} className="w-full border-b border-[#E0E0E0]">
+                <button
+                  type="button"
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full min-h-[60px] h-auto flex items-center justify-between gap-[10px] px-5 py-4 bg-[#F5F5F5] rounded-[4px] cursor-pointer transition-colors duration-200 hover:bg-[#EBEBEB] group"
+                  aria-expanded={isOpen ? "true" : "false"}
+                >
+                  <span className="text-[#050505] text-[15px] md:text-[18.6px] font-medium leading-[22px] md:leading-[28px] tracking-[-0.2px] font-sans text-left align-middle">
+                    {t(`${key}.question`)}
+                  </span>
+                  <span className={`text-[#6C6C6C] text-[20px] font-light shrink-0 transition-transform duration-300 group-hover:text-[#F37021] ${isOpen ? "rotate-45 text-[#F37021]" : ""}`}>
+                    +
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-[500px] opacity-100 pb-5 px-5" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <p className="text-[#6C6C6C] text-[14px] md:text-[16px] leading-[22px] md:leading-[26px] font-normal font-sans">
+                    {t(`${key}.answer`)}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

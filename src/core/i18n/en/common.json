@@ -194,16 +194,20 @@
     "titleAccent": "answers.",
     "items": {
       "item1": {
-        "question": "What exactly is an \"Pledge Schema\"?"
+        "question": "What exactly is an \"Pledge Schema\"?",
+        "answer": "PLEDGE stands for Promoting Leadership and Enterprise for Development of Growth Engines. It is a Government of Uttar Pradesh initiative under the MSME department designed to enable private industrial parks across all 75 districts."
       },
       "item2": {
-        "question": "What is the minimum land area required?"
+        "question": "What is the minimum land area required?",
+        "answer": "The minimum land area required is 10 to 50 acres for the development of private industrial parks under the PLEDGE scheme."
       },
       "item3": {
-        "question": "What financial benefits are available?"
+        "question": "What financial benefits are available?",
+        "answer": "Promoters and MSME units receive significant financial incentives including capital subsidies, interest rebates, and stamp duty exemptions."
       },
       "item4": {
-        "question": "What financial benefits are available?"
+        "question": "How can I track my application status?",
+        "answer": "You can track your application status in real-time by logging into the portal and using the Track Status service."
       }
     }
   },
