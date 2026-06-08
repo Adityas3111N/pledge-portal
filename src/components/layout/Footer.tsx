@@ -278,12 +278,12 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/faq"
                     className="text-[13px] font-semibold text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                   >
-                    {t("footer.helpCenter")}
-                  </a>
+                    {t("navbar.faqs")}
+                  </Link>
                 </li>
                 <li>
                   <Link
@@ -323,9 +323,9 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
-                    {t("footer.helpCenter")}
-                  </a>
+                  <Link href="/faq" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
+                    {t("navbar.faqs")}
+                  </Link>
                 </li>
                 <li>
                   <Link href="/about" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">

@@ -251,7 +251,7 @@ export default function Navbar() {
                     )}
                   </div>
 
-                  <a href="#" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.faqs")}</a>
+                  <Link href="/faq" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.faqs")}</Link>
                   <Link href="/contact" className="hover:text-brand-primary hover:bg-bg-subtle active:text-brand-primary p-2.5 rounded-lg border-b border-border-medium transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none">{t("navbar.contact")}</Link>
                 </nav>
 
@@ -371,12 +371,12 @@ export default function Navbar() {
               </div>
             </div>
 
-            <a 
-              href="#" 
+            <Link 
+              href="/faq" 
               className="px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
             >
               {t("navbar.faqs")}
-            </a>
+            </Link>
             
             <Link 
               href="/contact" 
