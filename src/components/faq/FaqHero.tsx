@@ -54,7 +54,7 @@ export function FaqHero() {
             width: "444px",
             height: "492px",
             top: "36px",
-            left: "1205px",
+            left: "1050px",
             opacity: 0.4,
           }}
         >
