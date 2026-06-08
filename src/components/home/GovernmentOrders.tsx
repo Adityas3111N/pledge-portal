@@ -38,12 +38,10 @@ const orders = [
 ];
 
 interface GovernmentOrdersProps {
-  showShapes?: boolean;
   showBgImage?: boolean;
 }
 
 export default function GovernmentOrders({
-  showShapes = false,
   showBgImage = true,
 }: GovernmentOrdersProps) {
   const { t } = useTranslation();

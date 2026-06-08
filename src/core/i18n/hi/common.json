@@ -475,6 +475,59 @@
     "Sultanpur": "सुल्तानपुर",
     "Unnao": "उन्नाव",
     "Varanasi": "वाराणसी"
+  },
+  "contactPage": {
+    "heroTitle": "संपर्क करें",
+    "heroSubtitle": "किसी भी प्रश्न या सहायता के लिए हमारी टीम से संपर्क करें। सहायता के लिए प्लेज सेल या अपने जिला उद्योग कार्यालय से संपर्क करें।",
+    "form": {
+      "titlePart1": "अपनी",
+      "titlePart2": "पूछताछ भेजें",
+      "emailLabel": "ईमेल पता",
+      "emailPlaceholder": "contact@company.com",
+      "nameLabel": "पूरा नाम",
+      "namePlaceholder": "अंजेलिका सिंह",
+      "contactLabel": "संपर्क नंबर",
+      "contactPlaceholder": "329857395",
+      "subjectLabel": "विषय",
+      "subjectPlaceholder": "-चुनें-",
+      "messageLabel": "संदेश",
+      "messagePlaceholder": "यहाँ लिखें",
+      "submitButton": "पूछताछ सबमिट करें",
+      "subjects": {
+        "general": "सामान्य पूछताछ",
+        "feedback": "सुझाव",
+        "support": "सहायता",
+        "technical": "तकनीकी समस्या"
+      }
+    },
+    "offices": {
+      "head": {
+        "title": "मुख्य कार्यालय",
+        "subtitle": "उद्योग निदेशालय",
+        "phone": "+91-512-2218401",
+        "email": "dir-industries@up.gov.in",
+        "address": "10, सर्वोदय नगर, कानपुर - 208005, उत्तर प्रदेश"
+      },
+      "regional": {
+        "title": "क्षेत्रीय कार्यालय",
+        "subtitle": "वाणिज्य विभाग",
+        "phone": "+91-512-2245678",
+        "email": "commerce-dept@up.gov.in",
+        "address": "45, सिविल लाइन्स, लखनऊ - 226001, उत्तर प्रदेश"
+      },
+      "branch": {
+        "title": "शाखा कार्यालय",
+        "subtitle": "लघु उद्योग इकाई",
+        "phone": "+91-512-2281234",
+        "email": "ssiu@up.gov.in",
+        "address": "78, औद्योगिक क्षेत्र, वाराणसी - 221005, उत्तर प्रदेश"
+      }
+    },
+    "officeHours": {
+      "title": "कार्यालय समय",
+      "timing": "सोम - शनि: 10:00 AM - 5:00 PM",
+      "note": "रविवार और सरकारी छुट्टियों पर बंद"
+    }
   }
 }
 

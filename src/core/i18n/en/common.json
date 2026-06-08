@@ -475,6 +475,59 @@
     "Sultanpur": "Sultanpur",
     "Unnao": "Unnao",
     "Varanasi": "Varanasi"
+  },
+  "contactPage": {
+    "heroTitle": "Contact Us",
+    "heroSubtitle": "Get in touch with our team for any questions or support you need. Get in touch with the PLEDGE Cell or your District Industries Office for assistance.",
+    "form": {
+      "titlePart1": "Send your",
+      "titlePart2": "Query",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "contact@company.com",
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Angelica Singh",
+      "contactLabel": "Contact Number",
+      "contactPlaceholder": "329857395",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "-SELECT-",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Type here",
+      "submitButton": "Submit query",
+      "subjects": {
+        "general": "General Inquiry",
+        "feedback": "Feedback",
+        "support": "Support / Assistance",
+        "technical": "Technical Issue"
+      }
+    },
+    "offices": {
+      "head": {
+        "title": "HEAD OFFICE",
+        "subtitle": "Directorate of Industries",
+        "phone": "+91-512-2218401",
+        "email": "dir-industries@up.gov.in",
+        "address": "10, Sarvodaya Nagar, Kanpur - 208005, UP"
+      },
+      "regional": {
+        "title": "REGIONAL OFFICE",
+        "subtitle": "Department of Commerce",
+        "phone": "+91-512-2245678",
+        "email": "commerce-dept@up.gov.in",
+        "address": "45, Civil Lines, Lucknow - 226001, UP"
+      },
+      "branch": {
+        "title": "BRANCH OFFICE",
+        "subtitle": "Small Scale Industries Unit",
+        "phone": "+91-512-2281234",
+        "email": "ssiu@up.gov.in",
+        "address": "78, Industrial Area, Varanasi - 221005, UP"
+      }
+    },
+    "officeHours": {
+      "title": "OFFICE HOURS",
+      "timing": "Mon - Sat: 10:00 AM - 5:00 PM",
+      "note": "Closed on Sundays & Govt holidays"
+    }
   }
 }
 
