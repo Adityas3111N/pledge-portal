@@ -1,15 +1,35 @@
 "use client";
 
 import React, { useState } from "react";
-import { FAQ_CATEGORIES, FAQ_ITEMS } from "@/constants/faqData";
+import {
+  FAQ_CATEGORIES_EN,
+  FAQ_CATEGORIES_HI,
+  FAQ_ITEMS_EN,
+  FAQ_ITEMS_HI
+} from "@/constants/faqData";
 import { Plus, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export function FaqList() {
-  const [activeCategory, setActiveCategory] = useState<string>(FAQ_CATEGORIES[0]);
-  const [expandedId, setExpandedId] = useState<number | null>(1); // Default open first
+  const { language } = useTranslation();
+  const [activeCategoryIndex, setActiveCategoryIndex] = useState<number>(0);
+  const [expandedId, setExpandedId] = useState<number | null>(null);
 
-  const filteredItems = FAQ_ITEMS.filter((item) => item.category === activeCategory);
+  const categories = language === "hi" ? FAQ_CATEGORIES_HI : FAQ_CATEGORIES_EN;
+  const items = language === "hi" ? FAQ_ITEMS_HI : FAQ_ITEMS_EN;
+
+  const activeCategory = categories[activeCategoryIndex];
+  const filteredItems = items.filter((item) => item.category === activeCategory);
+
+  // Automatically expand the first item in the selected category
+  React.useEffect(() => {
+    if (filteredItems.length > 0) {
+      setExpandedId(filteredItems[0].id);
+    } else {
+      setExpandedId(null);
+    }
+  }, [activeCategoryIndex, language]);
 
   const toggleItem = (id: number) => {
     setExpandedId((prev) => (prev === id ? null : id));
@@ -17,21 +37,28 @@ export function FaqList() {
 
   return (
     <section className="w-full bg-white py-16 px-4 md:px-8 flex flex-col items-center font-sans relative z-30">
-      {/* Dynamic Title based on selected category (optional, but mimicking the mockup "General Questions") */}
+      {/* Dynamic Title based on selected category */}
       <h2 className="text-[32px] md:text-[40px] font-semibold text-[#1A1A1A] mb-8 text-center">
-        {activeCategory === "General" ? "General" : activeCategory.replace("For ", "")} <span className="text-[#FF5200]">Questions</span>
+        {language === "hi" ? (
+          <>
+            {activeCategory} <span className="text-[#FF5200]">प्रश्न</span>
+          </>
+        ) : (
+          <>
+            {activeCategory === "General" ? "General" : activeCategory.replace("For ", "")} <span className="text-[#FF5200]">Questions</span>
+          </>
+        )}
       </h2>
 
       {/* Categories Filter */}
       <div className="flex flex-wrap justify-center gap-3 mb-12 max-w-[800px]">
-        {FAQ_CATEGORIES.map((category) => {
-          const isActive = activeCategory === category;
+        {categories.map((category, idx) => {
+          const isActive = activeCategoryIndex === idx;
           return (
             <button
               key={category}
               onClick={() => {
-                setActiveCategory(category);
-                setExpandedId(null);
+                setActiveCategoryIndex(idx);
               }}
               className={cn(
                 "px-5 py-2 rounded-full text-[14px] font-medium transition-colors border",
@@ -49,7 +76,9 @@ export function FaqList() {
       {/* FAQ Accordion List */}
       <div className="w-full max-w-[900px] flex flex-col gap-4">
         {filteredItems.length === 0 ? (
-          <p className="text-center text-gray-500 py-8">No questions available for this category.</p>
+          <p className="text-center text-gray-500 py-8">
+            {language === "hi" ? "इस श्रेणी के लिए कोई प्रश्न उपलब्ध नहीं है।" : "No questions available for this category."}
+          </p>
         ) : (
           filteredItems.map((item) => {
             const isExpanded = expandedId === item.id;
