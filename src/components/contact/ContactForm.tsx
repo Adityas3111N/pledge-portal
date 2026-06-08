@@ -73,32 +73,23 @@ export function ContactForm() {
         {/* Form Container */}
         <div className="w-full max-w-[800px] flex flex-col items-center">
           {/* Section Heading */}
-          <h2 className="text-[#050505] text-[28px] md:text-[44px] font-sans font-medium text-center leading-tight mb-8">
-            {t("contactPage.form.titlePart1")}{" "}
-            <span className="text-[#FF5200]">{t("contactPage.form.titlePart2")}</span>
-          </h2>
+          <div className="flex flex-col items-center mb-8 md:mb-10 w-full text-center">
+            <h2 className="text-[#050505] text-[28px] md:text-[44px] font-sans font-medium leading-tight">
+              {t("contactPage.form.titlePart1")}{" "}
+              <span className="text-[#FF5200]">{t("contactPage.form.titlePart2")}</span>
+            </h2>
+            <p className="mt-3 md:mt-4 text-[#666666] text-[13px] md:text-[16px] leading-relaxed max-w-[550px] font-sans">
+              Here are the key benefits you can anticipate experiencing in great detail, each one designed to enhance your overall satisfaction.
+            </p>
+          </div>
 
-          <form onSubmit={handleSubmit} className="w-full flex flex-col gap-6">
+          <form onSubmit={handleSubmit} className="w-full flex flex-col gap-5 md:gap-6">
             {/* Grid for Inputs */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-              {/* Email Address */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-[14px] font-medium text-[#1A1A1A]">
-                  {t("contactPage.form.emailLabel")}
-                </label>
-                <Input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder={t("contactPage.form.emailPlaceholder")}
-                  className="h-11 bg-white border border-[#E5E5E5] rounded-lg px-3.5 focus:border-[#FF5200] focus:ring-1 focus:ring-[#FF5200]"
-                  required
-                />
-              </div>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 w-full">
+              
               {/* Full Name */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-[14px] font-medium text-[#1A1A1A]">
+              <div className="flex flex-col gap-1.5 md:order-1 order-1">
+                <label className="text-[13px] md:text-[14px] font-medium text-[#1A1A1A]">
                   {t("contactPage.form.nameLabel")}
                 </label>
                 <Input
@@ -106,14 +97,50 @@ export function ContactForm() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder={t("contactPage.form.namePlaceholder")}
-                  className="h-11 bg-white border border-[#E5E5E5] rounded-lg px-3.5 focus:border-[#FF5200] focus:ring-1 focus:ring-[#FF5200]"
+                  className="h-11 bg-white border border-[#E5E5E5] rounded-lg px-3.5 focus:border-[#FF5200] focus:ring-1 focus:ring-[#FF5200] text-[13px] md:text-[14px]"
                   required
                 />
               </div>
 
+              {/* Email Address */}
+              <div className="flex flex-col gap-1.5 md:order-2 order-2">
+                <label className="text-[13px] md:text-[14px] font-medium text-[#1A1A1A]">
+                  {t("contactPage.form.emailLabel")}
+                </label>
+                <Input
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  placeholder={t("contactPage.form.emailPlaceholder")}
+                  className="h-11 bg-white border border-[#E5E5E5] rounded-lg px-3.5 focus:border-[#FF5200] focus:ring-1 focus:ring-[#FF5200] text-[13px] md:text-[14px]"
+                  required
+                />
+              </div>
+
+              {/* Subject */}
+              <div className="flex flex-col gap-1.5 md:order-3 order-3">
+                <label className="text-[13px] md:text-[14px] font-medium text-[#1A1A1A]">
+                  {t("contactPage.form.subjectLabel")}
+                </label>
+                <Select
+                  value={formData.subject}
+                  onValueChange={(val) => setFormData({ ...formData, subject: val })}
+                >
+                  <SelectTrigger className="w-full h-11 bg-white border border-[#E5E5E5] text-text-secondary rounded-lg text-[13px] md:text-[14px]">
+                    <SelectValue placeholder={t("contactPage.form.subjectPlaceholder")} />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white">
+                    <SelectItem value="general">{t("contactPage.form.subjects.general")}</SelectItem>
+                    <SelectItem value="feedback">{t("contactPage.form.subjects.feedback")}</SelectItem>
+                    <SelectItem value="support">{t("contactPage.form.subjects.support")}</SelectItem>
+                    <SelectItem value="technical">{t("contactPage.form.subjects.technical")}</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
               {/* Contact Number */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-[14px] font-medium text-[#1A1A1A]">
+              <div className="flex flex-col gap-1.5 md:order-4 order-4">
+                <label className="text-[13px] md:text-[14px] font-medium text-[#1A1A1A]">
                   {t("contactPage.form.contactLabel")}
                 </label>
                 <div className="flex gap-2">
@@ -121,7 +148,7 @@ export function ContactForm() {
                     value={formData.countryCode}
                     onValueChange={(val) => setFormData({ ...formData, countryCode: val })}
                   >
-                    <SelectTrigger className="w-[85px] h-11 bg-white border border-[#E5E5E5] text-text-primary rounded-lg">
+                    <SelectTrigger className="w-[85px] h-11 bg-[#F9F9F9] md:bg-white border border-[#E5E5E5] text-text-primary rounded-lg text-[13px] md:text-[14px] shrink-0">
                       <SelectValue placeholder="91+" />
                     </SelectTrigger>
                     <SelectContent className="bg-white">
@@ -135,56 +162,35 @@ export function ContactForm() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder={t("contactPage.form.contactPlaceholder")}
-                    className="flex-1 h-11 bg-white border border-[#E5E5E5] rounded-lg px-3.5 focus:border-[#FF5200] focus:ring-1 focus:ring-[#FF5200]"
+                    className="flex-1 h-11 bg-white border border-[#E5E5E5] rounded-lg px-3.5 focus:border-[#FF5200] focus:ring-1 focus:ring-[#FF5200] text-[13px] md:text-[14px]"
                     required
                   />
                 </div>
-              </div>
-
-              {/* Subject */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-[14px] font-medium text-[#1A1A1A]">
-                  {t("contactPage.form.subjectLabel")}
-                </label>
-                <Select
-                  value={formData.subject}
-                  onValueChange={(val) => setFormData({ ...formData, subject: val })}
-                >
-                  <SelectTrigger className="w-full h-11 bg-white border border-[#E5E5E5] text-text-secondary rounded-lg">
-                    <SelectValue placeholder={t("contactPage.form.subjectPlaceholder")} />
-                  </SelectTrigger>
-                  <SelectContent className="bg-white">
-                    <SelectItem value="general">{t("contactPage.form.subjects.general")}</SelectItem>
-                    <SelectItem value="feedback">{t("contactPage.form.subjects.feedback")}</SelectItem>
-                    <SelectItem value="support">{t("contactPage.form.subjects.support")}</SelectItem>
-                    <SelectItem value="technical">{t("contactPage.form.subjects.technical")}</SelectItem>
-                  </SelectContent>
-                </Select>
               </div>
             </div>
 
             {/* Message Textarea */}
             <div className="flex flex-col gap-1.5 w-full">
-              <label className="text-[14px] font-medium text-[#1A1A1A]">
+              <label className="text-[13px] md:text-[14px] font-medium text-[#1A1A1A]">
                 {t("contactPage.form.messageLabel")}
               </label>
               <Textarea
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 placeholder={t("contactPage.form.messagePlaceholder")}
-                className="min-h-[140px] bg-white border border-[#E5E5E5] rounded-lg px-3.5 py-3 focus-visible:border-[#FF5200] focus-visible:ring-1 focus-visible:ring-[#FF5200]"
+                className="min-h-[120px] md:min-h-[140px] bg-white border border-[#E5E5E5] rounded-lg px-3.5 py-3 focus-visible:border-[#FF5200] focus-visible:ring-1 focus-visible:ring-[#FF5200] text-[13px] md:text-[14px]"
                 required
               />
             </div>
 
             {/* Submit Button */}
-            <div className="flex justify-center mt-2">
+            <div className="flex justify-start md:justify-center mt-2">
               <Button
                 type="submit"
-                className="h-[46px] bg-[#FF5200] hover:bg-[#E04800] text-white px-8 rounded-lg font-medium text-[16px] flex items-center justify-center gap-1.5 shadow-sm transition-colors duration-200"
+                className="h-[42px] md:h-[46px] bg-[#FF5200] hover:bg-[#E04800] text-white px-6 md:px-8 rounded-lg font-medium text-[14px] md:text-[16px] flex items-center justify-center gap-1.5 shadow-sm transition-colors duration-200"
               >
                 {t("contactPage.form.submitButton")}
-                <ChevronRight size={18} />
+                <ChevronRight size={16} className="md:w-[18px] md:h-[18px]" />
               </Button>
             </div>
           </form>
