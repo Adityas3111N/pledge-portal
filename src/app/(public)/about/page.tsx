@@ -4,6 +4,7 @@ import { WhatIsPledge } from "@/components/about/WhatIsPledge";
 import { AboutBanner } from "@/components/about/AboutBanner";
 import KeyStakeholders from "@/components/about/KeyStakeholders";
 import SchemeObjectives from "@/components/about/SchemeObjectives";
+import GovernmentOrders from "@/components/home/GovernmentOrders";
 
 export default function AboutPage() {
   return (
@@ -13,6 +14,7 @@ export default function AboutPage() {
       <AboutBanner />
       <KeyStakeholders />
       <SchemeObjectives />
+      <GovernmentOrders showBgImage={false} />
     </>
   );
 }

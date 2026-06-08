@@ -6,13 +6,13 @@ import { useTranslation } from "@/hooks/useTranslation";
 
 const orders = [
   {
-    number: 3,
+    number: 1,
     titleKey: "governmentOrders.items.item1.title",
     descriptionKey: "governmentOrders.items.item1.description",
     dateKey: "governmentOrders.items.item1.date",
   },
   {
-    number: 3,
+    number: 2,
     titleKey: "governmentOrders.items.item2.title",
     descriptionKey: "governmentOrders.items.item2.description",
     dateKey: "governmentOrders.items.item2.date",
@@ -24,44 +24,58 @@ const orders = [
     dateKey: "governmentOrders.items.item3.date",
   },
   {
-    number: 3,
+    number: 4,
     titleKey: "governmentOrders.items.item4.title",
     descriptionKey: "governmentOrders.items.item4.description",
     dateKey: "governmentOrders.items.item4.date",
   },
   {
-    number: 3,
+    number: 5,
     titleKey: "governmentOrders.items.item5.title",
     descriptionKey: "governmentOrders.items.item5.description",
     dateKey: "governmentOrders.items.item5.date",
   },
 ];
 
-export default function GovernmentOrders() {
+interface GovernmentOrdersProps {
+  showShapes?: boolean;
+  showBgImage?: boolean;
+}
+
+export default function GovernmentOrders({
+  showShapes = false,
+  showBgImage = true,
+}: GovernmentOrdersProps) {
   const { t } = useTranslation();
+  const [activeIndex, setActiveIndex] = React.useState<number>(3);
 
   return (
-    <section className="w-full relative overflow-hidden">
+    <section className="w-full relative overflow-hidden bg-white">
       {/* Full-width Background Image */}
-      <div className="absolute inset-0 w-full h-full">
-        <Image
-          src="/bg_image_shashanadesh.png"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover"
-          aria-hidden="true"
-        />
-      </div>
+      {showBgImage && (
+        <>
+          <div className="absolute inset-0 w-full h-full">
+            <Image
+              src="/bg_image_shashanadesh.png"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover"
+              aria-hidden="true"
+            />
+          </div>
 
-      {/* White Overlay */}
-      <div className="absolute inset-0 w-full h-full bg-white/85" aria-hidden="true" />
+          {/* White Overlay */}
+          <div className="absolute inset-0 w-full h-full bg-white/85" aria-hidden="true" />
 
-      {/* Left White Gradient Fade */}
-      <div className="absolute left-0 top-0 bottom-0 w-[200px] md:w-[418px] bg-gradient-to-r from-white to-transparent z-[1]" aria-hidden="true" />
+          {/* Left White Gradient Fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-[200px] md:w-[418px] bg-gradient-to-r from-white to-transparent z-[1]" aria-hidden="true" />
 
-      {/* Right White Gradient Fade */}
-      <div className="absolute right-0 top-0 bottom-0 w-[200px] md:w-[418px] bg-gradient-to-l from-white to-transparent z-[1]" aria-hidden="true" />
+          {/* Right White Gradient Fade */}
+          <div className="absolute right-0 top-0 bottom-0 w-[200px] md:w-[418px] bg-gradient-to-l from-white to-transparent z-[1]" aria-hidden="true" />
+        </>
+      )}
+
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-[1090px] mx-auto px-6 md:px-12 lg:px-16 py-16 md:py-20 flex flex-col items-center gap-[40px]">
@@ -81,10 +95,11 @@ export default function GovernmentOrders() {
         {/* Cards Row */}
         <div className="w-full grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
           {orders.map((order, index) => {
-            const isActive = index === 3;
+            const isActive = index === activeIndex;
             return (
               <div
                 key={index}
+                onClick={() => setActiveIndex(index)}
                 className={`w-full h-[293px] rounded-[8px] border p-4 md:p-6 flex flex-col justify-between cursor-pointer transition-all duration-300 hover:shadow-lg ${
                   isActive
                     ? "bg-[#F37021] border-[#F37021] text-white"
@@ -94,9 +109,9 @@ export default function GovernmentOrders() {
                 {/* Number Badge */}
                 <div className="flex flex-col gap-4">
                   <div
-                    className={`w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] font-medium font-sans ${
+                    className={`w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] font-medium font-sans transition-all duration-300 ${
                       isActive
-                        ? "bg-white/20 text-white"
+                        ? "bg-white text-[#F37021]"
                         : "bg-[#F37021] text-white"
                     }`}
                   >
