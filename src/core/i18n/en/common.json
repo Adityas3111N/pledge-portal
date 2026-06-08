@@ -83,19 +83,19 @@
     "items": {
       "item1": {
         "title": "Instant Eligibility Assessment",
-        "description": "Get preliminary insights based on your business profile and investment category."
+        "description": "Get preliminary insights based on your business profile."
       },
       "item2": {
         "title": "Customized Investment Recommendations",
-        "description": "Receive tailored suggestions that align with your goals and risk tolerance."
+        "description": "Receive tailored suggestions that align with your goals."
       },
       "item3": {
         "title": "Real-Time Market Analysis",
-        "description": "Access up-to-date market trends and data to inform your investment decisions."
+        "description": "Access up-to-date market trends to inform your decisions."
       },
       "item4": {
         "title": "Instant Eligibility Assessment",
-        "description": "Get preliminary insights based on your business profile and investment category."
+        "description": "Get preliminary insights based on your business profile."
       }
     }
   },

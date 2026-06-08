@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PledgeWatermark from "../home/PledgeWatermark";
+import { exportPages } from "next/dist/export/worker";
 
 export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -21,3 +22,4 @@ export function ConditionalLayout({ children }: { children: React.ReactNode }) {
     </>
   );
 }
+
