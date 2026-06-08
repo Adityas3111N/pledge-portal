@@ -58,7 +58,10 @@ export function ContactForm() {
       </div>
 
       {/* Decorative Orange Shape (Right side) */}
-      <div className="absolute right-0 top-[-80px] w-[79px] h-[327px] select-none pointer-events-none hidden lg:block z-20">
+      <div 
+        className="absolute top-[-80px] w-[79px] h-[327px] select-none pointer-events-none hidden lg:block z-20"
+        style={{ right: "calc(-1 * var(--removed-body-scroll-bar-size, 0px))" }}
+      >
         <img
           src="/orange_shape2.svg"
           alt=""

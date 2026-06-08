@@ -181,11 +181,16 @@ export function RegistrationForm() {
             <label className="text-[14px] font-medium text-gray-700">{t("registration.contactNumber")}</label>
             <div className="flex gap-2">
               <Select defaultValue="+91">
-                <SelectTrigger className="h-[44px] w-[90px] bg-[#F9F9F9]">
-                  <SelectValue placeholder="91 +" />
+                <SelectTrigger className="h-[44px] w-[90px] bg-[#F9F9F9] shrink-0">
+                  <SelectValue placeholder="+91" />
                 </SelectTrigger>
                 <SelectContent position="popper">
-                  <SelectItem value="+91">91 +</SelectItem>
+                  <SelectItem value="+91">+91 (IN)</SelectItem>
+                  <SelectItem value="+1">+1 (US/CA)</SelectItem>
+                  <SelectItem value="+44">+44 (UK)</SelectItem>
+                  <SelectItem value="+61">+61 (AU)</SelectItem>
+                  <SelectItem value="+81">+81 (JP)</SelectItem>
+                  <SelectItem value="+971">+971 (AE)</SelectItem>
                 </SelectContent>
               </Select>
               <Input {...register("contactNumber")} placeholder={t("placeholders.contactNumber")} className={`h-[44px] flex-1 bg-white ${errors.contactNumber ? "border-red-500" : ""}`} />
