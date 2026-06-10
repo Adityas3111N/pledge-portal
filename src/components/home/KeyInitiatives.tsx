@@ -55,7 +55,7 @@ export default function KeyInitiatives() {
                   >
                     <div className="flex items-center justify-center shrink-0 w-6 h-6 relative">
                       <Image
-                        src="/sun.svg"
+                        src="/assets/icons/sun.svg"
                         alt="Sun icon"
                         width={24}
                         height={24}
@@ -78,7 +78,7 @@ export default function KeyInitiatives() {
 
           {/* Right Column: Key Initiatives Block */}
           <div className="w-full lg:w-[45%] xl:w-[591px] lg:h-[423px] flex mt-6 lg:mt-0">
-            <div className="w-[calc(100%+2rem)] md:w-full bg-[#ff5200] rounded-none -ml-4 md:ml-0 pl-[48px] pr-[48px] py-10 flex flex-col justify-between items-start text-text-inverse relative overflow-hidden shadow-lg h-full gap-[10px]">
+            <div className="w-[calc(100%+2rem)] md:w-full bg-brand-orange-deep rounded-none -ml-4 md:ml-0 pl-[48px] pr-[48px] py-10 flex flex-col justify-between items-start text-text-inverse relative overflow-hidden shadow-lg h-full gap-[10px]">
 
               {/* Subtle design pattern background overlay */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none" />

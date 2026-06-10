@@ -72,6 +72,17 @@
   --color-status-warning:     var(--primitive-yellow-500); /* Under Review */
   --color-status-info:        var(--primitive-blue-500);   /* Submitted */
   --color-status-draft:       var(--primitive-gray-500);   /* Draft */
+
+  /* ── Custom Recurrent Exact Color Variables ── */
+  --color-brand-orange-deep:          var(--primitive-orange-deep);
+  --color-brand-orange-bright:        var(--primitive-orange-bright);
+  --color-brand-orange-accent:        var(--primitive-orange-accent2);
+  --color-neutral-dark:               var(--primitive-neutral-dark);
+  --color-neutral-near-black:         var(--primitive-neutral-near-black);
+  --color-neutral-border-light:       var(--primitive-neutral-border-light);
+  --color-neutral-soft-bg:            var(--primitive-neutral-soft-bg);
+  --color-neutral-medium-gray:        var(--primitive-neutral-medium-gray);
+  --color-neutral-text-gray:          var(--primitive-neutral-text-gray);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -90,6 +101,11 @@
   --color-brand-light:        var(--color-brand-light);
   --color-brand-subtle:       var(--color-brand-subtle);
 
+  /* Recurrent Brand Custom Colors */
+  --color-brand-orange-deep:          var(--color-brand-orange-deep);
+  --color-brand-orange-bright:        var(--color-brand-orange-bright);
+  --color-brand-orange-accent:        var(--color-brand-orange-accent);
+
   /* Text */
   --color-text-primary:       var(--color-text-primary);
   --color-text-secondary:     var(--color-text-secondary);
@@ -98,6 +114,14 @@
   --color-text-inverse:       var(--color-text-inverse);
   --color-text-brand:         var(--color-text-brand);
   --color-text-brand-accent:  var(--color-text-brand-accent);
+
+  /* Recurrent Custom Neutral/Text Colors */
+  --color-neutral-dark:               var(--color-neutral-dark);
+  --color-neutral-near-black:         var(--color-neutral-near-black);
+  --color-neutral-border-light:       var(--color-neutral-border-light);
+  --color-neutral-soft-bg:            var(--color-neutral-soft-bg);
+  --color-neutral-medium-gray:        var(--color-neutral-medium-gray);
+  --color-neutral-text-gray:          var(--color-neutral-text-gray);
 
   /* Backgrounds */
   --color-bg-page:            var(--color-bg-page);

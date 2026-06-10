@@ -116,7 +116,7 @@ export default function PledgeGlance() {
       {/* Decorative Green Organic Leaf Shape on the Left */}
       <div className="absolute left-0 top-[20px] w-[74px] h-[418px] select-none pointer-events-none hidden lg:block">
         <Image
-          src="/green_shape.png"
+          src="/assets/decorations/green_shape.png"
           alt="Green decorative shape"
           fill
           sizes="74px"
@@ -171,7 +171,7 @@ export default function PledgeGlance() {
           <div className="relative w-full h-full flex items-end justify-center">
             {/* Map Image */}
             <Image
-              src="/upmap.png"
+              src="/assets/images/upmap.png"
               alt="Uttar Pradesh Map"
               fill
               sizes="(max-width: 1024px) 100vw, 520px"

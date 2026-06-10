@@ -12,9 +12,9 @@ export default function RegisterPage() {
       <div className="w-full min-h-screen grid grid-cols-1 lg:grid-cols-[35%_65%] xl:grid-cols-[45%_55%] bg-white">
          
          {/* Left Side - Image & Branding */}
-         <div className="hidden lg:block relative w-full h-full bg-[#1A1A1A]">
+         <div className="hidden lg:block relative w-full h-full bg-neutral-dark">
             <Image 
-               src="/register_bg.png"
+               src="/assets/backgrounds/register_bg.png"
                alt="Registration Background"
                fill
                className="object-cover opacity-60"
@@ -23,7 +23,7 @@ export default function RegisterPage() {
             {/* Overlay Content */}
             <div className="absolute inset-0 flex flex-col justify-start items-center pt-[143px] px-[60px] gap-[33px]">
                <Image 
-                  src="/upgovlogo.png"
+                  src="/assets/logos/upgovlogo.png"
                   alt="UP Government Logo"
                   width={150}
                   height={150}
@@ -46,8 +46,8 @@ export default function RegisterPage() {
            
            {/* Heading */}
            <div className="w-full flex flex-col gap-[12px] text-center px-2">
-              <h1 className="font-poppins font-medium text-[32px] sm:text-[40px] leading-[1.2] text-[#1A1A1A] tracking-tight whitespace-normal sm:whitespace-nowrap max-w-[280px] sm:max-w-none mx-auto">
-                 <span className="text-[#FF6A16]">{t("registration.pageTitle")}</span> <br className="block sm:hidden" /> {t("registration.pageSubtitle")}
+              <h1 className="font-poppins font-medium text-[32px] sm:text-[40px] leading-[1.2] text-neutral-dark tracking-tight whitespace-normal sm:whitespace-nowrap max-w-[280px] sm:max-w-none mx-auto">
+                 <span className="text-brand-orange-bright">{t("registration.pageTitle")}</span> <br className="block sm:hidden" /> {t("registration.pageSubtitle")}
               </h1>
               <p className="font-poppins font-normal text-[14px] sm:text-[16px] leading-[22px] sm:leading-[26px] text-[#4B4B4B] max-w-[680px] mx-auto">
                  {t("registration.pageDesc")}

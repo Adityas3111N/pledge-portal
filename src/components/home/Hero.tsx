@@ -92,7 +92,7 @@ export default function Hero() {
           }}
         >
           <Image 
-            src="/hero-image.jpg" 
+            src="/assets/images/hero-image.jpg" 
             alt="Official government review session group" 
             fill
             priority
@@ -108,7 +108,7 @@ export default function Hero() {
           }}
         >
           <Image 
-            src="/hero-layer.png" 
+            src="/assets/backgrounds/hero-layer.png" 
             alt="" 
             fill
             priority
@@ -161,7 +161,7 @@ export default function Hero() {
           {/* Mobile Jagged Mask as the background container extending below */}
           <div className="absolute top-0 left-0 w-full h-[calc(100%+70px)] z-10 pointer-events-none select-none">
             <Image 
-              src="/hero-layer-mobile.png" 
+              src="/assets/backgrounds/hero-layer-mobile.png" 
               alt="" 
               fill
               priority
@@ -189,7 +189,7 @@ export default function Hero() {
         {/* Lower Photo Area */}
         <div className="w-full aspect-[0.95] relative overflow-hidden z-10 mt-[-5px]">
           <Image 
-            src="/hero-image.jpg" 
+            src="/assets/images/hero-image.jpg" 
             alt="Official government review session group" 
             fill
             priority

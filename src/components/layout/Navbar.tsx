@@ -101,7 +101,7 @@ export default function Navbar() {
               style={{ borderColor: "var(--color-brand-primary)" }}
             >
               <Image 
-                src="/upgovlogo.png" 
+                src="/assets/logos/upgovlogo.png" 
                 alt="Government of Uttar Pradesh Logo" 
                 width={42}
                 height={42}
@@ -122,7 +122,7 @@ export default function Navbar() {
           {/* Right: Partner logos (Desktop) */}
           <div className="hidden lg:flex items-center gap-6">
             <Image 
-              src="/makeinindialogo.png" 
+              src="/assets/logos/makeinindialogo.png" 
               alt="Make in India" 
               width={160}
               height={58}
@@ -130,7 +130,7 @@ export default function Navbar() {
               className="w-auto h-[58px] object-contain mix-blend-multiply contrast-[1.8] brightness-[1.1]" 
             />
             <Image 
-              src="/investinuplogo.png" 
+              src="/assets/logos/investinuplogo.png" 
               alt="Invest UP" 
               width={160}
               height={52}
@@ -152,7 +152,7 @@ export default function Navbar() {
                 <Link href="/" className="flex items-center gap-2.5 pb-4 border-b border-border-medium hover:opacity-90 transition-opacity">
                   <div className="w-[34px] h-[34px] rounded-full border-[1.5px] border-[#FF6E28] flex items-center justify-center bg-bg-surface flex-shrink-0">
                     <Image 
-                      src="/upgovlogo.png" 
+                      src="/assets/logos/upgovlogo.png" 
                       alt="Government of Uttar Pradesh Emblem" 
                       width={22}
                       height={22}

@@ -10,7 +10,7 @@ export function FaqHero() {
   return (
     <section className="w-full relative overflow-hidden font-sans h-[624px] md:h-[403px]">
       {/* Background Image for Mobile */}
-      <div className="absolute inset-0 block md:hidden bg-[url('/faq_bg.jpg')] bg-cover bg-center" />
+      <div className="absolute inset-0 block md:hidden bg-[url('/assets/backgrounds/faq_bg.jpg')] bg-cover bg-center" />
       {/* Overlay for Mobile */}
       <div 
         className="absolute inset-0 block md:hidden z-10" 
@@ -21,7 +21,7 @@ export function FaqHero() {
       <div 
         className="absolute inset-0 hidden md:block" 
         style={{ 
-          background: "linear-gradient(360deg, #FFFFFF 0%, #FF5200 161.66%)" 
+          background: "linear-gradient(360deg, #FFFFFF 0%, var(--color-brand-orange-deep) 161.66%)" 
         }} 
       />
 
@@ -39,7 +39,7 @@ export function FaqHero() {
           }}
         >
           <Image
-            src="/office_building_faq.png"
+            src="/assets/decorations/office_building_faq.png"
             alt="Office Building Left"
             fill
             className="object-contain"
@@ -59,7 +59,7 @@ export function FaqHero() {
           }}
         >
           <Image
-            src="/office_building_faq.png"
+            src="/assets/decorations/office_building_faq.png"
             alt="Office Building Right"
             fill
             className="object-contain"
@@ -70,18 +70,18 @@ export function FaqHero() {
 
       {/* Content */}
       <div className="relative z-20 text-center px-6 max-w-[900px] mx-auto h-full flex flex-col justify-center items-center">
-        <h1 className="font-semibold text-[32px] sm:text-[44px] md:text-[54px] leading-tight text-white md:text-[#1A1A1A]">
+        <h1 className="font-semibold text-[32px] sm:text-[44px] md:text-[54px] leading-tight text-white md:text-neutral-dark">
           {language === "hi" ? (
             <>
-              अक्सर पूछे जाने वाले <span className="text-[#FF5200]">प्रश्न</span>
+              अक्सर पूछे जाने वाले <span className="text-brand-orange-deep">प्रश्न</span>
             </>
           ) : (
             <>
-              Frequently Asked <span className="text-[#FF5200]">Questions</span>
+              Frequently Asked <span className="text-brand-orange-deep">Questions</span>
             </>
           )}
         </h1>
-        <p className="mt-4 md:mt-6 font-medium text-[14px] sm:text-[16px] leading-relaxed text-white md:text-[#1A1A1A] max-w-[700px] opacity-90">
+        <p className="mt-4 md:mt-6 font-medium text-[14px] sm:text-[16px] leading-relaxed text-white md:text-neutral-dark max-w-[700px] opacity-90">
           {t("contactPage.heroSubtitle")}
         </p>
       </div>

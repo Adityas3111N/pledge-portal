@@ -17,7 +17,7 @@ export default function FaqPage() {
       {/* Abstract Right-side orange shape overlay (from the mockup) */}
       <div className="absolute right-0 top-[350px] w-[79px] h-[327px] select-none pointer-events-none hidden lg:block z-40">
         <img
-          src="/orange_shape2.svg"
+          src="/assets/decorations/orange_shape2.svg"
           alt=""
           className="w-full h-full object-contain object-right"
         />
@@ -26,7 +26,7 @@ export default function FaqPage() {
       {/* Abstract Left-side green shape overlay (from the mockup) */}
       <div className="absolute left-0 top-[550px] w-[79px] h-[327px] select-none pointer-events-none hidden lg:block z-40">
         <img
-          src="/green_shape2.svg"
+          src="/assets/decorations/green_shape2.svg"
           alt=""
           className="w-full h-full object-contain object-left"
         />

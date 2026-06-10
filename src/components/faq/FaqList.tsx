@@ -38,14 +38,14 @@ export function FaqList() {
   return (
     <section className="w-full bg-white py-16 px-4 md:px-8 flex flex-col items-center font-sans relative z-30">
       {/* Dynamic Title based on selected category */}
-      <h2 className="text-[32px] md:text-[40px] font-semibold text-[#1A1A1A] mb-8 text-center">
+      <h2 className="text-[32px] md:text-[40px] font-semibold text-neutral-dark mb-8 text-center">
         {language === "hi" ? (
           <>
-            {activeCategory} <span className="text-[#FF5200]">प्रश्न</span>
+            {activeCategory} <span className="text-brand-orange-deep">प्रश्न</span>
           </>
         ) : (
           <>
-            {activeCategory === "General" ? "General" : activeCategory.replace("For ", "")} <span className="text-[#FF5200]">Questions</span>
+            {activeCategory === "General" ? "General" : activeCategory.replace("For ", "")} <span className="text-brand-orange-deep">Questions</span>
           </>
         )}
       </h2>
@@ -64,7 +64,7 @@ export function FaqList() {
                 "px-5 py-2 rounded-full text-[14px] font-medium transition-colors border",
                 isActive
                   ? "bg-black text-white border-black"
-                  : "bg-white text-[#1A1A1A] border-[#EAEAEA] hover:border-gray-300 hover:bg-gray-50"
+                  : "bg-white text-neutral-dark border-[#EAEAEA] hover:border-gray-300 hover:bg-gray-50"
               )}
             >
               {category}
@@ -94,7 +94,7 @@ export function FaqList() {
                   <span
                     className={cn(
                       "text-[15px] md:text-[16px] font-medium pr-4 transition-colors",
-                      isExpanded ? "text-[#FF5200]" : "text-[#1A1A1A]"
+                      isExpanded ? "text-brand-orange-deep" : "text-neutral-dark"
                     )}
                   >
                     {item.question}
@@ -102,7 +102,7 @@ export function FaqList() {
                   <div
                     className={cn(
                       "flex-shrink-0 w-6 h-6 md:w-7 md:h-7 rounded-full flex items-center justify-center transition-transform duration-300",
-                      isExpanded ? "bg-[#FF5200] rotate-180" : "bg-[#FF5200]"
+                      isExpanded ? "bg-brand-orange-deep rotate-180" : "bg-brand-orange-deep"
                     )}
                   >
                     {isExpanded ? (

@@ -27,7 +27,7 @@ export default function SchemeObjectives() {
       
       {/* Decorative Orange Shape (Left edge, absolute to monitor, top: 3142px => relative top: 617px) */}
       <img
-        src="/orange_shape.svg"
+        src="/assets/decorations/orange_shape.svg"
         alt="Orange decorative shape"
         className="absolute left-0 top-[617px] w-[57px] h-[242px] select-none pointer-events-none z-0 hidden lg:block"
         style={{ transform: "rotate(0deg)" }}
@@ -35,7 +35,7 @@ export default function SchemeObjectives() {
 
       {/* Decorative Green Shape (Right edge, absolute to monitor, top: 2936px => relative top: 411px, z-20 to sit over image) */}
       <img
-        src="/green-shape-coreoffering_section.svg"
+        src="/assets/decorations/green-shape-coreoffering_section.svg"
         alt="Green decorative shape"
         className="absolute -scale-x-100 -scale-y-100 right-0 top-[500px] w-[54px] h-[406px] select-none pointer-events-none z-20 hidden lg:block"
         style={{ transform: "rotate(180deg)" }}
@@ -46,11 +46,11 @@ export default function SchemeObjectives() {
         <div className="container mx-auto">
           {/* Section Heading & Subheading */}
           <div className="text-center mb-12 flex flex-col items-center">
-            <h3 className="mb-3 text-[#050505] text-[28px] md:text-[44px] font-sans font-medium leading-tight">
+            <h3 className="mb-3 text-neutral-near-black text-[28px] md:text-[44px] font-sans font-medium leading-tight">
               {t("schemeObjectives.titlePart1")}{" "}
-              <span className="text-[#FF5200]">{t("schemeObjectives.titlePart2")}</span>
+              <span className="text-brand-orange-deep">{t("schemeObjectives.titlePart2")}</span>
             </h3>
-            <p className="text-[#050505] text-[16px] md:text-[18px] font-normal leading-[27px] max-w-[650px] mx-auto font-sans opacity-60">
+            <p className="text-neutral-near-black text-[16px] md:text-[18px] font-normal leading-[27px] max-w-[650px] mx-auto font-sans opacity-60">
               {t("schemeObjectives.description")}
             </p>
           </div>
@@ -69,13 +69,13 @@ export default function SchemeObjectives() {
               <div className="flex items-center gap-2.5 mb-1.5">
                 {/* Sun Icon */}
                 <img
-                  src="/sun.svg"
+                  src="/assets/icons/sun.svg"
                   alt="Sun icon"
                   className="w-[18px] h-[18px] shrink-0 select-none pointer-events-none"
                 />
                 
                 {/* Title */}
-                <h4 className="font-sans font-medium text-[16px] md:text-[18px] text-[#050505]">
+                <h4 className="font-sans font-medium text-[16px] md:text-[18px] text-neutral-near-black">
                   {item.title}
                 </h4>
               </div>
@@ -85,7 +85,7 @@ export default function SchemeObjectives() {
                 className="w-full mb-2.5"
                 style={{
                   height: "1px",
-                  backgroundImage: "linear-gradient(to right, #FF5200 60%, transparent 40%)",
+                  backgroundImage: "linear-gradient(to right, var(--color-brand-orange-deep) 60%, transparent 40%)",
                   backgroundSize: "8px 1px",
                   backgroundRepeat: "repeat-x",
                   WebkitMaskImage: "linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)",
@@ -94,7 +94,7 @@ export default function SchemeObjectives() {
               />
 
               {/* Description */}
-              <p className="font-sans font-normal text-[14px] md:text-[15px] leading-[22px] text-[#050505] opacity-70">
+              <p className="font-sans font-normal text-[14px] md:text-[15px] leading-[22px] text-neutral-near-black opacity-70">
                 {item.description}
               </p>
 
@@ -108,7 +108,7 @@ export default function SchemeObjectives() {
           {/* Mobile version: visible only on mobile/tablet (below lg) */}
           <div className="block lg:hidden w-full h-[450px] relative rounded-[16px] overflow-hidden shadow-md">
             <Image
-              src="/section_4_about_mobile_img.jpg"
+              src="/assets/images/section_4_about_mobile_img.jpg"
               alt="UP Vidhan Sabha"
               fill
               className="object-cover rounded-[16px]"
@@ -119,7 +119,7 @@ export default function SchemeObjectives() {
           {/* Desktop version: visible on lg and up */}
           <div className="hidden lg:block w-full h-[380px] relative rounded-[16px] overflow-hidden shadow-md">
             <Image
-              src="/aboutpage_section_4_sideimage.jpg"
+              src="/assets/images/aboutpage_section_4_sideimage.jpg"
               alt="UP Government Officials"
               fill
               className="object-cover rounded-[16px]"

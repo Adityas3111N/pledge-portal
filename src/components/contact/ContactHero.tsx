@@ -14,7 +14,7 @@ export function ContactHero() {
     >
       <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 767px) {
-          section { --mobile-bg: url('/contactus_mobile_bg.jpg'); }
+          section { --mobile-bg: url('/assets/backgrounds/contactus_mobile_bg.jpg'); }
         }
       `}} />
 
@@ -32,7 +32,7 @@ export function ContactHero() {
           }}
         >
           <Image
-            src="/handshake_contactus.png"
+            src="/assets/images/handshake_contactus.png"
             alt="Handshake Background"
             fill
             className="object-contain"
@@ -45,7 +45,7 @@ export function ContactHero() {
       <div 
         className="hidden md:block absolute inset-0 w-full h-full pointer-events-none z-10"
         style={{
-          background: "linear-gradient(360deg, #FFFFFF 4.57%, #FF5200 135.11%)"
+          background: "linear-gradient(360deg, #FFFFFF 4.57%, var(--color-brand-orange-deep) 135.11%)"
         }}
       />
 
@@ -73,7 +73,7 @@ export function ContactHero() {
           }}
         />
 
-        {/* Right-side Orange Ellipses (color #FF520014 equivalent to rgba(255, 82, 0, 0.08)) */}
+        {/* Right-side Orange Ellipses (color var(--color-brand-orange-deep)14 equivalent to rgba(255, 82, 0, 0.08)) */}
         {/* Ellipse 3: width: 326px; height: 326px; top: -155px; left: 1265px; */}
         <div 
           className="absolute rounded-full"
@@ -105,12 +105,12 @@ export function ContactHero() {
       <div className="relative z-30 w-full max-w-[840px] px-6 text-center flex flex-col items-center select-none font-sans mt-4 md:mt-0">
         {/* Main Title */}
         <h1 className="font-semibold text-[32px] sm:text-[44px] md:text-[54px] leading-tight tracking-tight">
-          <span className="text-[#FF5200]">{t("contactPage.heroTitle").split(" ")[0]}</span>{" "}
+          <span className="text-brand-orange-deep">{t("contactPage.heroTitle").split(" ")[0]}</span>{" "}
           <span className="text-white md:text-[#000000]">{t("contactPage.heroTitle").split(" ").slice(1).join(" ")}</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-4 font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.6] text-white/90 md:text-[#1A1A1A] max-w-[760px] opacity-90">
+        <p className="mt-4 font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.6] text-white/90 md:text-neutral-dark max-w-[760px] opacity-90">
           {t("contactPage.heroSubtitle")}
         </p>
       </div>

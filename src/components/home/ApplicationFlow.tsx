@@ -23,7 +23,7 @@ export default function ApplicationFlow() {
       {/* Orange Shape Decoration */}
       <div className="absolute right-0 top-0 md:top-10 w-[62px] h-[257px] select-none pointer-events-none hidden md:block -scale-x-100">
         <img
-          src="/orange_shape.svg"
+          src="/assets/decorations/orange_shape.svg"
           alt="Orange decorative shape"
           className="w-full h-full object-contain"
         />
@@ -32,12 +32,12 @@ export default function ApplicationFlow() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 md:mb-20 flex flex-col items-center">
           <h3 
-            className="mb-2 text-[#050505] text-[7vw] min-[400px]:text-[28px] md:text-[44px] font-medium leading-[100%] md:leading-[56px] w-full max-w-[424px] font-sans whitespace-nowrap"
+            className="mb-2 text-neutral-near-black text-[7vw] min-[400px]:text-[28px] md:text-[44px] font-medium leading-[100%] md:leading-[56px] w-full max-w-[424px] font-sans whitespace-nowrap"
           >
-            {t("applicationFlow.titlePart1")} <span className="text-[#F37021]">{t("applicationFlow.titlePart2")}</span>
+            {t("applicationFlow.titlePart1")} <span className="text-brand-orange-accent">{t("applicationFlow.titlePart2")}</span>
           </h3>
           <p 
-            className="text-[#050505] text-[16px] md:text-[18px] font-normal leading-[27px] md:leading-[23.4px] max-w-[650px] mx-auto font-sans"
+            className="text-neutral-near-black text-[16px] md:text-[18px] font-normal leading-[27px] md:leading-[23.4px] max-w-[650px] mx-auto font-sans"
           >
             {t("applicationFlow.description")}
           </p>
@@ -50,7 +50,7 @@ export default function ApplicationFlow() {
         style={{ containerType: 'inline-size' }}
       >
           <Image
-            src="/path.png"
+            src="/assets/icons/path.png"
             alt="Path"
             fill
             sizes="100vw"
@@ -70,7 +70,7 @@ export default function ApplicationFlow() {
             >
               <div className="relative w-full h-full">
                 <Image
-                  src="/location.png"
+                  src="/assets/icons/location.png"
                   alt={`Location ${index + 1}`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -93,7 +93,7 @@ export default function ApplicationFlow() {
                     marginLeft: loc.textPos === 'right' ? '0.8cqw' : '0',
                   }}
                 >
-                  <h4 className="font-bold text-[#050505] font-sans leading-tight" style={{ fontSize: '0.97cqw', marginBottom: '0.2cqw' }}>{9 - index}. {t("applicationFlow.step.title")}</h4>
+                  <h4 className="font-bold text-neutral-near-black font-sans leading-tight" style={{ fontSize: '0.97cqw', marginBottom: '0.2cqw' }}>{9 - index}. {t("applicationFlow.step.title")}</h4>
                   <p className="text-[#666666] leading-tight font-sans" style={{ fontSize: '0.76cqw' }}>
                     {t("applicationFlow.step.description")}
                   </p>

@@ -90,7 +90,7 @@ export const SelectTrigger = React.forwardRef<
       type="button"
       onClick={() => setOpen(!open)}
       className={cn(
-        "flex h-11 w-full items-center justify-between rounded-lg border border-input bg-transparent px-2.5 py-1 text-base md:text-sm transition-colors outline-none focus:border-[#FF6A16] focus:ring-1 focus:ring-[#FF6A16] disabled:cursor-not-allowed disabled:opacity-50 bg-white",
+        "flex h-11 w-full items-center justify-between rounded-lg border border-input bg-transparent px-2.5 py-1 text-base md:text-sm transition-colors outline-none focus:border-brand-orange-bright focus:ring-1 focus:ring-brand-orange-bright disabled:cursor-not-allowed disabled:opacity-50 bg-white",
         className
       )}
       {...props}

@@ -9,7 +9,7 @@ export default function CTABanner() {
   const { t } = useTranslation();
 
   return (
-    <section className="w-full bg-[#FF5200] relative overflow-hidden">
+    <section className="w-full bg-brand-orange-deep relative overflow-hidden">
       <div className="w-full max-w-[1440px] mx-auto relative flex flex-col lg:block h-auto min-h-[500px] lg:h-[260px] lg:min-h-[300px]">
         {/* Connect With Us Card - Top Left */}
         <div className="lg:absolute top-[22px] left-[19px] z-20 w-full lg:w-[160px] rounded-[8px] p-4 lg:p-3 flex flex-col gap-[10px]">
@@ -29,7 +29,7 @@ export default function CTABanner() {
         {/* Ram Mandir Image - Bottom Left/Center */}
         <div className="absolute bottom-0 left-0 lg:left-[5%] w-full lg:w-[480px] h-[180px] lg:h-[280px] pointer-events-none select-none z-0">
           <Image
-            src="/ram_mandir_image.svg"
+            src="/assets/images/ram_mandir_image.svg"
             alt="Ram Mandir"
             fill
             sizes="(max-width: 1024px) 100vw, 480px"

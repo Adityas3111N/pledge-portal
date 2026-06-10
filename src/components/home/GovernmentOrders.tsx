@@ -54,7 +54,7 @@ export default function GovernmentOrders({
         <>
           <div className="absolute inset-0 w-full h-full">
             <Image
-              src="/bg_image_shashanadesh.png"
+              src="/assets/backgrounds/bg_image_shashanadesh.png"
               alt=""
               fill
               sizes="100vw"
@@ -79,13 +79,13 @@ export default function GovernmentOrders({
       <div className="relative z-10 w-full max-w-[1090px] mx-auto px-6 md:px-12 lg:px-16 py-16 md:py-20 flex flex-col items-center gap-[40px]">
         {/* Heading Block */}
         <div className="flex flex-col items-center gap-3 text-center">
-          <h2 className="text-[7vw] min-[450px]:text-[28px] md:text-[44px] font-medium leading-[100%] text-[#050505] font-sans">
+          <h2 className="text-[7vw] min-[450px]:text-[28px] md:text-[44px] font-medium leading-[100%] text-neutral-near-black font-sans">
             {t("governmentOrders.titlePart1")}{" "}
-            <span className="text-[#F37021]">
+            <span className="text-brand-orange-accent">
               {t("governmentOrders.titlePart2")}
             </span>
           </h2>
-          <p className="text-[16px] md:text-[18px] font-normal leading-[27px] text-[#6C6C6C] font-sans max-w-[650px]">
+          <p className="text-[16px] md:text-[18px] font-normal leading-[27px] text-neutral-text-gray font-sans max-w-[650px]">
             {t("governmentOrders.description")}
           </p>
         </div>
@@ -100,8 +100,8 @@ export default function GovernmentOrders({
                 onClick={() => setActiveIndex(index)}
                 className={`w-full h-[293px] rounded-[8px] border p-4 md:p-6 flex flex-col justify-between cursor-pointer transition-all duration-300 hover:shadow-lg ${
                   isActive
-                    ? "bg-[#F37021] border-[#F37021] text-white"
-                    : "bg-white border-[#E0E0E0] text-[#050505] hover:border-[#F37021]/40"
+                    ? "bg-brand-orange-accent border-brand-orange-accent text-white"
+                    : "bg-white border-[#E0E0E0] text-neutral-near-black hover:border-brand-orange-accent/40"
                 }`}
               >
                 {/* Number Badge */}
@@ -109,8 +109,8 @@ export default function GovernmentOrders({
                   <div
                     className={`w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] font-medium font-sans transition-all duration-300 ${
                       isActive
-                        ? "bg-white text-[#F37021]"
-                        : "bg-[#F37021] text-white"
+                        ? "bg-white text-brand-orange-accent"
+                        : "bg-brand-orange-accent text-white"
                     }`}
                   >
                     {order.number}
@@ -119,7 +119,7 @@ export default function GovernmentOrders({
                   {/* Title */}
                   <h3
                     className={`text-[16px] font-medium leading-[22px] font-sans ${
-                      isActive ? "text-white" : "text-[#050505]"
+                      isActive ? "text-white" : "text-neutral-near-black"
                     }`}
                   >
                     {t(order.titleKey)}
@@ -128,7 +128,7 @@ export default function GovernmentOrders({
                   {/* Description */}
                   <p
                     className={`text-[12px] font-normal leading-[16px] font-sans ${
-                      isActive ? "text-white/90" : "text-[#6C6C6C]"
+                      isActive ? "text-white/90" : "text-neutral-text-gray"
                     }`}
                   >
                     {t(order.descriptionKey)}
@@ -138,7 +138,7 @@ export default function GovernmentOrders({
                 {/* Date */}
                 <p
                   className={`text-[14px] font-medium leading-[100%] font-sans ${
-                    isActive ? "text-white" : "text-[#F37021]"
+                    isActive ? "text-white" : "text-brand-orange-accent"
                   }`}
                 >
                   {t(order.dateKey)}

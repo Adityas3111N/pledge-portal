@@ -15,31 +15,31 @@ export default function Endorsements() {
       id: "modi",
       name: t("endorsements.officials.modi.name"),
       role: t("endorsements.officials.modi.role"),
-      image: "/narendramodi.png"
+      image: "/assets/images/narendramodi.png"
     },
     {
       id: "yogi",
       name: t("endorsements.officials.yogi.name"),
       role: t("endorsements.officials.yogi.role"),
-      image: "/yogiji.jpg"
+      image: "/assets/images/yogiji.jpg"
     },
     {
       id: "patel",
       name: t("endorsements.officials.patel.name"),
       role: t("endorsements.officials.patel.role"),
-      image: "/anandibenpatel.jpg"
+      image: "/assets/images/anandibenpatel.jpg"
     },
     {
       id: "nandi",
       name: t("endorsements.officials.nandi.name"),
       role: t("endorsements.officials.nandi.role"),
-      image: "/nandgopalgupta.jpg"
+      image: "/assets/images/nandgopalgupta.jpg"
     },
     {
       id: "saini",
       name: t("endorsements.officials.saini.name"),
       role: t("endorsements.officials.saini.role"),
-      image: "/jaswantsinghsaini.jpg"
+      image: "/assets/images/jaswantsinghsaini.jpg"
     }
   ];
 
@@ -114,7 +114,7 @@ export default function Endorsements() {
           {/* Sun icon */}
           <div className="flex items-center justify-center px-4 shrink-0">
             <Image
-              src="/sun.svg"
+              src="/assets/icons/sun.svg"
               alt="Sun emblem"
               width={24}
               height={24}

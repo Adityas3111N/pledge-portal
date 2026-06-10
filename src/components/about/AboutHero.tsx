@@ -22,7 +22,7 @@ export function AboutHero() {
       {/* 2. Map Background Layer */}
       <div className="absolute pointer-events-none z-0 left-1/2 -translate-x-1/2 top-[446px] md:top-[280px] lg:top-[393px] w-[412px] max-w-full md:w-full lg:max-w-none lg:w-[1250px] h-[188px] md:h-[350px] lg:h-[500px] opacity-60 md:opacity-80 lg:opacity-100">
         <Image
-          src="/about_page_hero_bg.svg"
+          src="/assets/backgrounds/about_page_hero_bg.svg"
           alt="Map Background"
           fill
           className="object-contain object-top"
@@ -51,21 +51,21 @@ export function AboutHero() {
       <div className="relative lg:absolute z-20 flex flex-col items-center text-center left-1/2 -translate-x-1/2 lg:w-[960px] lg:h-[442px] top-0 lg:top-[150px] gap-4 lg:gap-[20px] w-full max-w-[960px] px-4 lg:px-0 pt-[80px] lg:pt-0 pb-16 lg:pb-0">
         {/* Top Label */}
         <div className="flex items-center justify-center gap-2 px-3 py-1.5 bg-bg-surface rounded-md shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-border-medium w-fit shrink-0">
-          <div className="w-[3px] h-[14px] bg-[#FF6A16] rounded-full shrink-0" />
-          <span className="text-[12px] leading-[100%] lg:text-[14px] font-medium text-[#000000] lg:text-[#1A1A1A] text-center">
+          <div className="w-[3px] h-[14px] bg-brand-orange-bright rounded-full shrink-0" />
+          <span className="text-[12px] leading-[100%] lg:text-[14px] font-medium text-[#000000] lg:text-neutral-dark text-center">
             {t("about.topLabel")}
           </span>
         </div>
 
         {/* Main Title */}
-        <h1 className="w-full max-w-[374px] lg:max-w-[1219px] h-auto font-medium text-[28px] lg:text-[56px] leading-tight lg:leading-[70px] tracking-normal text-center text-[#050505] break-words min-w-0">
+        <h1 className="w-full max-w-[374px] lg:max-w-[1219px] h-auto font-medium text-[28px] lg:text-[56px] leading-tight lg:leading-[70px] tracking-normal text-center text-neutral-near-black break-words min-w-0">
           {t("about.titlePart1")} <br className="hidden lg:block" />
           {t("about.titlePart2")} <br />
           <span className="text-[#FA7B3F]">{t("about.titlePart3")}</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="w-full lg:max-w-[800px] font-normal text-[14px] lg:text-[16px] leading-relaxed tracking-normal text-center text-[#050505] opacity-70 break-words min-w-0 mt-2">
+        <p className="w-full lg:max-w-[800px] font-normal text-[14px] lg:text-[16px] leading-relaxed tracking-normal text-center text-neutral-near-black opacity-70 break-words min-w-0 mt-2">
           {t("about.description")}
         </p>
 
@@ -82,7 +82,7 @@ export function AboutHero() {
           </Button>
           <Button
             variant="outline"
-            className="w-[113px] h-[44px] gap-[10px] rounded-[8px] py-[10px] px-[12px] bg-white border border-[#CFCFCF] text-[#1A1A1A] font-medium text-[14px] lg:text-[16px] hover:bg-gray-50 whitespace-nowrap overflow-hidden text-ellipsis shrink-0"
+            className="w-[113px] h-[44px] gap-[10px] rounded-[8px] py-[10px] px-[12px] bg-white border border-[#CFCFCF] text-neutral-dark font-medium text-[14px] lg:text-[16px] hover:bg-gray-50 whitespace-nowrap overflow-hidden text-ellipsis shrink-0"
             style={{ boxShadow: "inset 0px 4px 8px 0px rgba(185,185,185,0.25)", borderWidth: "1px" }}
           >
             {t("about.learnMoreBtn")}

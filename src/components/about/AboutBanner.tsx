@@ -15,7 +15,7 @@ export function AboutBanner() {
         {/* Left Image Section (Desktop) */}
         <div className="hidden md:block absolute left-0 top-0 w-[50%] h-[318px] shrink-0 pointer-events-none z-0">
           <Image
-            src="/bg_image_sec3_about.png"
+            src="/assets/backgrounds/bg_image_sec3_about.png"
             alt="Building"
             fill
             className="object-cover"
@@ -45,7 +45,7 @@ export function AboutBanner() {
         {/* Bottom Image Section (Mobile) */}
         <div className="block md:hidden absolute left-0 top-[329px] w-full h-[185px] shrink-0 pointer-events-none z-0">
           <Image
-            src="/bg_image_sec3_about_mobile_screen.png"
+            src="/assets/backgrounds/bg_image_sec3_about_mobile_screen.png"
             alt="Red Fort"
             fill
             className="object-cover object-bottom"

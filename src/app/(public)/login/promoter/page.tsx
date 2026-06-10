@@ -22,7 +22,7 @@ export default function PromoterLoginPage() {
             opacity: 0.17
           }}
         >
-          <Image src="/white_bg_img_promoter_login.png" alt="Promoter Login Faint Map" fill className="object-cover" priority />
+          <Image src="/assets/backgrounds/white_bg_img_promoter_login.png" alt="Promoter Login Faint Map" fill className="object-cover" priority />
         </div>
 
         {/* Main Grid Content */}
@@ -39,7 +39,7 @@ export default function PromoterLoginPage() {
                 left: "0px"
               }}
             >
-              <Image src="/upmap.png" alt="UP Map" fill className="object-contain" priority />
+              <Image src="/assets/images/upmap.png" alt="UP Map" fill className="object-contain" priority />
             </div>
           </div>
 
@@ -47,8 +47,8 @@ export default function PromoterLoginPage() {
         <div className="w-full h-full flex flex-col justify-center items-center py-10 px-4 lg:px-6 xl:px-12 overflow-hidden">
           <div className="w-full max-w-[500px] flex flex-col gap-[40px] mt-4 lg:mt-0 relative z-30">
             <div className="w-full flex flex-col gap-[12px] text-center px-2">
-              <h1 className="font-poppins font-medium text-[24px] min-[375px]:text-[28px] sm:text-[40px] leading-[1.2] text-[#1A1A1A] tracking-tight whitespace-nowrap mx-auto">
-                <span className="text-[#FF6A16]">{t("login.promoterLog")}</span> {t("login.inHere")}
+              <h1 className="font-poppins font-medium text-[24px] min-[375px]:text-[28px] sm:text-[40px] leading-[1.2] text-neutral-dark tracking-tight whitespace-nowrap mx-auto">
+                <span className="text-brand-orange-bright">{t("login.promoterLog")}</span> {t("login.inHere")}
               </h1>
               <p className="font-poppins font-normal text-[14px] sm:text-[16px] leading-[22px] sm:leading-[26px] text-[#4B4B4B] max-w-[680px] mx-auto">
                 {t("login.pageDesc")}

@@ -60,14 +60,14 @@ export function RegistrationForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col gap-[32px]">
       
       {/* 1. Authorized Signatory Details */}
-      <div className="w-full flex flex-col rounded-[8px] border border-[#E5E5E5] bg-white overflow-hidden">
-        <div className="flex items-center gap-4 px-5 py-4 lg:px-7 lg:py-5 bg-[#F9F9F9] border-b border-[#E5E5E5]">
-           <div className="w-[48px] h-[48px] rounded-full border border-[#E5E5E5] flex items-center justify-center border-dashed bg-white shrink-0">
+      <div className="w-full flex flex-col rounded-[8px] border border-neutral-border-light bg-white overflow-hidden">
+        <div className="flex items-center gap-4 px-5 py-4 lg:px-7 lg:py-5 bg-neutral-soft-bg border-b border-neutral-border-light">
+           <div className="w-[48px] h-[48px] rounded-full border border-neutral-border-light flex items-center justify-center border-dashed bg-white shrink-0">
              <User className="text-text-secondary" size={24} />
            </div>
            <div className="flex flex-col">
-             <h3 className="font-poppins font-medium text-[16px] leading-[26px] text-[#1A1A1A]">{t("registration.authSignatory")}</h3>
-             <p className="font-poppins font-normal text-[12px] text-[#8E8E8E]">{t("registration.authSignatoryDesc")}</p>
+             <h3 className="font-poppins font-medium text-[16px] leading-[26px] text-neutral-dark">{t("registration.authSignatory")}</h3>
+             <p className="font-poppins font-normal text-[12px] text-neutral-medium-gray">{t("registration.authSignatoryDesc")}</p>
            </div>
         </div>
         
@@ -87,9 +87,9 @@ export function RegistrationForm() {
                <Input 
                  {...register("aadharCard")} 
                  placeholder={t("placeholders.aadharCard")} 
-                 className={`h-[44px] flex-1 bg-[#F9F9F9] ${errors.aadharCard ? "border-red-500" : ""}`} 
+                 className={`h-[44px] flex-1 bg-neutral-soft-bg ${errors.aadharCard ? "border-red-500" : ""}`} 
                />
-               <Button type="button" className="h-[44px] bg-[#1a1a1a] text-white hover:bg-black px-6 rounded-md">{t("registration.verifyBtn")}</Button>
+               <Button type="button" className="h-[44px] bg-neutral-dark text-white hover:bg-black px-6 rounded-md">{t("registration.verifyBtn")}</Button>
             </div>
             {errors.aadharCard && <span className="text-red-500 text-[11px] mt-1">{t(`errors.${errors.aadharCard.message}`)}</span>}
           </div>
@@ -97,14 +97,14 @@ export function RegistrationForm() {
       </div>
 
       {/* 2. Entity Information */}
-      <div className="w-full flex flex-col rounded-[8px] border border-[#E5E5E5] bg-white overflow-hidden">
-        <div className="flex items-center gap-4 px-5 py-4 lg:px-7 lg:py-5 bg-[#F9F9F9] border-b border-[#E5E5E5]">
-           <div className="w-[48px] h-[48px] rounded-full border border-[#E5E5E5] flex items-center justify-center border-dashed bg-white shrink-0">
+      <div className="w-full flex flex-col rounded-[8px] border border-neutral-border-light bg-white overflow-hidden">
+        <div className="flex items-center gap-4 px-5 py-4 lg:px-7 lg:py-5 bg-neutral-soft-bg border-b border-neutral-border-light">
+           <div className="w-[48px] h-[48px] rounded-full border border-neutral-border-light flex items-center justify-center border-dashed bg-white shrink-0">
              <FileText className="text-text-secondary" size={24} />
            </div>
            <div className="flex flex-col">
-             <h3 className="font-poppins font-medium text-[16px] leading-[26px] text-[#1A1A1A]">{t("registration.entityInfo")}</h3>
-             <p className="font-poppins font-normal text-[12px] text-[#8E8E8E]">{t("registration.entityInfoDesc")}</p>
+             <h3 className="font-poppins font-medium text-[16px] leading-[26px] text-neutral-dark">{t("registration.entityInfo")}</h3>
+             <p className="font-poppins font-normal text-[12px] text-neutral-medium-gray">{t("registration.entityInfoDesc")}</p>
            </div>
         </div>
         
@@ -145,14 +145,14 @@ export function RegistrationForm() {
       </div>
 
       {/* 3. Contact Details */}
-      <div className="w-full flex flex-col rounded-[8px] border border-[#E5E5E5] bg-white overflow-hidden">
-        <div className="flex items-center gap-4 px-5 py-4 lg:px-7 lg:py-5 bg-[#F9F9F9] border-b border-[#E5E5E5]">
-           <div className="w-[48px] h-[48px] rounded-full border border-[#E5E5E5] flex items-center justify-center border-dashed bg-white shrink-0">
+      <div className="w-full flex flex-col rounded-[8px] border border-neutral-border-light bg-white overflow-hidden">
+        <div className="flex items-center gap-4 px-5 py-4 lg:px-7 lg:py-5 bg-neutral-soft-bg border-b border-neutral-border-light">
+           <div className="w-[48px] h-[48px] rounded-full border border-neutral-border-light flex items-center justify-center border-dashed bg-white shrink-0">
              <LayoutGrid className="text-text-secondary" size={24} />
            </div>
            <div className="flex flex-col">
-             <h3 className="font-poppins font-medium text-[16px] leading-[26px] text-[#1A1A1A]">{t("registration.contactDetails")}</h3>
-             <p className="font-poppins font-normal text-[12px] text-[#8E8E8E]">{t("registration.contactDetailsDesc")}</p>
+             <h3 className="font-poppins font-medium text-[16px] leading-[26px] text-neutral-dark">{t("registration.contactDetails")}</h3>
+             <p className="font-poppins font-normal text-[12px] text-neutral-medium-gray">{t("registration.contactDetailsDesc")}</p>
            </div>
         </div>
         
@@ -173,7 +173,7 @@ export function RegistrationForm() {
                   {Districts.map(dist => <SelectItem key={dist} value={dist}>{t(`districts.${dist}`)}</SelectItem>)}
                 </SelectContent>
               </Select>
-              <Button type="button" className="h-[44px] bg-[#1a1a1a] text-white hover:bg-black px-6 rounded-md">{t("registration.verifyBtn")}</Button>
+              <Button type="button" className="h-[44px] bg-neutral-dark text-white hover:bg-black px-6 rounded-md">{t("registration.verifyBtn")}</Button>
             </div>
             {errors.district && <span className="text-red-500 text-[11px] mt-1">{t(`errors.${errors.district.message}`)}</span>}
           </div>
@@ -181,7 +181,7 @@ export function RegistrationForm() {
             <label className="text-[14px] font-medium text-gray-700">{t("registration.contactNumber")}</label>
             <div className="flex gap-2">
               <Select defaultValue="+91">
-                <SelectTrigger className="h-[44px] w-[90px] bg-[#F9F9F9] shrink-0">
+                <SelectTrigger className="h-[44px] w-[90px] bg-neutral-soft-bg shrink-0">
                   <SelectValue placeholder="+91" />
                 </SelectTrigger>
                 <SelectContent position="popper">

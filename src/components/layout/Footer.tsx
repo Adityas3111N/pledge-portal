@@ -87,7 +87,7 @@ export default function Footer() {
             <div className="flex items-center gap-2.5">
               <div className="w-[36px] h-[36px] rounded-full border-[1px] flex items-center justify-center bg-bg-surface flex-shrink-0" style={{ borderColor: "var(--color-brand-primary)" }}>
                 <Image
-                  src="/upgovlogo.png"
+                  src="/assets/logos/upgovlogo.png"
                   alt="Government of Uttar Pradesh emblem"
                   width={24}
                   height={24}

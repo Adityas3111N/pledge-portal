@@ -13,7 +13,7 @@ export function WhatIsPledge() {
       {/* Orange Shape on the left */}
       <div className="absolute left-0 top-0 w-[79px] sm:w-[49px] md:w-[69px] lg:w-[79px] pointer-events-none hidden lg:flex justify-start z-50 mt-[-20px]">
         <Image
-          src="/orange_shape.svg"
+          src="/assets/decorations/orange_shape.svg"
           alt="Decorative orange shape"
           width={79}
           height={327}
@@ -27,7 +27,7 @@ export function WhatIsPledge() {
           style={{ gap: "16px" }}
         >
           <h2
-            className="text-[#050505] text-[32px] sm:text-[44px] font-medium leading-[100%] text-center break-words w-full"
+            className="text-neutral-near-black text-[32px] sm:text-[44px] font-medium leading-[100%] text-center break-words w-full"
             style={{ fontWeight: 500 }}
           >
             {t("whatIsPledge.titleBlack1")}
@@ -38,13 +38,13 @@ export function WhatIsPledge() {
           </h2>
 
           <div className="flex flex-col items-center text-center mt-2 gap-1 sm:gap-2 max-w-[1100px]">
-            <p className="text-[#6C6C6C] text-[15px] sm:text-[18px] font-normal leading-relaxed sm:leading-[27px]">
+            <p className="text-neutral-text-gray text-[15px] sm:text-[18px] font-normal leading-relaxed sm:leading-[27px]">
               {t("whatIsPledge.p1")}
             </p>
-            <p className="text-[#6C6C6C] text-[15px] sm:text-[18px] font-normal leading-relaxed sm:leading-[27px]">
+            <p className="text-neutral-text-gray text-[15px] sm:text-[18px] font-normal leading-relaxed sm:leading-[27px]">
               {t("whatIsPledge.p2")}
             </p>
-            <p className="text-[#6C6C6C] text-[15px] sm:text-[18px] font-normal leading-relaxed sm:leading-[27px]">
+            <p className="text-neutral-text-gray text-[15px] sm:text-[18px] font-normal leading-relaxed sm:leading-[27px]">
               {t("whatIsPledge.p3")}
             </p>
           </div>
@@ -63,7 +63,7 @@ export function WhatIsPledge() {
           {/* Sun icon */}
           <div className="flex items-center justify-center px-4 shrink-0">
             <Image
-              src="/sun.svg"
+              src="/assets/icons/sun.svg"
               alt="Sun emblem"
               width={24}
               height={24}

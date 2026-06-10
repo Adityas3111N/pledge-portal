@@ -47,18 +47,18 @@ export function LoginForm({ role }: { role: string }) {
       
       {/* 1. Enter Your Details */}
       <div 
-        className={`w-full flex flex-col rounded-[8px] border border-[#E5E5E5] bg-white overflow-hidden ${role === "department" ? "lg:h-[371px]" : ""}`}
+        className={`w-full flex flex-col rounded-[8px] border border-neutral-border-light bg-white overflow-hidden ${role === "department" ? "lg:h-[371px]" : ""}`}
       >
-        <div className="flex items-center gap-4 px-5 py-4 lg:px-7 lg:py-5 bg-[#F9F9F9] border-b border-[#E5E5E5]">
-           <div className="w-[48px] h-[48px] rounded-full border border-[#E5E5E5] flex items-center justify-center border-dashed bg-white shrink-0">
+        <div className="flex items-center gap-4 px-5 py-4 lg:px-7 lg:py-5 bg-neutral-soft-bg border-b border-neutral-border-light">
+           <div className="w-[48px] h-[48px] rounded-full border border-neutral-border-light flex items-center justify-center border-dashed bg-white shrink-0">
              <User className="text-text-secondary" size={24} />
            </div>
            <div className="flex flex-col">
-             <h3 className="font-poppins font-medium text-[16px] leading-[26px] text-[#1A1A1A]">
+             <h3 className="font-poppins font-medium text-[16px] leading-[26px] text-neutral-dark">
                <span className="hidden sm:inline">{headerText}</span>
                <span className="inline sm:hidden">{t("login.enterDetails")}</span>
              </h3>
-             <p className="font-poppins font-normal text-[12px] text-[#8E8E8E]">{t("login.enterDetailsDesc")}</p>
+             <p className="font-poppins font-normal text-[12px] text-neutral-medium-gray">{t("login.enterDetailsDesc")}</p>
            </div>
         </div>
         
@@ -96,7 +96,7 @@ export function LoginForm({ role }: { role: string }) {
           <span className="inline sm:hidden">{role === "department" ? "Send OTP & Register" : buttonText}</span>
           <ChevronRight className="w-4 h-4" />
         </Button>
-        <p className={`text-[13px] sm:text-[14px] font-medium text-[#1A1A1A] ${role === "department" ? "sm:hidden" : ""}`}>
+        <p className={`text-[13px] sm:text-[14px] font-medium text-neutral-dark ${role === "department" ? "sm:hidden" : ""}`}>
           {t("login.newApplicant")} <Link href="/register" className="text-brand-primary hover:underline">{t("login.registerHere")}</Link>
         </p>
       </div>

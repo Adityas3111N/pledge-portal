@@ -48,4 +48,16 @@
   --primitive-blue-500:   #3B82F6; /* info / submitted                  */
   --primitive-green-500:  #16A34A; /* success / completed               */
   --primitive-teal-500:   #0D9488; /* conditional approval              */
+
+  /* ── Recurrent Exact Color Codes ─────────────── */
+  --primitive-orange-deep:          #FF5200; /* deep brand orange */
+  --primitive-orange-bright:        #FF6A16; /* bright brand orange */
+  --primitive-orange-accent2:       #F37021; /* another brand orange shade */
+  --primitive-neutral-dark:         #1A1A1A; /* dark gray text/bg */
+  --primitive-neutral-near-black:   #050505; /* near-black headers */
+  --primitive-neutral-border-light: #E5E5E5; /* light border */
+  --primitive-neutral-soft-bg:      #F9F9F9; /* soft bg */
+  --primitive-neutral-medium-gray:  #8E8E8E; /* medium gray text */
+  --primitive-neutral-text-gray:    #6C6C6C; /* text gray */
 }
+
