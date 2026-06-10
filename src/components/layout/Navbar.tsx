@@ -4,14 +4,14 @@ import React, { useState, useEffect } from "react";
 import { Search, Phone, Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { 
   Sheet, 
   SheetContent, 
   SheetHeader, 
   SheetTitle, 
   SheetTrigger 
-} from "@/components/ui/sheet";
+} from "@/components/ui/navigation/sheet";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Navbar() {

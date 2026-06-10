@@ -8,9 +8,9 @@ import { useFormPersist } from "@/hooks/useFormPersist";
 import { EntityTypes, Districts } from "@/constants/enums";
 import { User, FileText, LayoutGrid, ChevronRight } from "lucide-react";
 
-import { Input } from "@/components/ui/inputFields/input/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/inputFields/select/select";
-import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/inputs/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/inputs/select";
+import { Button } from "@/components/ui/actions/button";
 
 import { useTranslation } from "@/hooks/useTranslation";
 

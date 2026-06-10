@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslation";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 
 export default function CTABanner() {
   const { t } = useTranslation();

@@ -7,8 +7,8 @@ import { User, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-import { Input } from "@/components/ui/inputFields/input/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/inputs/input";
+import { Button } from "@/components/ui/actions/button";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export function LoginForm({ role }: { role: string }) {

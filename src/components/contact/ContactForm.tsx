@@ -2,16 +2,16 @@
 
 import React, { useState } from "react";
 import { useTranslation } from "@/hooks/useTranslation";
-import { Input } from "@/components/ui/inputFields/input/input";
-import { Textarea } from "@/components/ui/inputFields/textarea/textarea";
+import { Input } from "@/components/ui/inputs/input";
+import { Textarea } from "@/components/ui/inputs/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/inputFields/select/select";
-import { Button } from "@/components/ui/button";
+} from "@/components/ui/inputs/select";
+import { Button } from "@/components/ui/actions/button";
 import { Phone, Mail, MapPin, User, ChevronRight } from "lucide-react";
 
 export function ContactForm() {

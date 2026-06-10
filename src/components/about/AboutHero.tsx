@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/actions/button";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export function AboutHero() {
