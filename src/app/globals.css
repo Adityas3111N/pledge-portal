@@ -154,7 +154,7 @@
 }
 
 html {
-  overflow-y: scroll !important;
+  overflow-y: auto;
 }
 
 body {
