@@ -51,13 +51,15 @@ export default function FAQ() {
                   </span>
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen ? "max-h-[500px] opacity-100 pb-5 px-5" : "max-h-0 opacity-0"
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
-                  <p className="text-neutral-text-gray text-[14px] md:text-[16px] leading-[22px] md:leading-[26px] font-normal font-sans">
-                    {t(`${key}.answer`)}
-                  </p>
+                  <div className="overflow-hidden">
+                    <p className="text-neutral-text-gray text-[14px] md:text-[16px] leading-[22px] md:leading-[26px] font-normal font-sans pt-1 pb-5 px-5">
+                      {t(`${key}.answer`)}
+                    </p>
+                  </div>
                 </div>
               </div>
             );

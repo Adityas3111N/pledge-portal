@@ -130,7 +130,7 @@ export default function Hero() {
             </p>
 
             <div className="mt-8">
-              <button className="h-[46px] px-6 rounded-[10px] bg-white hover:bg-gray-50 active:scale-[0.98] transition-all text-black text-sm font-semibold cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.12)] border border-transparent focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none">
+              <button className="h-[46px] px-6 hover:px-8 hover:scale-[1.02] active:scale-[0.98] rounded-[10px] bg-white hover:bg-gray-50 transition-all duration-300 text-black text-sm font-semibold cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.12)] border border-transparent focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none">
                 {t("hero.checkEligibility")}
               </button>
             </div>
@@ -139,16 +139,16 @@ export default function Hero() {
           {/* Carousel Navigation Arrows */}
           <div className="absolute bottom-6 right-6 lg:right-12 z-30 flex items-center gap-2 pointer-events-auto">
             <button 
-              className="w-10 h-10 rounded-full border border-white/20 bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-[#fc661e] cursor-pointer"
+              className="group w-10 h-10 hover:w-12 rounded-full border border-white/20 bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#fc661e] cursor-pointer"
               aria-label="Previous Slide"
             >
-              <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
+              <ChevronLeft className="w-5 h-5 stroke-[2.5] group-hover:-translate-x-0.5 transition-transform duration-200" />
             </button>
             <button 
-              className="w-10 h-10 rounded-full border border-white/20 bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-[#fc661e] cursor-pointer"
+              className="group w-10 h-10 hover:w-12 rounded-full border border-white/20 bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#fc661e] cursor-pointer"
               aria-label="Next Slide"
             >
-              <ChevronRight className="w-5 h-5 stroke-[2.5]" />
+              <ChevronRight className="w-5 h-5 stroke-[2.5] group-hover:translate-x-0.5 transition-transform duration-200" />
             </button>
           </div>
         </div>
@@ -179,7 +179,7 @@ export default function Hero() {
             </p>
 
             <div>
-              <button className="h-[46px] px-6 rounded-[10px] bg-white hover:bg-gray-50 active:scale-[0.98] transition-all text-black text-sm font-semibold cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.1)] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none">
+              <button className="h-[46px] px-6 hover:px-8 hover:scale-[1.02] active:scale-[0.98] rounded-[10px] bg-white hover:bg-gray-50 transition-all duration-300 text-black text-sm font-semibold cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.1)] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none">
                 {t("hero.checkEligibility")}
               </button>
             </div>
@@ -200,16 +200,16 @@ export default function Hero() {
           {/* Carousel Navigation Arrows centered at the bottom of the photo */}
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-24">
             <button 
-              className="w-12 h-12 rounded-full bg-[#FF6E28] hover:bg-[#e25c1b] text-white flex items-center justify-center cursor-pointer transition-all shadow-[0_4px_12px_rgba(0,0,0,0.15)] active:scale-[0.95]"
+              className="group w-12 h-12 rounded-full bg-[#FF6E28] hover:bg-[#e25c1b] text-white flex items-center justify-center cursor-pointer transition-all shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:scale-105 active:scale-[0.95]"
               aria-label="Previous Slide"
             >
-              <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
+              <ChevronLeft className="w-6 h-6 stroke-[2.5] group-hover:-translate-x-0.5 transition-transform duration-200" />
             </button>
             <button 
-              className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 text-white flex items-center justify-center cursor-pointer transition-all shadow-[0_4px_12px_rgba(0,0,0,0.15)] active:scale-[0.95]"
+              className="group w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 text-white flex items-center justify-center cursor-pointer transition-all shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:scale-105 active:scale-[0.95]"
               aria-label="Next Slide"
             >
-              <ChevronRight className="w-6 h-6 stroke-[2.5]" />
+              <ChevronRight className="w-6 h-6 stroke-[2.5] group-hover:translate-x-0.5 transition-transform duration-200" />
             </button>
           </div>
         </div>

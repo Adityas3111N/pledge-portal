@@ -60,7 +60,7 @@ export default function CoreOfferings() {
           {offerings.map((offering, index) => (
             <div
               key={index}
-              className="relative w-full aspect-[315/347] rounded-[12px] overflow-hidden group cursor-pointer flex flex-col items-center justify-center p-6 text-center"
+              className="relative w-full aspect-[315/347] rounded-[12px] overflow-hidden group cursor-pointer flex flex-col items-center justify-center p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               {/* Background Image */}
               <Image

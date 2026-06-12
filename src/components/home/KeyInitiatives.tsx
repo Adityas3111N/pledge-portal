@@ -51,7 +51,7 @@ export default function KeyInitiatives() {
                 {listItems.map((item, idx) => (
                   <div
                     key={idx}
-                    className="flex gap-4 py-2.5 px-4 rounded-[12px] bg-[#FAFAFA] border border-border-medium shadow-[0_2px_6px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_10px_rgba(0,0,0,0.06)] transition-all duration-300 items-center min-h-[64px]"
+                    className="group flex gap-4 py-2.5 px-4 rounded-[12px] bg-[#FAFAFA] border border-border-medium shadow-[0_2px_6px_rgba(0,0,0,0.03)] hover:shadow-[0_6px_14px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 transition-all duration-300 items-center min-h-[64px]"
                   >
                     <div className="flex items-center justify-center shrink-0 w-6 h-6 relative">
                       <Image
@@ -59,7 +59,7 @@ export default function KeyInitiatives() {
                         alt="Sun icon"
                         width={24}
                         height={24}
-                        className="w-6 h-6 shrink-0 object-contain"
+                        className="w-6 h-6 shrink-0 object-contain group-hover:rotate-[30deg] transition-transform duration-500 ease-out"
                       />
                     </div>
                     <div className="flex flex-col gap-0.5">
