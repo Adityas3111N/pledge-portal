@@ -46,6 +46,31 @@ export default function GovernmentOrders({
 }: GovernmentOrdersProps) {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = React.useState<number>(3);
+  const hoverTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  // Clear timeout on unmount
+  React.useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleMouseEnter = (index: number) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    hoverTimeoutRef.current = setTimeout(() => {
+      setActiveIndex(index);
+    }, 200); // 200ms delay before switching active state
+  };
+
+  const handleMouseLeave = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+  };
 
   return (
     <section className="w-full relative overflow-hidden bg-white">
@@ -97,8 +122,9 @@ export default function GovernmentOrders({
             return (
               <div
                 key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`w-full h-[293px] rounded-[8px] border p-4 md:p-6 flex flex-col justify-between cursor-pointer transition-all duration-300 hover:shadow-lg ${
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+                className={`w-full h-[293px] rounded-[8px] border p-4 md:p-6 flex flex-col justify-between cursor-default transition-all duration-500 ease-in-out hover:shadow-lg ${
                   isActive
                     ? "bg-brand-orange-accent border-brand-orange-accent text-white"
                     : "bg-white border-[#E0E0E0] text-neutral-near-black hover:border-brand-orange-accent/40"
@@ -107,7 +133,7 @@ export default function GovernmentOrders({
                 {/* Number Badge */}
                 <div className="flex flex-col gap-4">
                   <div
-                    className={`w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] font-medium font-sans transition-all duration-300 ${
+                    className={`w-[40px] h-[40px] rounded-full flex items-center justify-center text-[16px] font-medium font-sans transition-all duration-500 ease-in-out ${
                       isActive
                         ? "bg-white text-brand-orange-accent"
                         : "bg-brand-orange-accent text-white"
@@ -118,7 +144,7 @@ export default function GovernmentOrders({
 
                   {/* Title */}
                   <h3
-                    className={`text-[16px] font-medium leading-[22px] font-sans ${
+                    className={`text-[16px] font-medium leading-[22px] font-sans transition-colors duration-500 ease-in-out ${
                       isActive ? "text-white" : "text-neutral-near-black"
                     }`}
                   >
@@ -127,7 +153,7 @@ export default function GovernmentOrders({
 
                   {/* Description */}
                   <p
-                    className={`text-[12px] font-normal leading-[16px] font-sans ${
+                    className={`text-[12px] font-normal leading-[16px] font-sans transition-colors duration-500 ease-in-out ${
                       isActive ? "text-white/90" : "text-neutral-text-gray"
                     }`}
                   >
@@ -137,7 +163,7 @@ export default function GovernmentOrders({
 
                 {/* Date */}
                 <p
-                  className={`text-[14px] font-medium leading-[100%] font-sans ${
+                  className={`text-[14px] font-medium leading-[100%] font-sans transition-colors duration-500 ease-in-out ${
                     isActive ? "text-white" : "text-brand-orange-accent"
                   }`}
                 >
