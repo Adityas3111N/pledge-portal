@@ -22,7 +22,7 @@ export default function Navbar() {
       <UtilityStrip />
 
       {/* 2. MIDDLE BRAND HEADER */}
-      <div className="bg-bg-surface font-sans border-b border-border-light">
+      <div className="bg-bg-surface font-sans border-b !border-[#CACACA]">
         <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-3 sm:px-4 md:px-6 lg:px-[42px] py-3 flex justify-between items-center gap-3">
           {/* Left: Emblem + Title */}
           <Link href="/" className="flex items-center gap-2 sm:gap-3.5 min-w-0 hover:opacity-90 transition-opacity">

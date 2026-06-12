@@ -10,7 +10,7 @@ export default function DesktopNav() {
   const { t } = useTranslation();
 
   return (
-    <div className="hidden lg:block bg-bg-surface border-b border-border-light shadow-xs">
+    <div className="hidden lg:block bg-bg-surface border-b !border-[#CACACA] shadow-xs">
       <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-[42px] py-2 flex justify-between items-center h-[65px]">
         {/* Navigation Links */}
         <nav className="flex items-center justify-between w-[739px] h-[49px] py-3 text-[14px] font-medium text-text-muted" aria-label="Main Navigation">
@@ -99,12 +99,14 @@ export default function DesktopNav() {
             </Link>
           </Button>
           <div className="relative group flex items-center">
-            <button 
-              className="h-[38px] px-[12px] py-[10px] rounded-[8px] bg-bg-surface text-text-primary text-[13px] font-medium cursor-pointer border border-[#CFCFCF] shadow-[inset_0_4px_8px_rgba(185,185,185,0.25)] hover:bg-bg-subtle active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none flex items-center justify-center gap-1"
+            <Button 
+              variant="raised-outline"
+              size="md"
+              className="text-text-primary focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none flex items-center justify-center gap-1 font-medium"
             >
               {t("navbar.logIn")}
               <ChevronDown className="w-[14px] h-[14px] opacity-60 group-hover:rotate-180 transition-transform duration-200" />
-            </button>
+            </Button>
             <div className="absolute top-full right-0 pt-2 hidden group-hover:block w-48 z-50">
               <div className="bg-bg-surface border border-border-medium rounded-lg shadow-md py-2">
                 <Link href="/login/buyer" className="block px-4 py-2.5 text-[13px] font-medium text-text-primary hover:bg-bg-subtle hover:text-brand-primary border-b border-border-medium/50">

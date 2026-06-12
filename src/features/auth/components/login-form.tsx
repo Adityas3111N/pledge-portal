@@ -90,7 +90,9 @@ export function LoginForm({ role }: { role: string }) {
         <Button 
           type="submit" 
           disabled={isSubmitting}
-          className="w-full h-[44px] bg-brand-primary hover:bg-brand-primary/90 text-white font-medium rounded-lg text-[15px] sm:text-[16px] flex items-center justify-center gap-1"
+          variant="brand-primary"
+          size="form-lg"
+          className="w-full max-w-[462px] mx-auto flex items-center justify-center gap-1"
         >
           <span className="hidden sm:inline">{buttonText}</span>
           <span className="inline sm:hidden">{role === "department" ? "Send OTP & Register" : buttonText}</span>

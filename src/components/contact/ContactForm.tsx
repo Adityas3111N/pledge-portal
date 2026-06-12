@@ -187,7 +187,8 @@ export function ContactForm() {
             <div className="flex justify-start md:justify-center mt-2">
               <Button
                 type="submit"
-                className="h-[42px] md:h-[46px] bg-brand-orange-deep hover:bg-[#E04800] text-white px-6 md:px-8 rounded-lg font-medium text-[14px] md:text-[16px] flex items-center justify-center gap-1.5 shadow-sm transition-colors duration-200"
+                variant="brand-orange-deep"
+                className="h-[42px] md:h-[46px] px-6 md:px-8 rounded-lg font-medium text-[14px] md:text-[16px] flex items-center justify-center gap-1.5 shadow-sm transition-colors duration-200"
               >
                 {t("contactPage.form.submitButton")}
                 <ChevronRight size={16} className="md:w-[18px] md:h-[18px]" />

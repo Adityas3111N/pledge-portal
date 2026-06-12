@@ -89,7 +89,7 @@ export function RegistrationForm() {
                  placeholder={t("placeholders.aadharCard")} 
                  className={`h-[44px] flex-1 bg-neutral-soft-bg ${errors.aadharCard ? "border-red-500" : ""}`} 
                />
-               <Button type="button" className="h-[44px] bg-neutral-dark text-white hover:bg-black px-6 rounded-md">{t("registration.verifyBtn")}</Button>
+               <Button type="button" variant="dark" size="form-lg" className="px-6 rounded-md">{t("registration.verifyBtn")}</Button>
             </div>
             {errors.aadharCard && <span className="text-red-500 text-[11px] mt-1">{t(`errors.${errors.aadharCard.message}`)}</span>}
           </div>
@@ -173,7 +173,7 @@ export function RegistrationForm() {
                   {Districts.map(dist => <SelectItem key={dist} value={dist}>{t(`districts.${dist}`)}</SelectItem>)}
                 </SelectContent>
               </Select>
-              <Button type="button" className="h-[44px] bg-neutral-dark text-white hover:bg-black px-6 rounded-md">{t("registration.verifyBtn")}</Button>
+              <Button type="button" variant="dark" size="form-lg" className="px-6 rounded-md">{t("registration.verifyBtn")}</Button>
             </div>
             {errors.district && <span className="text-red-500 text-[11px] mt-1">{t(`errors.${errors.district.message}`)}</span>}
           </div>
@@ -206,8 +206,9 @@ export function RegistrationForm() {
         <Button 
           type="button" 
           onClick={handleSaveDraft} 
-          variant="outline" 
-          className="hidden sm:flex h-[44px] w-full sm:w-auto px-8 border-gray-300 text-gray-800 font-medium rounded-lg"
+          variant="raised-outline" 
+          size="form-lg"
+          className="hidden sm:flex w-full sm:w-auto px-8"
         >
           {t("registration.saveDraft")}
         </Button>
@@ -215,15 +216,16 @@ export function RegistrationForm() {
           <Button 
             type="button" 
             onClick={handleReset} 
-            variant="outline" 
-            className="h-full flex-1 px-0 border-gray-300 text-gray-800 font-medium rounded-lg text-[13px] sm:text-[14px]"
+            variant="raised-outline" 
+            className="h-full flex-1 px-0 text-[13px] sm:text-[14px]"
           >
             {t("registration.resetData")}
           </Button>
           <Button 
             type="submit" 
             disabled={isSubmitting}
-            className="h-full flex-[1.5] sm:flex-[1.8] px-0 bg-brand-primary hover:bg-brand-primary/90 text-white font-medium rounded-lg text-[13px] sm:text-[15px] whitespace-nowrap flex items-center justify-center gap-1"
+            variant="brand-primary"
+            className="h-full flex-[1.5] sm:flex-[1.8] px-0 text-[13px] sm:text-[15px] whitespace-nowrap flex items-center justify-center gap-1"
           >
             {t("registration.sendOtp")} <ChevronRight className="w-4 h-4" />
           </Button>

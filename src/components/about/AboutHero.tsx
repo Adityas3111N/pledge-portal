@@ -72,18 +72,16 @@ export function AboutHero() {
         {/* Buttons */}
         <div className="flex flex-row items-center justify-center gap-[10px] mt-6 lg:mt-2">
           <Button
-            className="w-[155px] h-[44px] gap-[10px] rounded-[8px] py-[10px] px-[12px] text-white font-medium text-[14px] lg:text-[16px] border border-transparent hover:opacity-90 whitespace-nowrap overflow-hidden text-ellipsis shrink-0"
-            style={{
-              background: "linear-gradient(180deg, #FA7B3F 0%, #FF590A 100%)",
-              borderWidth: "1px"
-            }}
+            variant="brand-primary"
+            size="form-lg"
+            className="w-[155px] gap-[10px] whitespace-nowrap overflow-hidden text-ellipsis shrink-0"
           >
             {t("about.servicesBtn")}
           </Button>
           <Button
-            variant="outline"
-            className="w-[113px] h-[44px] gap-[10px] rounded-[8px] py-[10px] px-[12px] bg-white border border-[#CFCFCF] text-neutral-dark font-medium text-[14px] lg:text-[16px] hover:bg-gray-50 whitespace-nowrap overflow-hidden text-ellipsis shrink-0"
-            style={{ boxShadow: "inset 0px 4px 8px 0px rgba(185,185,185,0.25)", borderWidth: "1px" }}
+            variant="raised-outline"
+            size="form-lg"
+            className="w-[113px] gap-[10px] whitespace-nowrap overflow-hidden text-ellipsis shrink-0"
           >
             {t("about.learnMoreBtn")}
           </Button>

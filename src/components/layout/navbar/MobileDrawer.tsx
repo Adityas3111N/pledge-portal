@@ -151,7 +151,7 @@ export default function MobileDrawer({ onClose }: MobileDrawerProps) {
         </a>
 
         <div className="flex flex-col gap-2">
-          <Button asChild onClick={handleLinkClick} className="w-full bg-neutral-900 hover:bg-black text-white font-semibold rounded-xl py-2.5 shadow-sm text-sm">
+          <Button asChild onClick={handleLinkClick} variant="dark" className="w-full font-semibold rounded-xl py-2.5 shadow-sm text-sm">
             <Link href="/register">
               {t("navbar.newRegistration")}
             </Link>
