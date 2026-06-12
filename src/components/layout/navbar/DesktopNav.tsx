@@ -31,7 +31,7 @@ export default function DesktopNav() {
 
           <div className="relative group flex items-center h-[25px]">
             <button 
-              className="relative flex items-center gap-1 px-[10px] py-[2px] h-[25px] hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none after:absolute after:bottom-[-2px] after:left-[10px] after:right-[22px] after:h-[2px] after:bg-brand-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300 cursor-pointer"
+              className="relative flex items-center gap-1 px-[10px] py-[2px] h-[25px] hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none cursor-pointer"
               aria-expanded="false"
             >
               <span>{t("navbar.schemeInfo")}</span>
@@ -45,7 +45,7 @@ export default function DesktopNav() {
 
           <div className="relative group flex items-center h-[25px]">
             <button 
-              className="relative flex items-center gap-1 px-[10px] py-[2px] h-[25px] hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none after:absolute after:bottom-[-2px] after:left-[10px] after:right-[22px] after:h-[2px] after:bg-brand-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300 cursor-pointer"
+              className="relative flex items-center gap-1 px-[10px] py-[2px] h-[25px] hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none cursor-pointer"
               aria-expanded="false"
             >
               <span>{t("navbar.services")}</span>
@@ -60,7 +60,7 @@ export default function DesktopNav() {
 
           <div className="relative group flex items-center h-[25px]">
             <button 
-              className="relative flex items-center gap-1 px-[10px] py-[2px] h-[25px] hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none after:absolute after:bottom-[-2px] after:left-[10px] after:right-[22px] after:h-[2px] after:bg-brand-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300 cursor-pointer"
+              className="relative flex items-center gap-1 px-[10px] py-[2px] h-[25px] hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none cursor-pointer"
               aria-expanded="false"
             >
               <span>{t("navbar.approvedParks")}</span>

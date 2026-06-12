@@ -74,17 +74,17 @@ export default function ApplicationFlow() {
                   alt={`Location ${index + 1}`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-contain hover:scale-110 transition-transform cursor-pointer drop-shadow-md"
+                  className="object-contain group-hover:scale-115 group-hover:drop-shadow-[0_8px_10px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer drop-shadow-md"
                 />
                 
                 {/* Text next to icon */}
                 <div 
-                  className={`absolute z-10 pointer-events-none ${
+                  className={`absolute z-10 pointer-events-none transition-all duration-300 ${
                     loc.textPos === 'top' ? 'bottom-full left-1/2 -translate-x-1/2 text-center' :
                     loc.textPos === 'bottom' ? 'top-full left-1/2 -translate-x-1/2 text-center' :
                     loc.textPos === 'left' ? 'right-full top-1/2 -translate-y-1/2 text-right' :
                     'left-full top-1/2 -translate-y-1/2 text-left'
-                  }`}
+                  } group-hover:scale-105`}
                   style={{ 
                     width: '12.5cqw',
                     marginBottom: loc.textPos === 'top' ? '0.5cqw' : '0',
@@ -93,9 +93,11 @@ export default function ApplicationFlow() {
                     marginLeft: loc.textPos === 'right' ? '0.8cqw' : '0',
                   }}
                 >
-                  <h4 className="font-bold text-neutral-near-black font-sans leading-tight" style={{ fontSize: '0.97cqw', marginBottom: '0.2cqw' }}>{9 - index}. {t("applicationFlow.step.title")}</h4>
-                  <p className="text-[#666666] leading-tight font-sans" style={{ fontSize: '0.76cqw' }}>
-                    {t("applicationFlow.step.description")}
+                  <h4 className="font-bold text-neutral-near-black font-sans leading-tight group-hover:text-brand-orange-accent transition-colors duration-300" style={{ fontSize: '0.97cqw', marginBottom: '0.2cqw' }}>
+                    {9 - index}. {t(`applicationFlow.steps.step${9 - index}.title`)}
+                  </h4>
+                  <p className="text-[#666666] group-hover:text-text-primary leading-tight font-sans transition-colors duration-300" style={{ fontSize: '0.76cqw' }}>
+                    {t(`applicationFlow.steps.step${9 - index}.description`)}
                   </p>
                 </div>
               </div>

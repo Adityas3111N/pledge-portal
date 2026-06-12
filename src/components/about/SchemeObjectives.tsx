@@ -63,7 +63,7 @@ export default function SchemeObjectives() {
         {/* Left Columns: 6 Objectives in 3x2 grid (704px width) */}
         <div className="w-full lg:w-[704px] shrink-0 grid grid-cols-1 md:grid-cols-2 gap-x-[36px] gap-y-[64px]">
           {itemsList.map((item, idx) => (
-            <div key={idx} className="flex flex-col justify-start">
+            <div key={idx} className="group flex flex-col justify-start">
               
               {/* Title & Icon Header */}
               <div className="flex items-center gap-2.5 mb-1.5">
@@ -71,7 +71,7 @@ export default function SchemeObjectives() {
                 <img
                   src="/assets/icons/sun.svg"
                   alt="Sun icon"
-                  className="w-[18px] h-[18px] shrink-0 select-none pointer-events-none"
+                  className="w-[18px] h-[18px] shrink-0 select-none group-hover:rotate-[30deg] transition-transform duration-500 ease-out"
                 />
                 
                 {/* Title */}

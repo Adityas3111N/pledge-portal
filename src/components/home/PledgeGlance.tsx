@@ -1,9 +1,85 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguageStore } from "@/store/language.store";
+
+interface CounterProps {
+  value: string;
+  startFrom?: number;
+}
+
+function AnimatedCounter({ value, startFrom }: CounterProps) {
+  const [displayValue, setDisplayValue] = useState(startFrom !== undefined ? `${startFrom}` : value);
+  const elementRef = useRef<HTMLSpanElement>(null);
+  const hasAnimatedRef = useRef(false);
+
+  useEffect(() => {
+    if (startFrom === undefined) {
+      setDisplayValue(value);
+      return;
+    }
+
+    // Reset trigger when value or startFrom changes (e.g., language toggle)
+    hasAnimatedRef.current = false;
+    
+    const match = value.match(/^(\d+)(.*)$/);
+    if (!match) {
+      setDisplayValue(value);
+      return;
+    }
+
+    const targetNumber = parseInt(match[1], 10);
+    const suffix = match[2] || "";
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting && !hasAnimatedRef.current) {
+          hasAnimatedRef.current = true;
+          
+          let startTimestamp: number | null = null;
+          const duration = 1500; // Animation duration in ms
+
+          const step = (timestamp: number) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            
+            // Ease out cubic
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            const currentNumber = Math.floor(startFrom + easeProgress * (targetNumber - startFrom));
+
+            setDisplayValue(`${currentNumber}${suffix}`);
+
+            if (progress < 1) {
+              window.requestAnimationFrame(step);
+            } else {
+              setDisplayValue(value);
+            }
+          };
+
+          window.requestAnimationFrame(step);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentElement = elementRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
+    }
+
+    return () => {
+      if (currentElement) {
+        observer.unobserve(currentElement);
+      }
+      observer.disconnect();
+    };
+  }, [value, startFrom]);
+
+  return <span ref={elementRef}>{displayValue}</span>;
+}
 
 // Inline Icons representing Ruler & Pencil, Users, Wrench/Spanner, and Smiley face
 const RulerPencilIcon = () => (
@@ -97,6 +173,7 @@ export default function PledgeGlance() {
       icon: <UsersIcon />,
       value: t("pledgeGlance.stats.item2.value"),
       label: t("pledgeGlance.stats.item2.label"),
+      startFrom: 2, // Animate counting from 2 up to the target value
     },
     {
       icon: <WrenchIcon />,
@@ -147,14 +224,14 @@ export default function PledgeGlance() {
               {statsItems.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col justify-between p-3 md:p-5 rounded-[12px] bg-bg-surface border border-border-medium shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all duration-300 min-h-[100px] md:min-h-[125px] w-full"
+                  className="group flex flex-col justify-between p-3 md:p-5 rounded-[12px] bg-bg-surface border border-border-medium shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 min-h-[100px] md:min-h-[125px] w-full cursor-pointer"
                 >
                   <div className="flex items-center gap-2 md:gap-3">
-                    <div className="scale-75 md:scale-100 origin-left">
+                    <div className="scale-75 md:scale-100 origin-left group-hover:scale-110 group-hover:-translate-y-0.5 transition-transform duration-300">
                       {item.icon}
                     </div>
                     <span className="text-lg md:text-2xl font-bold text-text-primary leading-none">
-                      {item.value}
+                      <AnimatedCounter value={item.value} startFrom={item.startFrom} />
                     </span>
                   </div>
                   <div className="text-[9px] md:text-xs font-semibold text-text-secondary tracking-wider leading-snug uppercase mt-2 md:mt-3 max-w-[90px]">

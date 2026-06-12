@@ -67,7 +67,7 @@ export function WhatIsPledge() {
               alt="Sun emblem"
               width={24}
               height={24}
-              className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] object-contain select-none"
+              className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] object-contain select-none hover:rotate-[360deg] transition-transform duration-1000 ease-in-out cursor-pointer"
             />
           </div>
           {/* Right fade arm */}

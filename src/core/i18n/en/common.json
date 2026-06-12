@@ -105,20 +105,20 @@
     "description": "The PLEDGE scheme is supported and managed by high-ranking officials within the government, ensuring strong leadership and oversight throughout its implementation.",
     "stats": {
       "item1": {
-        "value": "20K+",
-        "label": "HAPPY CUSTOMERS"
+        "value": "10-50",
+        "label": "ACRES LAND REQUIRED"
       },
       "item2": {
-        "value": "20K+",
-        "label": "HAPPY CUSTOMERS"
+        "value": "36",
+        "label": "APPROVED PARKS"
       },
       "item3": {
-        "value": "20K+",
-        "label": "HAPPY CUSTOMERS"
+        "value": "1%",
+        "label": "LOAN INTEREST RATE"
       },
       "item4": {
-        "value": "20K+",
-        "label": "HAPPY CUSTOMERS"
+        "value": "100%",
+        "label": "STAMP DUTY EXEMPTION"
       }
     },
     "mapTitleHindi": "उत्तर प्रदेश",
@@ -127,10 +127,44 @@
   "applicationFlow": {
     "titlePart1": "Our Application",
     "titlePart2": "Flow",
-    "description": "Our dedicated team is committed to delivering exceptional results through personalized strategies and continuous improvement.",
-    "step": {
-      "title": "Registration",
-      "description": "Register with mobile OTP. Complete profile with entity details, KYC, and bank info."
+    "description": "The PLEDGE scheme follows a structured, single-window online process from registration to the final approval and comfort letter issuance.",
+    "steps": {
+      "step1": {
+        "title": "Online Registration",
+        "description": "Register on the portal with mobile OTP, KYC, and promoter entity details."
+      },
+      "step2": {
+        "title": "Land Verification",
+        "description": "Upload contiguous land documents (10-50 acres), Khasra, Khatuni & deeds."
+      },
+      "step3": {
+        "title": "Apply to DIC",
+        "description": "Submit a formal park development application to the District Industrial Centre."
+      },
+      "step4": {
+        "title": "Site Inspection",
+        "description": "DIC officers conduct site verification for 12m road connectivity & land feasibility."
+      },
+      "step5": {
+        "title": "District Approval",
+        "description": "District Level Committee (headed by the District Magistrate) approves the site."
+      },
+      "step6": {
+        "title": "DPR Preparation",
+        "description": "Draft Detailed Project Report containing layouts, utility maps, and costing details."
+      },
+      "step7": {
+        "title": "DPR Submission",
+        "description": "Submit complete DPR and layout plans to the State PLEDGE Nodal Cell."
+      },
+      "step8": {
+        "title": "State Evaluation",
+        "description": "Technical, financial, and regulatory evaluation of the DPR by the PLEDGE Cell."
+      },
+      "step9": {
+        "title": "Letter of Comfort",
+        "description": "Issuance of Letter of Comfort to unlock 1% interest loans and 100% stamp duty exemption."
+      }
     }
   },
   "coreOfferings": {
