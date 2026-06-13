@@ -7,63 +7,52 @@ import { useTranslation } from "@/hooks/useTranslation";
 export default function FooterColumns() {
   const { t } = useTranslation();
 
-  const quickLinks = [
+  const sharedLinks = [
     { label: t("footer.aboutScheme"), href: "#" },
     { label: t("footer.benefits"), href: "#" },
     { label: t("footer.eligibilityCriteria"), href: "#" },
     { label: t("footer.loanCalculator"), href: "#" },
   ];
 
-  const govResources = [
-    { label: t("footer.aboutScheme"), href: "#" },
-    { label: t("footer.benefits"), href: "#" },
-    { label: t("footer.eligibilityCriteria"), href: "#" },
-    { label: t("footer.loanCalculator"), href: "#" },
+  const linkColumns = [
+    {
+      title: t("footer.quickLinks"),
+      ariaLabel: "Quick links",
+      minWidthClass: "min-w-[160px]",
+      links: sharedLinks,
+    },
+    {
+      title: t("footer.govResources"),
+      ariaLabel: "Government resources",
+      minWidthClass: "min-w-[200px]",
+      links: sharedLinks,
+    },
   ];
 
   return (
     <>
-      {/* Column 2: Quick Links */}
-      <div className="flex flex-col gap-4 min-w-[160px]">
-        <h3 className="text-xs font-bold text-text-primary uppercase tracking-[0.08em]">
-          {t("footer.quickLinks")}
-        </h3>
-        <nav aria-label="Quick links">
-          <ul className="flex flex-col gap-3">
-            {quickLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  className="text-[11px] text-text-secondary hover:text-brand-primary transition-colors font-medium focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
-                >
-                  <span className="premium-underline">{link.label}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-
-      {/* Column 3: Government Resources */}
-      <div className="flex flex-col gap-4 min-w-[200px]">
-        <h3 className="text-xs font-bold text-text-primary uppercase tracking-[0.08em]">
-          {t("footer.govResources")}
-        </h3>
-        <nav aria-label="Government resources">
-          <ul className="flex flex-col gap-3">
-            {govResources.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  className="text-[11px] text-text-secondary hover:text-brand-primary transition-colors font-medium focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
-                >
-                  <span className="premium-underline">{link.label}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+      {/* Quick Links & Government Resources Columns (DRY) */}
+      {linkColumns.map((col) => (
+        <div key={col.title} className={`flex flex-col gap-4 ${col.minWidthClass}`}>
+          <h3 className="text-xs font-bold text-text-primary uppercase tracking-[0.08em]">
+            {col.title}
+          </h3>
+          <nav aria-label={col.ariaLabel}>
+            <ul className="flex flex-col gap-3">
+              {col.links.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-[11px] text-text-secondary hover:text-brand-primary transition-colors font-medium focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
+                  >
+                    <span className="premium-underline">{link.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      ))}
 
       {/* Column 4: Contact Us */}
       <div className="flex flex-col gap-4">
