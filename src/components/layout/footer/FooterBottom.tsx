@@ -28,7 +28,7 @@ export default function FooterBottom() {
                   href="#"
                   className="text-[13px] font-semibold text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                 >
-                  {t("navbar.home")}
+                  <span className="premium-underline">{t("navbar.home")}</span>
                 </a>
               </li>
 
@@ -40,7 +40,9 @@ export default function FooterBottom() {
                   aria-expanded={servicesOpen}
                   aria-haspopup="true"
                 >
-                  <span>{t("navbar.services")}</span>
+                  <span className="premium-underline">
+                    {t("navbar.services")}
+                  </span>
                   <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
                 </button>
                 {/* Dropdown panel */}
@@ -75,7 +77,7 @@ export default function FooterBottom() {
                   href="#"
                   className="text-[13px] font-semibold text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                 >
-                  {t("footer.blog")}
+                  <span className="premium-underline">{t("footer.blog")}</span>
                 </a>
               </li>
               <li>
@@ -83,7 +85,7 @@ export default function FooterBottom() {
                   href="/faq"
                   className="text-[13px] font-semibold text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                 >
-                  {t("navbar.faqs")}
+                  <span className="premium-underline">{t("navbar.faqs")}</span>
                 </Link>
               </li>
               <li>
@@ -91,7 +93,7 @@ export default function FooterBottom() {
                   href="/about"
                   className="text-[13px] font-semibold text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                 >
-                  {t("navbar.about")}
+                  <span className="premium-underline">{t("navbar.about")}</span>
                 </Link>
               </li>
             </ul>
@@ -110,27 +112,27 @@ export default function FooterBottom() {
             <ul className="flex flex-wrap items-center justify-center gap-x-2.5 sm:gap-x-6 gap-y-2">
               <li>
                 <a href="#" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
-                  {t("navbar.home")}
+                  <span className="premium-underline">{t("navbar.home")}</span>
                 </a>
               </li>
               <li>
                 <a href="#" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
-                  {t("navbar.services")}
+                  <span className="premium-underline">{t("navbar.services")}</span>
                 </a>
               </li>
               <li>
                 <a href="#" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
-                  {t("footer.blog")}
+                  <span className="premium-underline">{t("footer.blog")}</span>
                 </a>
               </li>
               <li>
                 <Link href="/faq" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
-                  {t("navbar.faqs")}
+                  <span className="premium-underline">{t("navbar.faqs")}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="text-[11px] sm:text-xs font-normal text-text-primary hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm">
-                  {t("navbar.about")}
+                  <span className="premium-underline">{t("navbar.about")}</span>
                 </Link>
               </li>
             </ul>

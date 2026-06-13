@@ -172,3 +172,32 @@ body {
   scrollbar-width: none;
 }
 
+/* Premium Left-to-Right Underline Animation */
+.premium-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.premium-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+}
+
+/* Trigger on hover of premium-underline or when parent has .group class and is hovered */
+.premium-underline:hover::after,
+.group:hover .premium-underline::after,
+a:hover > .premium-underline::after,
+Link:hover > .premium-underline::after,
+button:hover > .premium-underline::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+

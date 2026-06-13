@@ -36,7 +36,7 @@ export default function FooterColumns() {
                   href={link.href}
                   className="text-[11px] text-text-secondary hover:text-brand-primary transition-colors font-medium focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                 >
-                  {link.label}
+                  <span className="premium-underline">{link.label}</span>
                 </a>
               </li>
             ))}
@@ -57,7 +57,7 @@ export default function FooterColumns() {
                   href={link.href}
                   className="text-[11px] text-text-secondary hover:text-brand-primary transition-colors font-medium focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
                 >
-                  {link.label}
+                  <span className="premium-underline">{link.label}</span>
                 </a>
               </li>
             ))}
@@ -81,7 +81,7 @@ export default function FooterColumns() {
               href="mailto:pledge.up@gov.in"
               className="text-[11px] text-text-muted font-medium hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none rounded-sm"
             >
-              {t("footer.email")}
+              <span className="premium-underline">{t("footer.email")}</span>
             </a>
           </li>
           <li className="flex items-center gap-2.5">

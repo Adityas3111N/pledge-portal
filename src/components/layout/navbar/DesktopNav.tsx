@@ -16,17 +16,17 @@ export default function DesktopNav() {
         <nav className="flex items-center justify-between w-[739px] h-[36px] py-1 text-[13px] font-medium text-text-muted" aria-label="Main Navigation">
           <Link 
             href="/" 
-            className="relative px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none after:absolute after:bottom-[-2px] after:left-[10px] after:right-[10px] after:h-[2px] after:bg-brand-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+            className="px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
             aria-current="page"
           >
-            {t("navbar.home")}
+            <span className="premium-underline">{t("navbar.home")}</span>
           </Link>
           
           <Link 
             href="/about" 
-            className="relative px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none after:absolute after:bottom-[-2px] after:left-[10px] after:right-[10px] after:h-[2px] after:bg-brand-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+            className="px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
           >
-            {t("navbar.about")}
+            <span className="premium-underline">{t("navbar.about")}</span>
           </Link>
 
           <div className="relative group flex items-center h-[25px]">
@@ -34,7 +34,9 @@ export default function DesktopNav() {
               className="relative flex items-center gap-1 px-[10px] py-[2px] h-[25px] hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none cursor-pointer"
               aria-expanded="false"
             >
-              <span>{t("navbar.schemeInfo")}</span>
+              <span className="premium-underline">
+                {t("navbar.schemeInfo")}
+              </span>
               <ChevronDown className="w-[13px] h-[13px] opacity-60 group-hover:rotate-180 transition-transform duration-300 ease-out" />
             </button>
             <div className="absolute top-full left-0 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto w-52 bg-bg-surface border border-border-medium rounded-lg shadow-md py-2 z-50 transition-all duration-200 ease-out">
@@ -48,7 +50,9 @@ export default function DesktopNav() {
               className="relative flex items-center gap-1 px-[10px] py-[2px] h-[25px] hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none cursor-pointer"
               aria-expanded="false"
             >
-              <span>{t("navbar.services")}</span>
+              <span className="premium-underline">
+                {t("navbar.services")}
+              </span>
               <ChevronDown className="w-[13px] h-[13px] opacity-60 group-hover:rotate-180 transition-transform duration-300 ease-out" />
             </button>
             <div className="absolute top-full left-0 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto w-52 bg-bg-surface border border-border-medium rounded-lg shadow-md py-2 z-50 transition-all duration-200 ease-out">
@@ -63,7 +67,9 @@ export default function DesktopNav() {
               className="relative flex items-center gap-1 px-[10px] py-[2px] h-[25px] hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none cursor-pointer"
               aria-expanded="false"
             >
-              <span>{t("navbar.approvedParks")}</span>
+              <span className="premium-underline">
+                {t("navbar.approvedParks")}
+              </span>
               <ChevronDown className="w-[13px] h-[13px] opacity-60 group-hover:rotate-180 transition-transform duration-300 ease-out" />
             </button>
             <div className="absolute top-full left-0 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto w-52 bg-bg-surface border border-border-medium rounded-lg shadow-md py-2 z-50 transition-all duration-200 ease-out">
@@ -74,16 +80,16 @@ export default function DesktopNav() {
 
           <Link 
             href="/faq" 
-            className="relative px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none after:absolute after:bottom-[-2px] after:left-[10px] after:right-[10px] after:h-[2px] after:bg-brand-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+            className="px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
           >
-            {t("navbar.faqs")}
+            <span className="premium-underline">{t("navbar.faqs")}</span>
           </Link>
           
           <Link 
             href="/contact" 
-            className="relative px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none after:absolute after:bottom-[-2px] after:left-[10px] after:right-[10px] after:h-[2px] after:bg-brand-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+            className="px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none"
           >
-            {t("navbar.contact")}
+            <span className="premium-underline">{t("navbar.contact")}</span>
           </Link>
         </nav>
 
