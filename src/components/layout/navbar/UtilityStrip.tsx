@@ -39,7 +39,7 @@ export default function UtilityStrip() {
   }, [language]);
 
   return (
-    <div className="bg-brand-primary text-text-inverse py-2 text-[11px] lg:text-[14px] font-medium whitespace-nowrap overflow-x-auto no-scrollbar">
+    <div className="bg-brand-primary text-text-inverse py-1.5 text-[11px] lg:text-[14px] font-medium whitespace-nowrap overflow-x-auto no-scrollbar">
       <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-3 sm:px-4 md:px-6 lg:px-[42px] flex justify-between items-center gap-4">
         <div className="opacity-95 tabular-nums tracking-wide flex-shrink-0 font-medium">
           <span className="inline sm:hidden">{shortTime || t("navbar.dateFallback")}</span>

@@ -11,9 +11,9 @@ export default function DesktopNav() {
 
   return (
     <div className="hidden lg:block bg-bg-surface border-b !border-[#CACACA] shadow-xs">
-      <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-[42px] py-2 flex justify-between items-center h-[65px]">
+      <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-[42px] py-1 flex justify-between items-center h-[48px]">
         {/* Navigation Links */}
-        <nav className="flex items-center justify-between w-[739px] h-[49px] py-3 text-[14px] font-medium text-text-muted" aria-label="Main Navigation">
+        <nav className="flex items-center justify-between w-[739px] h-[36px] py-1 text-[13px] font-medium text-text-muted" aria-label="Main Navigation">
           <Link 
             href="/" 
             className="relative px-[10px] py-[2px] h-[25px] flex items-center justify-center hover:text-brand-primary transition-colors focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none after:absolute after:bottom-[-2px] after:left-[10px] after:right-[10px] after:h-[2px] after:bg-brand-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
@@ -88,31 +88,31 @@ export default function DesktopNav() {
         </nav>
 
         {/* CTA Buttons */}
-        <div className="flex items-center gap-[6px] h-[38px]">
+        <div className="flex items-center gap-[6px] h-[32px]">
           <Button 
             asChild
             variant="gradient-dark"
-            className="cursor-pointer h-[38px] px-[12px] py-[10px] rounded-[8px] text-[13px] font-medium hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+            className="cursor-pointer h-[32px] px-[12px] py-[6px] rounded-[6px] text-[12.5px] font-medium hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
           >
             <Link href="/register">
               {t("navbar.newRegistration")}
             </Link>
           </Button>
-          <div className="relative group flex items-center h-[38px]">
+          <div className="relative group flex items-center h-[32px]">
             <Button 
               variant="raised-outline"
-              size="md"
-              className="text-text-primary focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none flex items-center justify-center gap-1 font-medium hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              size="sm"
+              className="text-text-primary focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:outline-none flex items-center justify-center gap-1 font-medium hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 h-[32px] px-[10px] rounded-[6px] text-[12.5px]"
             >
               {t("navbar.logIn")}
               <ChevronDown className="w-[14px] h-[14px] opacity-60 group-hover:rotate-180 transition-transform duration-300 ease-out" />
             </Button>
             <div className="absolute top-full right-0 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto w-48 z-50 transition-all duration-200 ease-out">
               <div className="bg-bg-surface border border-border-medium rounded-lg shadow-md py-2">
-                <Link href="/login/buyer" className="block px-4 py-2.5 text-[13px] font-medium text-text-primary hover:bg-bg-subtle hover:text-brand-primary border-b border-border-medium/50 transition-colors">
+                <Link href="/login/buyer" className="block px-4 py-2 text-[13px] font-medium text-text-primary hover:bg-bg-subtle hover:text-brand-primary border-b border-border-medium/50 transition-colors">
                   Buyer Login
                 </Link>
-                <Link href="/login/promoter" className="block px-4 py-2.5 text-[13px] font-medium text-text-primary hover:bg-bg-subtle hover:text-brand-primary border-b border-border-medium/50 transition-colors">
+                <Link href="/login/promoter" className="block px-4 py-2 text-[13px] font-medium text-text-primary hover:bg-bg-subtle hover:text-brand-primary border-b border-border-medium/50 transition-colors">
                   Promoter Login
                 </Link>
                 <Link href="/login/department" className="block px-4 py-2.5 text-[13px] font-medium text-text-primary hover:bg-bg-subtle hover:text-brand-primary transition-colors">

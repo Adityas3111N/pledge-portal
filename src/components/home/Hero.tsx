@@ -82,7 +82,7 @@ export default function Hero() {
   return (
     <section className="w-full bg-[#FF6E28] relative border-b-[4px] border-white">
       {/* Desktop & Tablet Layout (lg and above) */}
-      <div className="hidden lg:block relative w-full h-[calc(100vh-140px)] min-h-[600px] max-h-[750px] overflow-hidden">
+      <div className="hidden lg:block relative w-full h-[calc(100vh-120px)] min-h-[600px] max-h-[750px] overflow-hidden">
         {/* 1. Hero Image (Right Side - Bound to screen boundaries to keep people visible) */}
         <div 
           className="absolute top-[3px] h-[99%] z-0"
@@ -121,7 +121,7 @@ export default function Hero() {
         <div className="relative w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto h-full pointer-events-none">
           {/* 3. Text & Content Overlaid on the Left Orange Layer */}
           <div 
-            className="absolute z-30 flex flex-col justify-start pointer-events-auto lg:left-[40px] xl:left-[73px] 2xl:left-[100px] lg:top-[171px] lg:w-[400px] xl:w-[480px] 2xl:w-[560px] h-[407px]"
+            className="absolute z-30 flex flex-col justify-center pointer-events-auto lg:left-[40px] xl:left-[73px] 2xl:left-[100px] top-1/2 -translate-y-1/2 lg:w-[400px] xl:w-[480px] 2xl:w-[560px]"
           >
             {renderDesktopTitle()}
             
