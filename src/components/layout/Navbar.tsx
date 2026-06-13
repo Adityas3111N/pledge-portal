@@ -11,12 +11,13 @@ import DesktopNav from "./navbar/DesktopNav";
 import MobileDrawer from "./navbar/MobileDrawer";
 
 export default function Navbar() {
-  const { t } = useTranslation();
+  const { t, language, setLanguage } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
   const [scrollPercent, setScrollPercent] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showMicroHeader, setShowMicroHeader] = useState(false);
   const [yOffset, setYOffset] = useState(0);
   const lastScrollY = useRef(0);
   const yOffsetRef = useRef(0);
@@ -63,6 +64,13 @@ export default function Navbar() {
       const clampedOffset = Math.min(0, Math.max(-headerHeight, newOffset));
       yOffsetRef.current = clampedOffset;
       setYOffset(clampedOffset);
+
+      // Show micro-header when main navbar is scrolled out of view
+      if (currentScrollY > headerHeight && clampedOffset <= -headerHeight + 20) {
+        setShowMicroHeader(true);
+      } else {
+        setShowMicroHeader(false);
+      }
 
       lastScrollY.current = currentScrollY;
     };
@@ -161,6 +169,88 @@ export default function Navbar() {
         {/* 3. DESKTOP NAVIGATION BAR */}
         <DesktopNav />
       </header>
+
+      {/* Sticky Micro-Header (visible only on scroll down after headerHeight) */}
+      <div 
+        className={`fixed top-0 left-0 right-0 z-40 bg-brand-primary border-b border-brand-accent/30 shadow-md transition-all duration-300 transform ${
+          showMicroHeader 
+            ? "translate-y-0 opacity-100" 
+            : "-translate-y-full opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="w-full max-w-[1440px] 2xl:max-w-[1800px] mx-auto px-3 sm:px-4 md:px-6 lg:px-[42px] h-[52px] flex justify-between items-center gap-3">
+          {/* Left: Round Emblem + Two-line Brand Text */}
+          <div className="flex items-center gap-2.5 min-w-0">
+            {/* UP Gov Emblem with white background */}
+            <div 
+              className="w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] rounded-full border-2 border-white/35 flex items-center justify-center bg-white flex-shrink-0 shadow-[0_0_8px_rgba(255,255,255,0.25)]"
+            >
+              <Image 
+                src="/assets/logos/upgovlogo.png" 
+                alt="Government of Uttar Pradesh Logo" 
+                width={30}
+                height={30}
+                className="w-[26px] h-[26px] sm:w-[30px] sm:h-[30px] object-contain" 
+              />
+            </div>
+
+            <div className="flex flex-col min-w-0">
+              <h2 className="font-bold text-white text-[10.5px] sm:text-[13px] leading-tight truncate">
+                {t("navbar.title")}
+              </h2>
+              <p className="text-white/80 font-bold text-[6.5px] sm:text-[8px] tracking-wider mt-0.5 uppercase truncate">
+                {t("navbar.subtitle")}
+              </p>
+            </div>
+          </div>
+
+          {/* Right: Language Switcher, Login and Registration CTAs */}
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {/* Mini Segmented Language Switcher */}
+            <div className="flex bg-white/10 p-0.5 rounded border border-white/20 h-[30px] items-center">
+              <button
+                onClick={() => setLanguage("en")}
+                className={`px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-semibold transition-all cursor-pointer h-[24px] ${
+                  language === "en" 
+                    ? "bg-white text-brand-primary shadow-xs" 
+                    : "text-white/80 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLanguage("hi")}
+                className={`px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-semibold transition-all cursor-pointer h-[24px] ${
+                  language === "hi" 
+                    ? "bg-white text-brand-primary shadow-xs" 
+                    : "text-white/80 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                हिं
+              </button>
+            </div>
+
+            <Button 
+              asChild
+              variant="ghost"
+              className="h-[30px] px-2.5 sm:px-3.5 rounded-[6px] text-[11px] sm:text-[12px] font-semibold text-white border border-white/30 hover:bg-white/10 hover:text-white transition-all duration-200"
+            >
+              <Link href="/login">
+                {t("navbar.logIn")}
+              </Link>
+            </Button>
+            <Button 
+              asChild
+              variant="gradient-dark"
+              className="h-[30px] px-2.5 sm:px-3.5 rounded-[6px] text-[11px] sm:text-[12px] font-semibold hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+            >
+              <Link href="/register">
+                {t("navbar.newRegistration")}
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
 
       {/* Floating Scroll-To-Top Circular Progress Button */}
       <button
