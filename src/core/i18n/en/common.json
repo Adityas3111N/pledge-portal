@@ -170,23 +170,23 @@
   "coreOfferings": {
     "titlePart1": "Our Core",
     "titlePart2": "Offerings",
-    "description": "Our dedicated team is committed to delivering exceptional results through personalized strategies and continuous improvement.",
+    "description": "Comprehensive tools and services designed to guide developers from registration to final approval and incentives under the PLEDGE scheme.",
     "items": {
       "item1": {
         "title": "Eligibility Assessment",
-        "description": "There are twelve essential Infrastructure Standards that must be adhered."
+        "description": "Evaluate land feasibility (10–50 contiguous acres), road width connectivity, and promoter guidelines."
       },
       "item2": {
         "title": "Document Guidance System",
-        "description": "There are twelve essential Infrastructure Standards that must be adhered."
+        "description": "Access checklists for land deeds, Khasra, Khatuni, land conversion forms, and registration requirements."
       },
       "item3": {
         "title": "Infrastructure Standards",
-        "description": "There are twelve essential Infrastructure Standards that must be adhered."
+        "description": "Ensure design compliance for park layouts, internal roads, power sub-stations, and drainage."
       },
       "item4": {
-        "title": "Infrastructure Standards",
-        "description": "There are twelve essential Infrastructure Standards that must be adhered."
+        "title": "Letter of Comfort",
+        "description": "Gain certification to unlock subsidized loans at 1% interest and 100% stamp duty exemption."
       }
     }
   },
