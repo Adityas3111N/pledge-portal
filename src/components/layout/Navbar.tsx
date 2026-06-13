@@ -184,7 +184,10 @@ export default function Navbar() {
             cx="24"
             cy="24"
             r="20"
-            className="stroke-brand-orange-accent fill-none transition-all duration-100"
+            className="stroke-brand-orange-accent fill-none"
+            style={{
+              transition: "stroke-dashoffset 60ms cubic-bezier(0.1, 0.8, 0.25, 1)",
+            }}
             strokeWidth="3"
             strokeDasharray={125.66}
             strokeDashoffset={125.66 - (scrollPercent / 100) * 125.66}
