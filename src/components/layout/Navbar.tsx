@@ -94,7 +94,7 @@ export default function Navbar() {
           transform: `translateY(${yOffset}px)`,
           transition: "transform 0s linear, background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease",
         }}
-        className={`w-full flex flex-col z-50 sticky top-0 font-sans ${
+        className={`w-full flex flex-col z-[100] sticky top-0 font-sans ${
           isSticky 
             ? "bg-bg-surface/90 backdrop-blur-md shadow-md" 
             : "bg-bg-surface"
@@ -172,7 +172,7 @@ export default function Navbar() {
 
       {/* Sticky Micro-Header (visible only on scroll down after headerHeight) */}
       <div 
-        className={`fixed top-0 left-0 right-0 z-40 bg-brand-primary border-b border-brand-accent/30 shadow-md transition-all duration-300 transform ${
+        className={`fixed top-0 left-0 right-0 z-[100] bg-brand-primary border-b border-brand-accent/30 shadow-md transition-all duration-300 transform ${
           showMicroHeader 
             ? "translate-y-0 opacity-100" 
             : "-translate-y-full opacity-0 pointer-events-none"
