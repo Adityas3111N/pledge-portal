@@ -172,7 +172,7 @@ export default function Navbar() {
 
       {/* Sticky Micro-Header (visible only on scroll down after headerHeight) */}
       <div 
-        className={`fixed top-0 left-0 right-0 z-[100] bg-brand-primary border-b border-brand-accent/30 shadow-md transition-all duration-300 transform ${
+        className={`fixed top-0 left-0 right-0 z-[100] bg-brand-primary shadow-md transition-all duration-300 transform ${
           showMicroHeader 
             ? "translate-y-0 opacity-100" 
             : "-translate-y-full opacity-0 pointer-events-none"

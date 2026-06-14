@@ -20,28 +20,28 @@ export default function Hero() {
       const secondLine = parts.slice(1).join(" ");
       return (
         <h1 
-          className="text-[32px] lg:text-[40px] xl:text-[64px] 2xl:text-[72px] tracking-normal font-sans"
+          className="text-[28px] lg:text-[36px] xl:text-[48px] 2xl:text-[56px] tracking-normal font-sans"
           style={{
             fontWeight: 500,
-            lineHeight: "100%",
+            lineHeight: "105%",
           }}
         >
           <span className="text-black">{titlePart1}</span>{" "}
           <span className="text-white">{firstLineWhite}</span>
-          <span className="text-white block mt-2">{secondLine}</span>
+          <span className="text-white block mt-1.5">{secondLine}</span>
         </h1>
       );
     } else {
       return (
         <h1 
-          className="text-[32px] lg:text-[40px] xl:text-[64px] 2xl:text-[72px] tracking-normal font-sans"
+          className="text-[28px] lg:text-[36px] xl:text-[48px] 2xl:text-[56px] tracking-normal font-sans"
           style={{
             fontWeight: 500,
-            lineHeight: "100%",
+            lineHeight: "105%",
           }}
         >
           <span className="text-black">{titlePart1}</span>
-          <span className="text-white block mt-2">{titlePart2}</span>
+          <span className="text-white block mt-1.5">{titlePart2}</span>
         </h1>
       );
     }
@@ -82,7 +82,7 @@ export default function Hero() {
   return (
     <section className="w-full bg-[#FF6E28] relative border-b-[4px] border-white">
       {/* Desktop & Tablet Layout (lg and above) */}
-      <div className="hidden lg:block relative w-full h-[calc(100vh-120px)] min-h-[600px] max-h-[750px] overflow-hidden">
+      <div className="hidden lg:block relative w-full h-[calc(100vh-144px)] min-h-[520px] overflow-hidden">
         {/* 1. Hero Image (Right Side - Bound to screen boundaries to keep people visible) */}
         <div 
           className="absolute top-[3px] h-[99%] z-0"
@@ -108,7 +108,7 @@ export default function Hero() {
           }}
         >
           <Image 
-            src="/assets/backgrounds/hero-layer.png" 
+            src="/assets/backgrounds/hero_layer.svg" 
             alt="" 
             fill
             priority
@@ -125,11 +125,11 @@ export default function Hero() {
           >
             {renderDesktopTitle()}
             
-            <p className="text-white/95 text-xs lg:text-sm xl:text-base leading-relaxed mt-6 font-medium max-w-[440px]">
+            <p className="text-white/95 text-xs lg:text-sm xl:text-base leading-relaxed mt-4 font-medium max-w-[440px]">
               {t("hero.description")}
             </p>
 
-            <div className="mt-8">
+            <div className="mt-6">
               <button className="h-[46px] px-6 hover:px-8 hover:scale-[1.02] active:scale-[0.98] rounded-[10px] bg-white hover:bg-gray-50 transition-all duration-300 text-black text-sm font-semibold cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.12)] border border-transparent focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none">
                 {t("hero.checkEligibility")}
               </button>
