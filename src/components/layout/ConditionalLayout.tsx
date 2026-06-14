@@ -9,7 +9,15 @@ import PledgeWatermark from "../home/PledgeWatermark";
 
 export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isAuthPage = pathname === "/register";
+  const isDashboard = pathname.startsWith("/dashboard");
+
+  if (isDashboard) {
+    return (
+      <main className="flex-1">
+        {children}
+      </main>
+    );
+  }
 
   return (
     <>
