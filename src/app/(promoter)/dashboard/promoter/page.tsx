@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useTranslation } from "@/hooks/useTranslation";
 import { 
   Search, 
   Bell, 
@@ -21,6 +23,7 @@ import {
 } from "lucide-react";
 
 export default function PromoterDashboard() {
+  const { t, language, setLanguage } = useTranslation();
   const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState("dashboard");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -62,10 +65,13 @@ export default function PromoterDashboard() {
   ];
 
   return (
-    <div className="w-full flex justify-center bg-[#FAFAFA] min-h-screen font-sans items-start overflow-x-hidden md:overflow-hidden">
+    <div className="w-full flex justify-center bg-[#FAFAFA] min-h-screen font-sans items-start overflow-hidden">
       {/* Container Box (Layout base) */}
       <div 
-        className="relative bg-[#FAFAFA] overflow-x-hidden select-none flex flex-col w-full max-w-[1440px] min-h-screen md:h-screen md:max-h-[943px]"
+        className="relative bg-[#FAFAFA] overflow-hidden select-none flex flex-col w-full max-w-[1440px] h-screen max-h-[943px]"
+        style={{
+          height: "943px"
+        }}
       >
         {/* Top Header Row (Logo + Navigation Utilities) - Height 66px */}
         <div className="w-full h-[66px] flex items-center border-b border-[#E9E9E9] bg-white z-20 flex-shrink-0">
@@ -81,8 +87,9 @@ export default function PromoterDashboard() {
           </button>
 
           {/* Logo Brand Frame - Width: 316px (desktop), Height: 66px */}
-          <div 
-            className="hidden md:flex w-[316px] h-full items-center gap-[8px] px-[24px] border-r border-[#E9E9E9] flex-shrink-0 bg-white"
+          <Link 
+            href="/"
+            className="hidden md:flex w-[316px] h-full items-center gap-[8px] px-[24px] border-r border-[#E9E9E9] flex-shrink-0 bg-white hover:opacity-90 transition-opacity cursor-pointer"
           >
             <div className="w-[34px] h-[34px] rounded-full border border-[#FF5200] flex items-center justify-center bg-white flex-shrink-0">
               <Image 
@@ -101,7 +108,7 @@ export default function PromoterDashboard() {
                 Govt. of Uttar Pradesh
               </span>
             </div>
-          </div>
+          </Link>
 
           {/* Top Right Utilities Header section - Width remaining, height: 66px */}
           <div 
@@ -112,13 +119,23 @@ export default function PromoterDashboard() {
               <Search className="absolute left-3 w-4 h-4 text-gray-400" />
               <input 
                 type="text" 
-                placeholder="Search" 
+                placeholder={t("promoterDashboard.search")} 
                 className="w-full h-[36px] pl-10 pr-4 rounded-lg bg-[#F8F9FA] border border-gray-200 text-[14px] text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#FF5200] transition-colors"
               />
             </div>
 
-            {/* Right Actions: Notifications and Profile */}
+            {/* Right Actions: Language Selector, Notifications and Profile */}
             <div className="flex items-center gap-2.5 md:gap-[18px]">
+              {/* Language Switcher */}
+              <div className="flex bg-gray-100 p-0.5 rounded border border-gray-200 h-[30px] items-center">
+                <button
+                  onClick={() => setLanguage(language === "en" ? "hi" : "en")}
+                  className="px-2 py-0.5 rounded text-[11px] font-semibold transition-all cursor-pointer h-[24px] text-[#FF5200]"
+                >
+                  {language === "en" ? "हिन्दी" : "English"}
+                </button>
+              </div>
+
               {/* Notification Bell */}
               <button className="relative w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors">
                 <Bell className="w-[18px] h-[18px]" />
@@ -138,7 +155,7 @@ export default function PromoterDashboard() {
                     <ChevronDown className="w-3.5 h-3.5 text-gray-500" />
                   </div>
                   <span className="text-[10px] md:text-[11px] font-medium text-[#10B981] leading-none mt-0.5">
-                    System Online
+                    {t("promoterDashboard.online")}
                   </span>
                 </div>
                 {/* Micro caret for mobile profile */}
@@ -168,7 +185,10 @@ export default function PromoterDashboard() {
             {/* Menu Items */}
             <div className="flex flex-col gap-[8px] w-full">
               {/* Mobile Branding Header inside drawer */}
-              <div className="md:hidden flex items-center gap-[8px] pb-4 mb-4 border-b border-gray-100">
+              <Link 
+                href="/"
+                className="md:hidden flex items-center gap-[8px] pb-4 mb-4 border-b border-gray-100 hover:opacity-90 cursor-pointer"
+              >
                 <div className="w-[30px] h-[30px] rounded-full border border-[#FF5200] flex items-center justify-center bg-white flex-shrink-0">
                   <Image 
                     src="/assets/logos/upgovlogo.png" 
@@ -186,7 +206,7 @@ export default function PromoterDashboard() {
                     Govt. of Uttar Pradesh
                   </span>
                 </div>
-              </div>
+              </Link>
 
               <button 
                 onClick={() => { setActiveTab("dashboard"); setSidebarOpen(false); }}
@@ -197,7 +217,7 @@ export default function PromoterDashboard() {
                 }`}
               >
                 <LayoutDashboard className="w-[18px] h-[18px]" />
-                <span className="text-[14px]">Dashboard</span>
+                <span className="text-[14px]">{t("promoterDashboard.dashboard")}</span>
               </button>
 
               <button 
@@ -209,7 +229,7 @@ export default function PromoterDashboard() {
                 }`}
               >
                 <FileText className="w-[18px] h-[18px]" />
-                <span className="text-[14px]">Enclosure</span>
+                <span className="text-[14px]">{t("promoterDashboard.enclosure")}</span>
               </button>
 
               <button 
@@ -221,7 +241,7 @@ export default function PromoterDashboard() {
                 }`}
               >
                 <FolderOpen className="w-[18px] h-[18px]" />
-                <span className="text-[14px]">My Applications</span>
+                <span className="text-[14px]">{t("promoterDashboard.myApplications")}</span>
               </button>
             </div>
 
@@ -229,12 +249,12 @@ export default function PromoterDashboard() {
             <div className="flex flex-col gap-[8px] w-full border-t border-gray-100 pt-4">
               <button className="w-full h-[42px] px-4 flex items-center gap-3 text-[#4B5563] hover:bg-gray-50 rounded-lg transition-colors">
                 <Settings className="w-[18px] h-[18px]" />
-                <span className="text-[14px] font-medium">Settings</span>
+                <span className="text-[14px] font-medium">{t("promoterDashboard.settings")}</span>
               </button>
 
               <button className="w-full h-[42px] px-4 flex items-center gap-3 bg-red-50 text-[#EF4444] hover:bg-red-100 rounded-lg transition-colors">
                 <LogOut className="w-[18px] h-[18px]" />
-                <span className="text-[14px] font-semibold">Log Out</span>
+                <span className="text-[14px] font-semibold">{t("promoterDashboard.logOut")}</span>
               </button>
             </div>
           </div>
@@ -242,6 +262,9 @@ export default function PromoterDashboard() {
           {/* Right Main Content Workspace */}
           <div 
             className="flex-1 flex flex-col gap-[16px] md:gap-[20px] p-[16px] md:p-[36px] overflow-y-auto w-full"
+            style={{
+              maxHeight: "876px"
+            }}
           >
             {/* Orange Welcome Section - Height auto on mobile, 106px on desktop */}
             <div 
@@ -261,20 +284,20 @@ export default function PromoterDashboard() {
               {/* Welcome Text */}
               <div className="relative z-10 flex flex-col justify-center">
                 <span className="text-[12px] md:text-[13px] font-medium text-white/90 uppercase tracking-wider">
-                  Welcome back!
+                  {t("promoterDashboard.welcomeBack")}
                 </span>
                 <span className="text-[22px] md:text-[26px] font-bold text-white leading-tight mt-0.5">
                   Ramesh Kumar Singh
                 </span>
                 <span className="text-[12px] font-light text-white/85 mt-1.5">
-                  Complete enclosure checklist before applying for PLEDGE park.
+                  {t("promoterDashboard.completeChecklist")}
                 </span>
               </div>
 
               {/* Registration ID Badge */}
               <div className="relative z-10 flex flex-col items-start md:items-end gap-1">
                 <span className="text-[11px] font-semibold text-white/95 tracking-wide uppercase">
-                  Registration ID
+                  {t("promoterDashboard.registrationId")}
                 </span>
                 <div className="flex items-center gap-2 bg-white rounded-lg px-[14px] py-[8px] shadow-sm border border-white/10 w-full md:w-auto">
                   <span className="font-mono font-bold text-[12.5px] text-[#1E293B] flex-1">
@@ -289,14 +312,14 @@ export default function PromoterDashboard() {
                   </button>
                 </div>
                 <span className="text-[10.5px] text-white/80 font-light mt-0.5">
-                  Use this ID for all correspondence
+                  {t("promoterDashboard.correspondenceNote")}
                 </span>
               </div>
             </div>
 
             {/* Overview Title */}
             <div className="flex items-center justify-between flex-shrink-0">
-              <h2 className="text-[18px] font-bold text-[#1E293B]">Overview</h2>
+              <h2 className="text-[18px] font-bold text-[#1E293B]">{t("promoterDashboard.overview")}</h2>
             </div>
 
             {/* Row of Stat Cards - Stacks on mobile */}
@@ -305,7 +328,7 @@ export default function PromoterDashboard() {
               <div className="bg-white rounded-xl p-[20px] border border-gray-100 flex items-center justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
                 <div className="flex flex-col">
                   <span className="text-[12.5px] font-semibold text-gray-500 uppercase tracking-wide flex items-center gap-1.5">
-                    <FolderOpen className="w-3.5 h-3.5 text-gray-400" /> Total Applications
+                    <FolderOpen className="w-3.5 h-3.5 text-gray-400" /> {t("promoterDashboard.totalApplications")}
                   </span>
                   <span className="text-[32px] font-extrabold text-[#1E293B] mt-2">03</span>
                 </div>
@@ -325,7 +348,7 @@ export default function PromoterDashboard() {
               <div className="bg-white rounded-xl p-[20px] border border-gray-100 flex items-center justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
                 <div className="flex flex-col">
                   <span className="text-[12.5px] font-semibold text-gray-500 uppercase tracking-wide flex items-center gap-1.5">
-                    <FileText className="w-3.5 h-3.5 text-gray-400" /> Enclosure Status
+                    <FileText className="w-3.5 h-3.5 text-gray-400" /> {t("promoterDashboard.enclosureStatus")}
                   </span>
                   <span className="text-[32px] font-extrabold text-[#1E293B] mt-2">-</span>
                 </div>
@@ -338,7 +361,7 @@ export default function PromoterDashboard() {
               <div className="bg-white rounded-xl p-[20px] border border-gray-100 flex items-center justify-between shadow-sm relative overflow-hidden sm:col-span-2 lg:col-span-1 group hover:shadow-md transition-shadow">
                 <div className="flex flex-col">
                   <span className="text-[12.5px] font-semibold text-gray-500 uppercase tracking-wide flex items-center gap-1.5">
-                    <HelpCircle className="w-3.5 h-3.5 text-gray-400" /> Enclosure Readiness
+                    <HelpCircle className="w-3.5 h-3.5 text-gray-400" /> {t("promoterDashboard.enclosureReadiness")}
                   </span>
                   <span className="text-[32px] font-extrabold text-[#1E293B] mt-2">3/9</span>
                 </div>
@@ -366,7 +389,7 @@ export default function PromoterDashboard() {
                 </div>
               </div>
               <button className="h-[44px] sm:h-[40px] w-full sm:w-auto px-5 rounded-lg bg-[#FF5200] text-white text-[13.5px] font-bold hover:bg-[#E04800] transition-colors shadow-sm flex items-center justify-center gap-1 flex-shrink-0">
-                Upload site map
+                {t("promoterDashboard.uploadSiteMap")}
                 <span className="text-[16px]">&rsaquo;</span>
               </button>
             </div>
@@ -376,9 +399,9 @@ export default function PromoterDashboard() {
               {/* Header row */}
               <div className="flex items-center justify-between mb-2.5 flex-shrink-0">
                 <div className="flex items-center gap-3">
-                  <h3 className="text-[15px] font-bold text-[#1E293B]">Recent activity</h3>
+                  <h3 className="text-[15px] font-bold text-[#1E293B]">{t("promoterDashboard.recentActivity")}</h3>
                   <span className="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-600 text-[11px] font-semibold">
-                    10 users
+                    10 {t("promoterDashboard.users")}
                   </span>
                 </div>
                 <button className="text-gray-400 hover:text-gray-600">
@@ -388,18 +411,18 @@ export default function PromoterDashboard() {
                 </button>
               </div>
 
-              {/* Table wrapper - Flow normally with horizontal overflow protection */}
+              {/* Table wrapper - Flow normally with responsive overflow scroller */}
               <div className="w-full flex-1 overflow-x-auto min-h-0">
-                <table className="w-full text-left border-collapse min-w-[500px] md:min-w-0">
+                <table className="w-full text-left border-collapse min-w-[650px] md:min-w-0">
                   <thead>
                     <tr className="border-b border-gray-100 text-[11px] font-semibold text-gray-500 uppercase tracking-wider sticky top-0 bg-white z-10">
                       <th className="py-2.5 px-4 flex items-center gap-1">
-                        Application ID <span className="text-[10px] text-gray-400 font-normal">ⓘ</span>
+                        {t("promoterDashboard.applicationId")} <span className="text-[10px] text-gray-400 font-normal">ⓘ</span>
                       </th>
-                      <th className="py-2.5 px-4">Project Name</th>
-                      <th className="py-2.5 px-4 hidden md:table-cell">District</th>
-                      <th className="py-2.5 px-4 hidden sm:table-cell">Status</th>
-                      <th className="py-2.5 px-4 text-right">Actions</th>
+                      <th className="py-2.5 px-4">{t("promoterDashboard.projectName")}</th>
+                      <th className="py-2.5 px-4">{t("promoterDashboard.district")}</th>
+                      <th className="py-2.5 px-4">{t("promoterDashboard.status")}</th>
+                      <th className="py-2.5 px-4 text-right">{t("promoterDashboard.actions")}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-50 text-[13px]">
@@ -411,10 +434,10 @@ export default function PromoterDashboard() {
                         <td className="py-2.5 px-4 text-[#4B5563] truncate max-w-[150px] md:max-w-none">
                           {act.projectName}
                         </td>
-                        <td className="py-2.5 px-4 text-[#4B5563] hidden md:table-cell">
+                        <td className="py-2.5 px-4 text-[#4B5563]">
                           {act.district}
                         </td>
-                        <td className="py-2.5 px-4 hidden sm:table-cell">
+                        <td className="py-2.5 px-4">
                           <div className="flex items-center gap-2">
                             <span 
                               className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
@@ -425,17 +448,13 @@ export default function PromoterDashboard() {
                             >
                               {act.status}
                             </span>
-                            <span className="text-gray-400 text-[10px] font-medium">+3</span>
+                            <span className="text-gray-400 text-[10px] font-medium">+4</span>
                           </div>
                         </td>
                         <td className="py-2.5 px-4 text-right">
                           <div className="flex items-center justify-end gap-3 text-gray-400">
-                            <button className="hover:text-red-500 transition-colors">
-                              <Trash2 className="w-3.5 h-3.5" />
-                            </button>
-                            <button className="hover:text-blue-500 transition-colors">
-                              <Edit3 className="w-3.5 h-3.5" />
-                            </button>
+                            <Trash2 className="w-3.5 h-3.5 cursor-pointer hover:text-red-500 transition-colors" />
+                            <Edit3 className="w-3.5 h-3.5 cursor-pointer hover:text-blue-500 transition-colors" />
                           </div>
                         </td>
                       </tr>
@@ -447,7 +466,7 @@ export default function PromoterDashboard() {
               {/* Pagination Controls */}
               <div className="flex items-center justify-between border-t border-gray-100 pt-3 mt-1.5 flex-shrink-0">
                 <button className="h-[32px] px-2.5 md:px-3 rounded-lg border border-gray-200 text-[12px] font-semibold text-[#4B5563] hover:bg-gray-50 transition-colors flex items-center gap-1">
-                  &larr; <span className="hidden sm:inline">Previous</span>
+                  &larr; <span className="hidden sm:inline">{t("promoterDashboard.previous")}</span>
                 </button>
                 
                 <div className="flex items-center gap-1">
@@ -460,7 +479,7 @@ export default function PromoterDashboard() {
                 </div>
 
                 <button className="h-[32px] px-2.5 md:px-3 rounded-lg border border-gray-200 text-[12px] font-semibold text-[#4B5563] hover:bg-gray-50 transition-colors flex items-center gap-1">
-                  <span className="hidden sm:inline">Next</span> &rarr;
+                  <span className="hidden sm:inline">{t("promoterDashboard.next")}</span> &rarr;
                 </button>
               </div>
             </div>
