@@ -9,18 +9,18 @@ export function AboutHero() {
   const { t } = useTranslation();
 
   return (
-    <main className="w-full bg-bg-surface relative overflow-x-hidden flex flex-col min-h-[700px] lg:block lg:min-h-[1000px]">
+    <main className="w-full bg-bg-surface relative overflow-hidden flex flex-col min-h-[600px] lg:h-[calc(100vh-144px)] lg:min-h-[550px]">
       {/* 1. Ellipse Layer */}
       <div
-        className="absolute pointer-events-none z-0 rounded-[100%] left-1/2 -translate-x-1/2 top-[20px] lg:top-[40px] w-[150%] sm:w-[120%] lg:w-[957px] h-[400px] lg:h-[958px]"
+        className="absolute pointer-events-none z-0 rounded-[100%] left-1/2 -translate-x-1/2 top-[20px] lg:top-[30px] w-[150%] sm:w-[120%] lg:w-[900px] h-[400px] lg:h-[680px]"
         style={{
           background:
-            "linear-gradient(180deg, #FFC4A8 0%, rgba(255, 255, 255, 0) 46.15%)",
+            "linear-gradient(180deg, #FFC4A8 0%, rgba(255, 255, 255, 0) 65%)",
         }}
       />
 
       {/* 2. Map Background Layer */}
-      <div className="absolute pointer-events-none z-0 left-1/2 -translate-x-1/2 top-[446px] md:top-[280px] lg:top-[393px] w-[412px] max-w-full md:w-full lg:max-w-none lg:w-[1250px] h-[188px] md:h-[350px] lg:h-[500px] opacity-60 md:opacity-80 lg:opacity-100">
+      <div className="absolute pointer-events-none z-0 left-1/2 -translate-x-1/2 top-[446px] md:top-[280px] lg:top-[300px] w-[412px] max-w-full md:w-full lg:max-w-none lg:w-[1150px] h-[188px] md:h-[350px] lg:h-[380px] opacity-60 md:opacity-80 lg:opacity-100">
         <Image
           src="/assets/backgrounds/about_page_hero_bg.svg"
           alt="Map Background"
@@ -32,23 +32,23 @@ export function AboutHero() {
 
       {/* 3. Top Fading Gradient Layer (Desktop only) */}
       <div
-        className="hidden lg:block absolute pointer-events-none z-10 left-1/2 -translate-x-1/2 w-[1440px] h-[400px] top-[220px]"
+        className="hidden lg:block absolute pointer-events-none z-10 left-1/2 -translate-x-1/2 w-[1440px] h-[250px] top-[180px]"
         style={{
           background:
-            "linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%)",
+            "linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%)",
         }}
       />
 
       {/* 4. Bottom Fading Gradient Layer (Desktop only) */}
       <div
-        className="hidden lg:block absolute pointer-events-none z-10 left-1/2 -translate-x-1/2 w-[1440px] h-[129px] top-[830px]"
+        className="hidden lg:block absolute pointer-events-none z-10 left-1/2 -translate-x-1/2 w-[1440px] h-[100px] bottom-0"
         style={{
-          background: "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%)"
+          background: "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%)"
         }}
       />
 
       {/* 5. Main Text & Button Section */}
-      <div className="relative lg:absolute z-20 flex flex-col items-center text-center left-1/2 -translate-x-1/2 lg:w-[960px] lg:h-[442px] top-0 lg:top-[150px] gap-4 lg:gap-[20px] w-full max-w-[960px] px-4 lg:px-0 pt-[80px] lg:pt-0 pb-16 lg:pb-0">
+      <div className="relative lg:absolute z-20 flex flex-col items-center text-center left-1/2 -translate-x-1/2 lg:w-[960px] top-0 lg:top-[60px] gap-4 lg:gap-[16px] w-full max-w-[960px] px-4 lg:px-0 pt-[80px] lg:pt-0 pb-16 lg:pb-0">
         {/* Top Label */}
         <div className="flex items-center justify-center gap-2 px-3 py-1.5 bg-bg-surface rounded-md shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-border-medium w-fit shrink-0">
           <div className="w-[3px] h-[14px] bg-brand-orange-bright rounded-full shrink-0" />
@@ -58,19 +58,19 @@ export function AboutHero() {
         </div>
 
         {/* Main Title */}
-        <h1 className="w-full max-w-[374px] lg:max-w-[1219px] h-auto font-medium text-[28px] lg:text-[56px] leading-tight lg:leading-[70px] tracking-normal text-center text-neutral-near-black break-words min-w-0">
+        <h1 className="w-full max-w-[374px] lg:max-w-[1219px] h-auto font-medium text-[28px] lg:text-[46px] leading-tight lg:leading-[58px] tracking-normal text-center text-neutral-near-black break-words min-w-0">
           {t("about.titlePart1")} <br className="hidden lg:block" />
           {t("about.titlePart2")} <br />
           <span className="text-[#FA7B3F]">{t("about.titlePart3")}</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="w-full lg:max-w-[800px] font-normal text-[14px] lg:text-[16px] leading-relaxed tracking-normal text-center text-neutral-near-black opacity-70 break-words min-w-0 mt-2">
+        <p className="w-full lg:max-w-[760px] font-normal text-[14px] lg:text-[15px] leading-relaxed tracking-normal text-center text-neutral-near-black opacity-70 break-words min-w-0 mt-1">
           {t("about.description")}
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-row items-center justify-center gap-[10px] mt-6 lg:mt-2">
+        <div className="flex flex-row items-center justify-center gap-[10px] mt-4 lg:mt-2">
           <Button
             variant="brand-primary"
             size="form-lg"
