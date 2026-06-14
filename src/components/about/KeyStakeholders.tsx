@@ -28,7 +28,7 @@ export default function KeyStakeholders() {
   }
 
   return (
-    <section className="relative w-full pb-20 md:pb-28 overflow-visible bg-[#F9FAFC] z-20 px-0">
+    <section className="relative w-full pt-16 md:pt-24 pb-20 md:pb-28 overflow-visible bg-[#F9FAFC] z-20 px-0">
       
       {/* Decorative Green Shape (Left monitor edge, z-0 to sit behind content) */}
       <img

@@ -8,7 +8,7 @@ export function WhatIsPledge() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative z-50 w-full bg-transparent -mt-10 pb-16 md:pb-20 overflow-visible">
+    <section className="relative z-50 w-full bg-transparent pt-12 lg:pt-16 pb-16 md:pb-20 overflow-visible">
       {" "}
       {/* Orange Shape on the left */}
       <div className="absolute left-0 top-0 w-[79px] sm:w-[49px] md:w-[69px] lg:w-[79px] pointer-events-none hidden lg:flex justify-start z-50 mt-[-20px]">
